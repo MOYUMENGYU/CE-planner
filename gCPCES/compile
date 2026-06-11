@@ -1,0 +1,8 @@
+#!/bin/bash
+mkdir build
+javac -classpath "$(pwd)"/src/cpces/:"$(pwd)"/libs/* src/cpces/*.java -d build/
+javac -classpath "$(pwd)"/src/:"$(pwd)"/libs/* src/*.java -d build/
+cp src/ff build/
+cp src/MpC build/
+cp src/hFF build/
+

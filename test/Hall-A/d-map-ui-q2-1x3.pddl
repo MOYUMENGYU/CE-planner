@@ -1,0 +1,159 @@
+(define (domain hall)
+  (:constants p1 p2 p3)
+  (:predicates (x-agent ?p) (y-agent ?p)
+               (visited-A) (visited-B) (visited-C) (visited-D)
+               (obsA)
+               (not-obsA-q0)
+               (obsA-q0-Right-q0)
+               (obsA-q0-Right-q1)
+               (obsA-q0-Left-q0)
+               (obsA-q0-Left-q1)
+               (not-obsA-q1)
+               (obsA-q1-Right-q0)
+               (obsA-q1-Right-q1)
+               (obsA-q1-Left-q0)
+               (obsA-q1-Left-q1)
+               (obsB)
+               (not-obsB-q0)
+               (obsB-q0-Right-q0)
+               (obsB-q0-Right-q1)
+               (obsB-q0-Left-q0)
+               (obsB-q0-Left-q1)
+               (not-obsB-q1)
+               (obsB-q1-Right-q0)
+               (obsB-q1-Right-q1)
+               (obsB-q1-Left-q0)
+               (obsB-q1-Left-q1)
+               (obs-)
+               (not-obs--q0)
+               (obs--q0-Right-q0)
+               (obs--q0-Right-q1)
+               (obs--q0-Left-q0)
+               (obs--q0-Left-q1)
+               (not-obs--q1)
+               (obs--q1-Right-q0)
+               (obs--q1-Right-q1)
+               (obs--q1-Left-q0)
+               (obs--q1-Left-q1)
+               (q0)
+               (q1)
+  )
+  (:action map-A-q0-Right-q0 :precondition (not-obsA-q0) :effect (and (not (not-obsA-q0)) (obsA-q0-Right-q0)) )
+  (:action app-A-q0-Right-q0
+    :precondition (obsA-q0-Right-q0)
+    :effect (and (when (and (obsA) (q0) (x-agent p1) (y-agent p1)) (and (x-agent p2) (not (x-agent p1)) (not (obsA))))
+                 
+                 (when (and (obsA) (q0) (x-agent p2) (y-agent p1)) (and (x-agent p3) (not (x-agent p2)) (not (obsA))))
+                  ))
+  (:action map-A-q0-Right-q1 :precondition (not-obsA-q0) :effect (and (not (not-obsA-q0)) (obsA-q0-Right-q1)) )
+  (:action app-A-q0-Right-q1
+    :precondition (obsA-q0-Right-q1)
+    :effect (and (when (and (obsA) (q0) (x-agent p1) (y-agent p1)) (and (x-agent p2) (not (x-agent p1)) (not (obsA)) (not (q0)) (q1)))
+                 
+                 (when (and (obsA) (q0) (x-agent p2) (y-agent p1)) (and (x-agent p3) (not (x-agent p2)) (not (obsA)) (not (q0)) (q1)))
+                  ))
+  (:action map-A-q1-Right-q0 :precondition (not-obsA-q1) :effect (and (not (not-obsA-q1)) (obsA-q1-Right-q0)) )
+  (:action app-A-q1-Right-q0
+    :precondition (obsA-q1-Right-q0)
+    :effect (and (when (and (obsA) (q1) (x-agent p1) (y-agent p1)) (and (x-agent p2) (not (x-agent p1)) (not (obsA)) (not (q1)) (q0)))
+                 
+                 (when (and (obsA) (q1) (x-agent p2) (y-agent p1)) (and (x-agent p3) (not (x-agent p2)) (not (obsA)) (not (q1)) (q0)))
+                  ))
+  (:action map-A-q1-Right-q1 :precondition (not-obsA-q1) :effect (and (not (not-obsA-q1)) (obsA-q1-Right-q1)) )
+  (:action app-A-q1-Right-q1
+    :precondition (obsA-q1-Right-q1)
+    :effect (and (when (and (obsA) (q1) (x-agent p1) (y-agent p1)) (and (x-agent p2) (not (x-agent p1)) (not (obsA))))
+                 
+                 (when (and (obsA) (q1) (x-agent p2) (y-agent p1)) (and (x-agent p3) (not (x-agent p2)) (not (obsA))))
+                  ))
+  (:action map---q0-Right-q0 :precondition (not-obs--q0) :effect (and (not (not-obs--q0)) (obs--q0-Right-q0)) )
+  (:action app---q0-Right-q0
+    :precondition (obs--q0-Right-q0)
+    :effect (and (when (and (obs-) (q0) (x-agent p1) (y-agent p1)) (and (x-agent p2) (not (x-agent p1)) (not (obs-))))
+                 
+                 (when (and (obs-) (q0) (x-agent p2) (y-agent p1)) (and (x-agent p3) (not (x-agent p2)) (not (obs-))))
+                  ))
+  (:action map---q0-Right-q1 :precondition (not-obs--q0) :effect (and (not (not-obs--q0)) (obs--q0-Right-q1)) )
+  (:action app---q0-Right-q1
+    :precondition (obs--q0-Right-q1)
+    :effect (and (when (and (obs-) (q0) (x-agent p1) (y-agent p1)) (and (x-agent p2) (not (x-agent p1)) (not (obs-)) (not (q0)) (q1)))
+                 
+                 (when (and (obs-) (q0) (x-agent p2) (y-agent p1)) (and (x-agent p3) (not (x-agent p2)) (not (obs-)) (not (q0)) (q1)))
+                  ))
+  (:action map---q1-Right-q0 :precondition (not-obs--q1) :effect (and (not (not-obs--q1)) (obs--q1-Right-q0)) )
+  (:action app---q1-Right-q0
+    :precondition (obs--q1-Right-q0)
+    :effect (and (when (and (obs-) (q1) (x-agent p1) (y-agent p1)) (and (x-agent p2) (not (x-agent p1)) (not (obs-)) (not (q1)) (q0)))
+                 
+                 (when (and (obs-) (q1) (x-agent p2) (y-agent p1)) (and (x-agent p3) (not (x-agent p2)) (not (obs-)) (not (q1)) (q0)))
+                  ))
+  (:action map---q1-Right-q1 :precondition (not-obs--q1) :effect (and (not (not-obs--q1)) (obs--q1-Right-q1)) )
+  (:action app---q1-Right-q1
+    :precondition (obs--q1-Right-q1)
+    :effect (and (when (and (obs-) (q1) (x-agent p1) (y-agent p1)) (and (x-agent p2) (not (x-agent p1)) (not (obs-))))
+                 
+                 (when (and (obs-) (q1) (x-agent p2) (y-agent p1)) (and (x-agent p3) (not (x-agent p2)) (not (obs-))))
+                  ))
+  (:action map-B-q0-Left-q0 :precondition (not-obsB-q0) :effect (and (not (not-obsB-q0)) (obsB-q0-Left-q0)) )
+  (:action app-B-q0-Left-q0
+    :precondition (obsB-q0-Left-q0)
+    :effect (and (when (and (obsB) (q0) (x-agent p2) (y-agent p1)) (and (x-agent p1) (not (x-agent p2)) (not (obsB))))
+                 
+                 (when (and (obsB) (q0) (x-agent p3) (y-agent p1)) (and (x-agent p2) (not (x-agent p3)) (not (obsB))))
+                  ))
+  (:action map-B-q0-Left-q1 :precondition (not-obsB-q0) :effect (and (not (not-obsB-q0)) (obsB-q0-Left-q1)) )
+  (:action app-B-q0-Left-q1
+    :precondition (obsB-q0-Left-q1)
+    :effect (and (when (and (obsB) (q0) (x-agent p2) (y-agent p1)) (and (x-agent p1) (not (x-agent p2)) (not (obsB)) (not (q0)) (q1)))
+                 
+                 (when (and (obsB) (q0) (x-agent p3) (y-agent p1)) (and (x-agent p2) (not (x-agent p3)) (not (obsB)) (not (q0)) (q1)))
+                  ))
+  (:action map-B-q1-Left-q0 :precondition (not-obsB-q1) :effect (and (not (not-obsB-q1)) (obsB-q1-Left-q0)) )
+  (:action app-B-q1-Left-q0
+    :precondition (obsB-q1-Left-q0)
+    :effect (and (when (and (obsB) (q1) (x-agent p2) (y-agent p1)) (and (x-agent p1) (not (x-agent p2)) (not (obsB)) (not (q1)) (q0)))
+                 
+                 (when (and (obsB) (q1) (x-agent p3) (y-agent p1)) (and (x-agent p2) (not (x-agent p3)) (not (obsB)) (not (q1)) (q0)))
+                  ))
+  (:action map-B-q1-Left-q1 :precondition (not-obsB-q1) :effect (and (not (not-obsB-q1)) (obsB-q1-Left-q1)) )
+  (:action app-B-q1-Left-q1
+    :precondition (obsB-q1-Left-q1)
+    :effect (and (when (and (obsB) (q1) (x-agent p2) (y-agent p1)) (and (x-agent p1) (not (x-agent p2)) (not (obsB))))
+                 
+                 (when (and (obsB) (q1) (x-agent p3) (y-agent p1)) (and (x-agent p2) (not (x-agent p3)) (not (obsB))))
+                  ))
+  (:action map---q0-Left-q0 :precondition (not-obs--q0) :effect (and (not (not-obs--q0)) (obs--q0-Left-q0)) )
+  (:action app---q0-Left-q0
+    :precondition (obs--q0-Left-q0)
+    :effect (and (when (and (obs-) (q0) (x-agent p2) (y-agent p1)) (and (x-agent p1) (not (x-agent p2)) (not (obs-))))
+                 
+                 (when (and (obs-) (q0) (x-agent p3) (y-agent p1)) (and (x-agent p2) (not (x-agent p3)) (not (obs-))))
+                  ))
+  (:action map---q0-Left-q1 :precondition (not-obs--q0) :effect (and (not (not-obs--q0)) (obs--q0-Left-q1)) )
+  (:action app---q0-Left-q1
+    :precondition (obs--q0-Left-q1)
+    :effect (and (when (and (obs-) (q0) (x-agent p2) (y-agent p1)) (and (x-agent p1) (not (x-agent p2)) (not (obs-)) (not (q0)) (q1)))
+                 
+                 (when (and (obs-) (q0) (x-agent p3) (y-agent p1)) (and (x-agent p2) (not (x-agent p3)) (not (obs-)) (not (q0)) (q1)))
+                  ))
+  (:action map---q1-Left-q0 :precondition (not-obs--q1) :effect (and (not (not-obs--q1)) (obs--q1-Left-q0)) )
+  (:action app---q1-Left-q0
+    :precondition (obs--q1-Left-q0)
+    :effect (and (when (and (obs-) (q1) (x-agent p2) (y-agent p1)) (and (x-agent p1) (not (x-agent p2)) (not (obs-)) (not (q1)) (q0)))
+                 
+                 (when (and (obs-) (q1) (x-agent p3) (y-agent p1)) (and (x-agent p2) (not (x-agent p3)) (not (obs-)) (not (q1)) (q0)))
+                  ))
+  (:action map---q1-Left-q1 :precondition (not-obs--q1) :effect (and (not (not-obs--q1)) (obs--q1-Left-q1)) )
+  (:action app---q1-Left-q1
+    :precondition (obs--q1-Left-q1)
+    :effect (and (when (and (obs-) (q1) (x-agent p2) (y-agent p1)) (and (x-agent p1) (not (x-agent p2)) (not (obs-))))
+                 
+                 (when (and (obs-) (q1) (x-agent p3) (y-agent p1)) (and (x-agent p2) (not (x-agent p3)) (not (obs-))))
+                  ))
+  (:action zoom
+    :effect (and (when (and (x-agent p1) (y-agent p1)) (obsA))
+                 (when (and (x-agent p2) (y-agent p1)) (obs-))
+                 (when (and (x-agent p3) (y-agent p1)) (obsB))
+                 (when (and (x-agent p1) (y-agent p1)) (visited-A))
+                 (when (and (x-agent p3) (y-agent p1)) (visited-B)) ))
+)

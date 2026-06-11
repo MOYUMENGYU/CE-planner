@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+export IGC_CANDIDATE_PLANNER=icpces
+exec ./plan-cegis "$@"

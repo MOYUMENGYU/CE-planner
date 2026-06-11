@@ -1,0 +1,46 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "python-debug",
+      "request": "launch",
+      "type": "debugpy",
+      "program": "/home/moyu/igc/gc_counter/lama/translate/translate.py",
+      "console": "integratedTerminal",
+      "args": [
+        "/home/moyu/igc/gc_counter/test/blocks/domain.pddl",
+        "/home/moyu/igc/gc_counter/test/blocks/b4.pddl"
+        //         "/home/moyu/gc_counter/test/bomb/domain.pddl",
+        // "/home/moyu/gc_counter/test/bomb/p10-5.pddl"
+      ],
+    },
+    {
+      "name": "iGC-debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "preLaunchTask": "iGC-build",
+      "args": [
+        "pMdarfF",
+        "/home/moyu/igc/gc_counter/result",
+               "false",
+              "<",
+              "/home/moyu/igc/gc_counter/output"
+            ],
+      "miDebuggerArgs": "-q -ex quit; wait() { fg >/dev/null; }; /usr/bin/gdb -q --interpreter=mi",
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "/home/moyu/igc/gc_counter",
+      "program": "/home/moyu/igc/gc_counter/lama/search/search",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
+

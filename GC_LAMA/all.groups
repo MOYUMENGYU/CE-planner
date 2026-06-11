@@ -1,0 +1,1821 @@
+begin_groups
+9
+group
+257
+0 160 holding 1 o1 
+0 16 obj_at 2 o1 p1_1 
+0 165 obj_at 2 o1 p1_2 
+0 75 obj_at 2 o1 p1_3 
+0 25 obj_at 2 o1 p1_4 
+0 53 obj_at 2 o1 p1_5 
+0 11 obj_at 2 o1 p1_6 
+0 112 obj_at 2 o1 p1_7 
+0 30 obj_at 2 o1 p1_8 
+0 0 obj_at 2 o1 p1_9 
+0 70 obj_at 2 o1 p1_10 
+0 226 obj_at 2 o1 p1_11 
+0 214 obj_at 2 o1 p1_12 
+0 135 obj_at 2 o1 p1_13 
+0 100 obj_at 2 o1 p1_14 
+0 197 obj_at 2 o1 p1_15 
+0 115 obj_at 2 o1 p1_16 
+0 147 obj_at 2 o1 p2_1 
+0 255 obj_at 2 o1 p2_2 
+0 38 obj_at 2 o1 p2_3 
+0 87 obj_at 2 o1 p2_4 
+0 113 obj_at 2 o1 p2_5 
+0 249 obj_at 2 o1 p2_6 
+0 83 obj_at 2 o1 p2_7 
+0 134 obj_at 2 o1 p2_8 
+0 205 obj_at 2 o1 p2_9 
+0 167 obj_at 2 o1 p2_10 
+0 257 obj_at 2 o1 p2_11 
+0 51 obj_at 2 o1 p2_12 
+0 164 obj_at 2 o1 p2_13 
+0 208 obj_at 2 o1 p2_14 
+0 106 obj_at 2 o1 p2_15 
+0 139 obj_at 2 o1 p2_16 
+0 202 obj_at 2 o1 p3_1 
+0 110 obj_at 2 o1 p3_2 
+0 12 obj_at 2 o1 p3_3 
+0 224 obj_at 2 o1 p3_4 
+0 196 obj_at 2 o1 p3_5 
+0 158 obj_at 2 o1 p3_6 
+0 5 obj_at 2 o1 p3_7 
+0 217 obj_at 2 o1 p3_8 
+0 124 obj_at 2 o1 p3_9 
+0 136 obj_at 2 o1 p3_10 
+0 132 obj_at 2 o1 p3_11 
+0 242 obj_at 2 o1 p3_12 
+0 76 obj_at 2 o1 p3_13 
+0 98 obj_at 2 o1 p3_14 
+0 37 obj_at 2 o1 p3_15 
+0 248 obj_at 2 o1 p3_16 
+0 151 obj_at 2 o1 p4_1 
+0 181 obj_at 2 o1 p4_2 
+0 17 obj_at 2 o1 p4_3 
+0 114 obj_at 2 o1 p4_4 
+0 207 obj_at 2 o1 p4_5 
+0 175 obj_at 2 o1 p4_6 
+0 9 obj_at 2 o1 p4_7 
+0 163 obj_at 2 o1 p4_8 
+0 201 obj_at 2 o1 p4_9 
+0 40 obj_at 2 o1 p4_10 
+0 54 obj_at 2 o1 p4_11 
+0 232 obj_at 2 o1 p4_12 
+0 254 obj_at 2 o1 p4_13 
+0 195 obj_at 2 o1 p4_14 
+0 185 obj_at 2 o1 p4_15 
+0 225 obj_at 2 o1 p4_16 
+0 230 obj_at 2 o1 p5_1 
+0 121 obj_at 2 o1 p5_2 
+0 35 obj_at 2 o1 p5_3 
+0 27 obj_at 2 o1 p5_4 
+0 125 obj_at 2 o1 p5_5 
+0 85 obj_at 2 o1 p5_6 
+0 61 obj_at 2 o1 p5_7 
+0 221 obj_at 2 o1 p5_8 
+0 218 obj_at 2 o1 p5_9 
+0 162 obj_at 2 o1 p5_10 
+0 45 obj_at 2 o1 p5_11 
+0 47 obj_at 2 o1 p5_12 
+0 206 obj_at 2 o1 p5_13 
+0 154 obj_at 2 o1 p5_14 
+0 131 obj_at 2 o1 p5_15 
+0 97 obj_at 2 o1 p5_16 
+0 138 obj_at 2 o1 p6_1 
+0 116 obj_at 2 o1 p6_2 
+0 212 obj_at 2 o1 p6_3 
+0 58 obj_at 2 o1 p6_4 
+0 141 obj_at 2 o1 p6_5 
+0 122 obj_at 2 o1 p6_6 
+0 155 obj_at 2 o1 p6_7 
+0 7 obj_at 2 o1 p6_8 
+0 64 obj_at 2 o1 p6_9 
+0 228 obj_at 2 o1 p6_10 
+0 55 obj_at 2 o1 p6_11 
+0 189 obj_at 2 o1 p6_12 
+0 15 obj_at 2 o1 p6_13 
+0 8 obj_at 2 o1 p6_14 
+0 168 obj_at 2 o1 p6_15 
+0 200 obj_at 2 o1 p6_16 
+0 49 obj_at 2 o1 p7_1 
+0 128 obj_at 2 o1 p7_2 
+0 173 obj_at 2 o1 p7_3 
+0 59 obj_at 2 o1 p7_4 
+0 103 obj_at 2 o1 p7_5 
+0 34 obj_at 2 o1 p7_6 
+0 84 obj_at 2 o1 p7_7 
+0 60 obj_at 2 o1 p7_8 
+0 236 obj_at 2 o1 p7_9 
+0 142 obj_at 2 o1 p7_10 
+0 80 obj_at 2 o1 p7_11 
+0 177 obj_at 2 o1 p7_12 
+0 146 obj_at 2 o1 p7_13 
+0 99 obj_at 2 o1 p7_14 
+0 65 obj_at 2 o1 p7_15 
+0 2 obj_at 2 o1 p7_16 
+0 72 obj_at 2 o1 p8_1 
+0 171 obj_at 2 o1 p8_2 
+0 4 obj_at 2 o1 p8_3 
+0 22 obj_at 2 o1 p8_4 
+0 117 obj_at 2 o1 p8_5 
+0 213 obj_at 2 o1 p8_6 
+0 237 obj_at 2 o1 p8_7 
+0 227 obj_at 2 o1 p8_8 
+0 123 obj_at 2 o1 p8_9 
+0 74 obj_at 2 o1 p8_10 
+0 101 obj_at 2 o1 p8_11 
+0 105 obj_at 2 o1 p8_12 
+0 193 obj_at 2 o1 p8_13 
+0 78 obj_at 2 o1 p8_14 
+0 39 obj_at 2 o1 p8_15 
+0 137 obj_at 2 o1 p8_16 
+0 90 obj_at 2 o1 p9_1 
+0 79 obj_at 2 o1 p9_2 
+0 183 obj_at 2 o1 p9_3 
+0 130 obj_at 2 o1 p9_4 
+0 96 obj_at 2 o1 p9_5 
+0 118 obj_at 2 o1 p9_6 
+0 31 obj_at 2 o1 p9_7 
+0 191 obj_at 2 o1 p9_8 
+0 166 obj_at 2 o1 p9_9 
+0 245 obj_at 2 o1 p9_10 
+0 91 obj_at 2 o1 p9_11 
+0 57 obj_at 2 o1 p9_12 
+0 33 obj_at 2 o1 p9_13 
+0 29 obj_at 2 o1 p9_14 
+0 192 obj_at 2 o1 p9_15 
+0 94 obj_at 2 o1 p9_16 
+0 184 obj_at 2 o1 p10_1 
+0 243 obj_at 2 o1 p10_2 
+0 216 obj_at 2 o1 p10_3 
+0 10 obj_at 2 o1 p10_4 
+0 102 obj_at 2 o1 p10_5 
+0 209 obj_at 2 o1 p10_6 
+0 41 obj_at 2 o1 p10_7 
+0 3 obj_at 2 o1 p10_8 
+0 157 obj_at 2 o1 p10_9 
+0 143 obj_at 2 o1 p10_10 
+0 186 obj_at 2 o1 p10_11 
+0 86 obj_at 2 o1 p10_12 
+0 77 obj_at 2 o1 p10_13 
+0 188 obj_at 2 o1 p10_14 
+0 144 obj_at 2 o1 p10_15 
+0 222 obj_at 2 o1 p10_16 
+0 69 obj_at 2 o1 p11_1 
+0 235 obj_at 2 o1 p11_2 
+0 233 obj_at 2 o1 p11_3 
+0 220 obj_at 2 o1 p11_4 
+0 63 obj_at 2 o1 p11_5 
+0 159 obj_at 2 o1 p11_6 
+0 1 obj_at 2 o1 p11_7 
+0 62 obj_at 2 o1 p11_8 
+0 153 obj_at 2 o1 p11_9 
+0 32 obj_at 2 o1 p11_10 
+0 161 obj_at 2 o1 p11_11 
+0 48 obj_at 2 o1 p11_12 
+0 18 obj_at 2 o1 p11_13 
+0 89 obj_at 2 o1 p11_14 
+0 148 obj_at 2 o1 p11_15 
+0 81 obj_at 2 o1 p11_16 
+0 176 obj_at 2 o1 p12_1 
+0 140 obj_at 2 o1 p12_2 
+0 238 obj_at 2 o1 p12_3 
+0 93 obj_at 2 o1 p12_4 
+0 126 obj_at 2 o1 p12_5 
+0 149 obj_at 2 o1 p12_6 
+0 172 obj_at 2 o1 p12_7 
+0 179 obj_at 2 o1 p12_8 
+0 250 obj_at 2 o1 p12_9 
+0 178 obj_at 2 o1 p12_10 
+0 13 obj_at 2 o1 p12_11 
+0 240 obj_at 2 o1 p12_12 
+0 73 obj_at 2 o1 p12_13 
+0 6 obj_at 2 o1 p12_14 
+0 24 obj_at 2 o1 p12_15 
+0 244 obj_at 2 o1 p12_16 
+0 42 obj_at 2 o1 p13_1 
+0 229 obj_at 2 o1 p13_2 
+0 56 obj_at 2 o1 p13_3 
+0 71 obj_at 2 o1 p13_4 
+0 198 obj_at 2 o1 p13_5 
+0 190 obj_at 2 o1 p13_6 
+0 111 obj_at 2 o1 p13_7 
+0 241 obj_at 2 o1 p13_8 
+0 145 obj_at 2 o1 p13_9 
+0 26 obj_at 2 o1 p13_10 
+0 247 obj_at 2 o1 p13_11 
+0 170 obj_at 2 o1 p13_12 
+0 239 obj_at 2 o1 p13_13 
+0 28 obj_at 2 o1 p13_14 
+0 223 obj_at 2 o1 p13_15 
+0 187 obj_at 2 o1 p13_16 
+0 66 obj_at 2 o1 p14_1 
+0 203 obj_at 2 o1 p14_2 
+0 231 obj_at 2 o1 p14_3 
+0 14 obj_at 2 o1 p14_4 
+0 215 obj_at 2 o1 p14_5 
+0 211 obj_at 2 o1 p14_6 
+0 127 obj_at 2 o1 p14_7 
+0 21 obj_at 2 o1 p14_8 
+0 109 obj_at 2 o1 p14_9 
+0 253 obj_at 2 o1 p14_10 
+0 150 obj_at 2 o1 p14_11 
+0 194 obj_at 2 o1 p14_12 
+0 36 obj_at 2 o1 p14_13 
+0 23 obj_at 2 o1 p14_14 
+0 180 obj_at 2 o1 p14_15 
+0 169 obj_at 2 o1 p14_16 
+0 152 obj_at 2 o1 p15_1 
+0 119 obj_at 2 o1 p15_2 
+0 95 obj_at 2 o1 p15_3 
+0 92 obj_at 2 o1 p15_4 
+0 256 obj_at 2 o1 p15_5 
+0 104 obj_at 2 o1 p15_6 
+0 68 obj_at 2 o1 p15_7 
+0 43 obj_at 2 o1 p15_8 
+0 210 obj_at 2 o1 p15_9 
+0 252 obj_at 2 o1 p15_10 
+0 174 obj_at 2 o1 p15_11 
+0 219 obj_at 2 o1 p15_12 
+0 50 obj_at 2 o1 p15_13 
+0 234 obj_at 2 o1 p15_14 
+0 204 obj_at 2 o1 p15_15 
+0 88 obj_at 2 o1 p15_16 
+0 251 obj_at 2 o1 p16_1 
+0 52 obj_at 2 o1 p16_2 
+0 129 obj_at 2 o1 p16_3 
+0 120 obj_at 2 o1 p16_4 
+0 67 obj_at 2 o1 p16_5 
+0 108 obj_at 2 o1 p16_6 
+0 156 obj_at 2 o1 p16_7 
+0 246 obj_at 2 o1 p16_8 
+0 199 obj_at 2 o1 p16_9 
+0 82 obj_at 2 o1 p16_10 
+0 182 obj_at 2 o1 p16_11 
+0 19 obj_at 2 o1 p16_12 
+0 44 obj_at 2 o1 p16_13 
+0 46 obj_at 2 o1 p16_14 
+0 133 obj_at 2 o1 p16_15 
+0 20 obj_at 2 o1 p16_16 
+group
+257
+1 71 holding 1 o2 
+1 193 obj_at 2 o2 p1_1 
+1 88 obj_at 2 o2 p1_2 
+1 183 obj_at 2 o2 p1_3 
+1 157 obj_at 2 o2 p1_4 
+1 242 obj_at 2 o2 p1_5 
+1 245 obj_at 2 o2 p1_6 
+1 146 obj_at 2 o2 p1_7 
+1 235 obj_at 2 o2 p1_8 
+1 207 obj_at 2 o2 p1_9 
+1 27 obj_at 2 o2 p1_10 
+1 220 obj_at 2 o2 p1_11 
+1 225 obj_at 2 o2 p1_12 
+1 3 obj_at 2 o2 p1_13 
+1 85 obj_at 2 o2 p1_14 
+1 81 obj_at 2 o2 p1_15 
+1 120 obj_at 2 o2 p1_16 
+1 234 obj_at 2 o2 p2_1 
+1 134 obj_at 2 o2 p2_2 
+1 44 obj_at 2 o2 p2_3 
+1 40 obj_at 2 o2 p2_4 
+1 14 obj_at 2 o2 p2_5 
+1 181 obj_at 2 o2 p2_6 
+1 79 obj_at 2 o2 p2_7 
+1 208 obj_at 2 o2 p2_8 
+1 46 obj_at 2 o2 p2_9 
+1 117 obj_at 2 o2 p2_10 
+1 132 obj_at 2 o2 p2_11 
+1 23 obj_at 2 o2 p2_12 
+1 74 obj_at 2 o2 p2_13 
+1 246 obj_at 2 o2 p2_14 
+1 58 obj_at 2 o2 p2_15 
+1 19 obj_at 2 o2 p2_16 
+1 55 obj_at 2 o2 p3_1 
+1 94 obj_at 2 o2 p3_2 
+1 252 obj_at 2 o2 p3_3 
+1 33 obj_at 2 o2 p3_4 
+1 63 obj_at 2 o2 p3_5 
+1 198 obj_at 2 o2 p3_6 
+1 200 obj_at 2 o2 p3_7 
+1 39 obj_at 2 o2 p3_8 
+1 129 obj_at 2 o2 p3_9 
+1 196 obj_at 2 o2 p3_10 
+1 91 obj_at 2 o2 p3_11 
+1 125 obj_at 2 o2 p3_12 
+1 160 obj_at 2 o2 p3_13 
+1 202 obj_at 2 o2 p3_14 
+1 11 obj_at 2 o2 p3_15 
+1 135 obj_at 2 o2 p3_16 
+1 82 obj_at 2 o2 p4_1 
+1 237 obj_at 2 o2 p4_2 
+1 147 obj_at 2 o2 p4_3 
+1 121 obj_at 2 o2 p4_4 
+1 87 obj_at 2 o2 p4_5 
+1 241 obj_at 2 o2 p4_6 
+1 155 obj_at 2 o2 p4_7 
+1 95 obj_at 2 o2 p4_8 
+1 70 obj_at 2 o2 p4_9 
+1 57 obj_at 2 o2 p4_10 
+1 158 obj_at 2 o2 p4_11 
+1 168 obj_at 2 o2 p4_12 
+1 6 obj_at 2 o2 p4_13 
+1 45 obj_at 2 o2 p4_14 
+1 189 obj_at 2 o2 p4_15 
+1 163 obj_at 2 o2 p4_16 
+1 165 obj_at 2 o2 p5_1 
+1 167 obj_at 2 o2 p5_2 
+1 257 obj_at 2 o2 p5_3 
+1 145 obj_at 2 o2 p5_4 
+1 107 obj_at 2 o2 p5_5 
+1 204 obj_at 2 o2 p5_6 
+1 97 obj_at 2 o2 p5_7 
+1 152 obj_at 2 o2 p5_8 
+1 239 obj_at 2 o2 p5_9 
+1 221 obj_at 2 o2 p5_10 
+1 249 obj_at 2 o2 p5_11 
+1 28 obj_at 2 o2 p5_12 
+1 186 obj_at 2 o2 p5_13 
+1 227 obj_at 2 o2 p5_14 
+1 254 obj_at 2 o2 p5_15 
+1 133 obj_at 2 o2 p5_16 
+1 150 obj_at 2 o2 p6_1 
+1 251 obj_at 2 o2 p6_2 
+1 247 obj_at 2 o2 p6_3 
+1 232 obj_at 2 o2 p6_4 
+1 143 obj_at 2 o2 p6_5 
+1 41 obj_at 2 o2 p6_6 
+1 209 obj_at 2 o2 p6_7 
+1 21 obj_at 2 o2 p6_8 
+1 192 obj_at 2 o2 p6_9 
+1 61 obj_at 2 o2 p6_10 
+1 13 obj_at 2 o2 p6_11 
+1 93 obj_at 2 o2 p6_12 
+1 73 obj_at 2 o2 p6_13 
+1 217 obj_at 2 o2 p6_14 
+1 80 obj_at 2 o2 p6_15 
+1 138 obj_at 2 o2 p6_16 
+1 201 obj_at 2 o2 p7_1 
+1 139 obj_at 2 o2 p7_2 
+1 10 obj_at 2 o2 p7_3 
+1 67 obj_at 2 o2 p7_4 
+1 20 obj_at 2 o2 p7_5 
+1 9 obj_at 2 o2 p7_6 
+1 210 obj_at 2 o2 p7_7 
+1 60 obj_at 2 o2 p7_8 
+1 153 obj_at 2 o2 p7_9 
+1 148 obj_at 2 o2 p7_10 
+1 244 obj_at 2 o2 p7_11 
+1 75 obj_at 2 o2 p7_12 
+1 100 obj_at 2 o2 p7_13 
+1 102 obj_at 2 o2 p7_14 
+1 199 obj_at 2 o2 p7_15 
+1 248 obj_at 2 o2 p7_16 
+1 190 obj_at 2 o2 p8_1 
+1 84 obj_at 2 o2 p8_2 
+1 253 obj_at 2 o2 p8_3 
+1 16 obj_at 2 o2 p8_4 
+1 184 obj_at 2 o2 p8_5 
+1 48 obj_at 2 o2 p8_6 
+1 18 obj_at 2 o2 p8_7 
+1 238 obj_at 2 o2 p8_8 
+1 140 obj_at 2 o2 p8_9 
+1 197 obj_at 2 o2 p8_10 
+1 164 obj_at 2 o2 p8_11 
+1 59 obj_at 2 o2 p8_12 
+1 222 obj_at 2 o2 p8_13 
+1 215 obj_at 2 o2 p8_14 
+1 62 obj_at 2 o2 p8_15 
+1 17 obj_at 2 o2 p8_16 
+1 213 obj_at 2 o2 p9_1 
+1 47 obj_at 2 o2 p9_2 
+1 185 obj_at 2 o2 p9_3 
+1 206 obj_at 2 o2 p9_4 
+1 36 obj_at 2 o2 p9_5 
+1 54 obj_at 2 o2 p9_6 
+1 96 obj_at 2 o2 p9_7 
+1 169 obj_at 2 o2 p9_8 
+1 172 obj_at 2 o2 p9_9 
+1 42 obj_at 2 o2 p9_10 
+1 68 obj_at 2 o2 p9_11 
+1 104 obj_at 2 o2 p9_12 
+1 228 obj_at 2 o2 p9_13 
+1 4 obj_at 2 o2 p9_14 
+1 69 obj_at 2 o2 p9_15 
+1 99 obj_at 2 o2 p9_16 
+1 182 obj_at 2 o2 p10_1 
+1 179 obj_at 2 o2 p10_2 
+1 86 obj_at 2 o2 p10_3 
+1 111 obj_at 2 o2 p10_4 
+1 22 obj_at 2 o2 p10_5 
+1 124 obj_at 2 o2 p10_6 
+1 90 obj_at 2 o2 p10_7 
+1 119 obj_at 2 o2 p10_8 
+1 224 obj_at 2 o2 p10_9 
+1 128 obj_at 2 o2 p10_10 
+1 32 obj_at 2 o2 p10_11 
+1 136 obj_at 2 o2 p10_12 
+1 233 obj_at 2 o2 p10_13 
+1 72 obj_at 2 o2 p10_14 
+1 5 obj_at 2 o2 p10_15 
+1 50 obj_at 2 o2 p10_16 
+1 187 obj_at 2 o2 p11_1 
+1 229 obj_at 2 o2 p11_2 
+1 256 obj_at 2 o2 p11_3 
+1 37 obj_at 2 o2 p11_4 
+1 194 obj_at 2 o2 p11_5 
+1 154 obj_at 2 o2 p11_6 
+1 205 obj_at 2 o2 p11_7 
+1 191 obj_at 2 o2 p11_8 
+1 89 obj_at 2 o2 p11_9 
+1 25 obj_at 2 o2 p11_10 
+1 108 obj_at 2 o2 p11_11 
+1 141 obj_at 2 o2 p11_12 
+1 173 obj_at 2 o2 p11_13 
+1 103 obj_at 2 o2 p11_14 
+1 178 obj_at 2 o2 p11_15 
+1 98 obj_at 2 o2 p11_16 
+1 131 obj_at 2 o2 p12_1 
+1 78 obj_at 2 o2 p12_2 
+1 180 obj_at 2 o2 p12_3 
+1 203 obj_at 2 o2 p12_4 
+1 106 obj_at 2 o2 p12_5 
+1 7 obj_at 2 o2 p12_6 
+1 175 obj_at 2 o2 p12_7 
+1 137 obj_at 2 o2 p12_8 
+1 166 obj_at 2 o2 p12_9 
+1 101 obj_at 2 o2 p12_10 
+1 159 obj_at 2 o2 p12_11 
+1 49 obj_at 2 o2 p12_12 
+1 216 obj_at 2 o2 p12_13 
+1 156 obj_at 2 o2 p12_14 
+1 115 obj_at 2 o2 p12_15 
+1 43 obj_at 2 o2 p12_16 
+1 118 obj_at 2 o2 p13_1 
+1 176 obj_at 2 o2 p13_2 
+1 243 obj_at 2 o2 p13_3 
+1 64 obj_at 2 o2 p13_4 
+1 112 obj_at 2 o2 p13_5 
+1 236 obj_at 2 o2 p13_6 
+1 34 obj_at 2 o2 p13_7 
+1 214 obj_at 2 o2 p13_8 
+1 218 obj_at 2 o2 p13_9 
+1 226 obj_at 2 o2 p13_10 
+1 1 obj_at 2 o2 p13_11 
+1 110 obj_at 2 o2 p13_12 
+1 223 obj_at 2 o2 p13_13 
+1 122 obj_at 2 o2 p13_14 
+1 26 obj_at 2 o2 p13_15 
+1 77 obj_at 2 o2 p13_16 
+1 92 obj_at 2 o2 p14_1 
+1 66 obj_at 2 o2 p14_2 
+1 31 obj_at 2 o2 p14_3 
+1 151 obj_at 2 o2 p14_4 
+1 116 obj_at 2 o2 p14_5 
+1 0 obj_at 2 o2 p14_6 
+1 188 obj_at 2 o2 p14_7 
+1 144 obj_at 2 o2 p14_8 
+1 51 obj_at 2 o2 p14_9 
+1 126 obj_at 2 o2 p14_10 
+1 231 obj_at 2 o2 p14_11 
+1 142 obj_at 2 o2 p14_12 
+1 174 obj_at 2 o2 p14_13 
+1 230 obj_at 2 o2 p14_14 
+1 56 obj_at 2 o2 p14_15 
+1 114 obj_at 2 o2 p14_16 
+1 30 obj_at 2 o2 p15_1 
+1 177 obj_at 2 o2 p15_2 
+1 15 obj_at 2 o2 p15_3 
+1 161 obj_at 2 o2 p15_4 
+1 162 obj_at 2 o2 p15_5 
+1 171 obj_at 2 o2 p15_6 
+1 65 obj_at 2 o2 p15_7 
+1 113 obj_at 2 o2 p15_8 
+1 211 obj_at 2 o2 p15_9 
+1 195 obj_at 2 o2 p15_10 
+1 109 obj_at 2 o2 p15_11 
+1 149 obj_at 2 o2 p15_12 
+1 76 obj_at 2 o2 p15_13 
+1 53 obj_at 2 o2 p15_14 
+1 2 obj_at 2 o2 p15_15 
+1 130 obj_at 2 o2 p15_16 
+1 24 obj_at 2 o2 p16_1 
+1 127 obj_at 2 o2 p16_2 
+1 123 obj_at 2 o2 p16_3 
+1 52 obj_at 2 o2 p16_4 
+1 35 obj_at 2 o2 p16_5 
+1 170 obj_at 2 o2 p16_6 
+1 212 obj_at 2 o2 p16_7 
+1 38 obj_at 2 o2 p16_8 
+1 8 obj_at 2 o2 p16_9 
+1 240 obj_at 2 o2 p16_10 
+1 250 obj_at 2 o2 p16_11 
+1 105 obj_at 2 o2 p16_12 
+1 83 obj_at 2 o2 p16_13 
+1 29 obj_at 2 o2 p16_14 
+1 255 obj_at 2 o2 p16_15 
+1 12 obj_at 2 o2 p16_16 
+group
+256
+2 203 at 1 p1_1 
+2 73 at 1 p1_2 
+2 51 at 1 p1_3 
+2 140 at 1 p1_4 
+2 121 at 1 p1_5 
+2 244 at 1 p1_6 
+2 217 at 1 p1_7 
+2 112 at 1 p1_8 
+2 90 at 1 p1_9 
+2 99 at 1 p1_10 
+2 226 at 1 p1_11 
+2 208 at 1 p1_12 
+2 97 at 1 p1_13 
+2 95 at 1 p1_14 
+2 78 at 1 p1_15 
+2 131 at 1 p1_16 
+2 55 at 1 p2_1 
+2 63 at 1 p2_2 
+2 207 at 1 p2_3 
+2 247 at 1 p2_4 
+2 137 at 1 p2_5 
+2 115 at 1 p2_6 
+2 6 at 1 p2_7 
+2 83 at 1 p2_8 
+2 104 at 1 p2_9 
+2 165 at 1 p2_10 
+2 61 at 1 p2_11 
+2 80 at 1 p2_12 
+2 120 at 1 p2_13 
+2 223 at 1 p2_14 
+2 227 at 1 p2_15 
+2 238 at 1 p2_16 
+2 20 at 1 p3_1 
+2 229 at 1 p3_2 
+2 177 at 1 p3_3 
+2 157 at 1 p3_4 
+2 8 at 1 p3_5 
+2 62 at 1 p3_6 
+2 167 at 1 p3_7 
+2 246 at 1 p3_8 
+2 94 at 1 p3_9 
+2 93 at 1 p3_10 
+2 220 at 1 p3_11 
+2 178 at 1 p3_12 
+2 242 at 1 p3_13 
+2 143 at 1 p3_14 
+2 225 at 1 p3_15 
+2 245 at 1 p3_16 
+2 171 at 1 p4_1 
+2 213 at 1 p4_2 
+2 12 at 1 p4_3 
+2 234 at 1 p4_4 
+2 0 at 1 p4_5 
+2 76 at 1 p4_6 
+2 98 at 1 p4_7 
+2 200 at 1 p4_8 
+2 92 at 1 p4_9 
+2 163 at 1 p4_10 
+2 59 at 1 p4_11 
+2 40 at 1 p4_12 
+2 155 at 1 p4_13 
+2 249 at 1 p4_14 
+2 49 at 1 p4_15 
+2 91 at 1 p4_16 
+2 136 at 1 p5_1 
+2 130 at 1 p5_2 
+2 236 at 1 p5_3 
+2 116 at 1 p5_4 
+2 221 at 1 p5_5 
+2 212 at 1 p5_6 
+2 68 at 1 p5_7 
+2 105 at 1 p5_8 
+2 84 at 1 p5_9 
+2 122 at 1 p5_10 
+2 248 at 1 p5_11 
+2 37 at 1 p5_12 
+2 243 at 1 p5_13 
+2 222 at 1 p5_14 
+2 74 at 1 p5_15 
+2 126 at 1 p5_16 
+2 241 at 1 p6_1 
+2 118 at 1 p6_2 
+2 138 at 1 p6_3 
+2 162 at 1 p6_4 
+2 184 at 1 p6_5 
+2 67 at 1 p6_6 
+2 56 at 1 p6_7 
+2 133 at 1 p6_8 
+2 154 at 1 p6_9 
+2 85 at 1 p6_10 
+2 9 at 1 p6_11 
+2 166 at 1 p6_12 
+2 231 at 1 p6_13 
+2 187 at 1 p6_14 
+2 64 at 1 p6_15 
+2 230 at 1 p6_16 
+2 54 at 1 p7_1 
+2 86 at 1 p7_2 
+2 218 at 1 p7_3 
+2 11 at 1 p7_4 
+2 45 at 1 p7_5 
+2 180 at 1 p7_6 
+2 65 at 1 p7_7 
+2 100 at 1 p7_8 
+2 206 at 1 p7_9 
+2 199 at 1 p7_10 
+2 53 at 1 p7_11 
+2 75 at 1 p7_12 
+2 179 at 1 p7_13 
+2 145 at 1 p7_14 
+2 251 at 1 p7_15 
+2 193 at 1 p7_16 
+2 70 at 1 p8_1 
+2 18 at 1 p8_2 
+2 168 at 1 p8_3 
+2 88 at 1 p8_4 
+2 240 at 1 p8_5 
+2 186 at 1 p8_6 
+2 79 at 1 p8_7 
+2 60 at 1 p8_8 
+2 205 at 1 p8_9 
+2 160 at 1 p8_10 
+2 182 at 1 p8_11 
+2 228 at 1 p8_12 
+2 124 at 1 p8_13 
+2 47 at 1 p8_14 
+2 194 at 1 p8_15 
+2 142 at 1 p8_16 
+2 81 at 1 p9_1 
+2 235 at 1 p9_2 
+2 211 at 1 p9_3 
+2 52 at 1 p9_4 
+2 28 at 1 p9_5 
+2 147 at 1 p9_6 
+2 129 at 1 p9_7 
+2 44 at 1 p9_8 
+2 197 at 1 p9_9 
+2 119 at 1 p9_10 
+2 96 at 1 p9_11 
+2 21 at 1 p9_12 
+2 254 at 1 p9_13 
+2 29 at 1 p9_14 
+2 10 at 1 p9_15 
+2 190 at 1 p9_16 
+2 50 at 1 p10_1 
+2 183 at 1 p10_2 
+2 202 at 1 p10_3 
+2 114 at 1 p10_4 
+2 134 at 1 p10_5 
+2 14 at 1 p10_6 
+2 35 at 1 p10_7 
+2 198 at 1 p10_8 
+2 188 at 1 p10_9 
+2 107 at 1 p10_10 
+2 38 at 1 p10_11 
+2 169 at 1 p10_12 
+2 15 at 1 p10_13 
+2 103 at 1 p10_14 
+2 196 at 1 p10_15 
+2 111 at 1 p10_16 
+2 135 at 1 p11_1 
+2 26 at 1 p11_2 
+2 4 at 1 p11_3 
+2 132 at 1 p11_4 
+2 189 at 1 p11_5 
+2 161 at 1 p11_6 
+2 31 at 1 p11_7 
+2 170 at 1 p11_8 
+2 41 at 1 p11_9 
+2 1 at 1 p11_10 
+2 7 at 1 p11_11 
+2 139 at 1 p11_12 
+2 210 at 1 p11_13 
+2 255 at 1 p11_14 
+2 146 at 1 p11_15 
+2 181 at 1 p11_16 
+2 106 at 1 p12_1 
+2 58 at 1 p12_2 
+2 204 at 1 p12_3 
+2 158 at 1 p12_4 
+2 24 at 1 p12_5 
+2 2 at 1 p12_6 
+2 152 at 1 p12_7 
+2 233 at 1 p12_8 
+2 82 at 1 p12_9 
+2 172 at 1 p12_10 
+2 192 at 1 p12_11 
+2 13 at 1 p12_12 
+2 33 at 1 p12_13 
+2 253 at 1 p12_14 
+2 128 at 1 p12_15 
+2 150 at 1 p12_16 
+2 195 at 1 p13_1 
+2 22 at 1 p13_2 
+2 209 at 1 p13_3 
+2 214 at 1 p13_4 
+2 66 at 1 p13_5 
+2 156 at 1 p13_6 
+2 5 at 1 p13_7 
+2 46 at 1 p13_8 
+2 148 at 1 p13_9 
+2 239 at 1 p13_10 
+2 39 at 1 p13_11 
+2 101 at 1 p13_12 
+2 175 at 1 p13_13 
+2 232 at 1 p13_14 
+2 102 at 1 p13_15 
+2 149 at 1 p13_16 
+2 250 at 1 p14_1 
+2 32 at 1 p14_2 
+2 57 at 1 p14_3 
+2 16 at 1 p14_4 
+2 164 at 1 p14_5 
+2 173 at 1 p14_6 
+2 69 at 1 p14_7 
+2 185 at 1 p14_8 
+2 77 at 1 p14_9 
+2 252 at 1 p14_10 
+2 19 at 1 p14_11 
+2 153 at 1 p14_12 
+2 176 at 1 p14_13 
+2 123 at 1 p14_14 
+2 113 at 1 p14_15 
+2 71 at 1 p14_16 
+2 30 at 1 p15_1 
+2 151 at 1 p15_2 
+2 191 at 1 p15_3 
+2 224 at 1 p15_4 
+2 201 at 1 p15_5 
+2 127 at 1 p15_6 
+2 117 at 1 p15_7 
+2 23 at 1 p15_8 
+2 108 at 1 p15_9 
+2 144 at 1 p15_10 
+2 72 at 1 p15_11 
+2 43 at 1 p15_12 
+2 27 at 1 p15_13 
+2 216 at 1 p15_14 
+2 89 at 1 p15_15 
+2 48 at 1 p15_16 
+2 141 at 1 p16_1 
+2 36 at 1 p16_2 
+2 215 at 1 p16_3 
+2 34 at 1 p16_4 
+2 219 at 1 p16_5 
+2 42 at 1 p16_6 
+2 159 at 1 p16_7 
+2 109 at 1 p16_8 
+2 87 at 1 p16_9 
+2 25 at 1 p16_10 
+2 174 at 1 p16_11 
+2 125 at 1 p16_12 
+2 17 at 1 p16_13 
+2 110 at 1 p16_14 
+2 3 at 1 p16_15 
+2 237 at 1 p16_16 
+group
+258
+1 71 holding 1 o2 
+1 193 obj_at 2 o2 p1_1 
+1 88 obj_at 2 o2 p1_2 
+1 183 obj_at 2 o2 p1_3 
+1 157 obj_at 2 o2 p1_4 
+1 242 obj_at 2 o2 p1_5 
+1 245 obj_at 2 o2 p1_6 
+1 146 obj_at 2 o2 p1_7 
+1 235 obj_at 2 o2 p1_8 
+1 207 obj_at 2 o2 p1_9 
+1 27 obj_at 2 o2 p1_10 
+1 220 obj_at 2 o2 p1_11 
+1 225 obj_at 2 o2 p1_12 
+1 3 obj_at 2 o2 p1_13 
+1 85 obj_at 2 o2 p1_14 
+1 81 obj_at 2 o2 p1_15 
+1 120 obj_at 2 o2 p1_16 
+1 234 obj_at 2 o2 p2_1 
+1 134 obj_at 2 o2 p2_2 
+1 44 obj_at 2 o2 p2_3 
+1 40 obj_at 2 o2 p2_4 
+1 14 obj_at 2 o2 p2_5 
+1 181 obj_at 2 o2 p2_6 
+1 79 obj_at 2 o2 p2_7 
+1 208 obj_at 2 o2 p2_8 
+1 46 obj_at 2 o2 p2_9 
+1 117 obj_at 2 o2 p2_10 
+1 132 obj_at 2 o2 p2_11 
+1 23 obj_at 2 o2 p2_12 
+1 74 obj_at 2 o2 p2_13 
+1 246 obj_at 2 o2 p2_14 
+1 58 obj_at 2 o2 p2_15 
+1 19 obj_at 2 o2 p2_16 
+1 55 obj_at 2 o2 p3_1 
+1 94 obj_at 2 o2 p3_2 
+1 252 obj_at 2 o2 p3_3 
+1 33 obj_at 2 o2 p3_4 
+1 63 obj_at 2 o2 p3_5 
+1 198 obj_at 2 o2 p3_6 
+1 200 obj_at 2 o2 p3_7 
+1 39 obj_at 2 o2 p3_8 
+1 129 obj_at 2 o2 p3_9 
+1 196 obj_at 2 o2 p3_10 
+1 91 obj_at 2 o2 p3_11 
+1 125 obj_at 2 o2 p3_12 
+1 160 obj_at 2 o2 p3_13 
+1 202 obj_at 2 o2 p3_14 
+1 11 obj_at 2 o2 p3_15 
+1 135 obj_at 2 o2 p3_16 
+1 82 obj_at 2 o2 p4_1 
+1 237 obj_at 2 o2 p4_2 
+1 147 obj_at 2 o2 p4_3 
+1 121 obj_at 2 o2 p4_4 
+1 87 obj_at 2 o2 p4_5 
+1 241 obj_at 2 o2 p4_6 
+1 155 obj_at 2 o2 p4_7 
+1 95 obj_at 2 o2 p4_8 
+1 70 obj_at 2 o2 p4_9 
+1 57 obj_at 2 o2 p4_10 
+1 158 obj_at 2 o2 p4_11 
+1 168 obj_at 2 o2 p4_12 
+1 6 obj_at 2 o2 p4_13 
+1 45 obj_at 2 o2 p4_14 
+1 189 obj_at 2 o2 p4_15 
+1 163 obj_at 2 o2 p4_16 
+1 165 obj_at 2 o2 p5_1 
+1 167 obj_at 2 o2 p5_2 
+1 257 obj_at 2 o2 p5_3 
+1 145 obj_at 2 o2 p5_4 
+1 107 obj_at 2 o2 p5_5 
+1 204 obj_at 2 o2 p5_6 
+1 97 obj_at 2 o2 p5_7 
+1 152 obj_at 2 o2 p5_8 
+1 239 obj_at 2 o2 p5_9 
+1 221 obj_at 2 o2 p5_10 
+1 249 obj_at 2 o2 p5_11 
+1 28 obj_at 2 o2 p5_12 
+1 186 obj_at 2 o2 p5_13 
+1 227 obj_at 2 o2 p5_14 
+1 254 obj_at 2 o2 p5_15 
+1 133 obj_at 2 o2 p5_16 
+1 150 obj_at 2 o2 p6_1 
+1 251 obj_at 2 o2 p6_2 
+1 247 obj_at 2 o2 p6_3 
+1 232 obj_at 2 o2 p6_4 
+1 143 obj_at 2 o2 p6_5 
+1 41 obj_at 2 o2 p6_6 
+1 209 obj_at 2 o2 p6_7 
+1 21 obj_at 2 o2 p6_8 
+1 192 obj_at 2 o2 p6_9 
+1 61 obj_at 2 o2 p6_10 
+1 13 obj_at 2 o2 p6_11 
+1 93 obj_at 2 o2 p6_12 
+1 73 obj_at 2 o2 p6_13 
+1 217 obj_at 2 o2 p6_14 
+1 80 obj_at 2 o2 p6_15 
+1 138 obj_at 2 o2 p6_16 
+1 201 obj_at 2 o2 p7_1 
+1 139 obj_at 2 o2 p7_2 
+1 10 obj_at 2 o2 p7_3 
+1 67 obj_at 2 o2 p7_4 
+1 20 obj_at 2 o2 p7_5 
+1 9 obj_at 2 o2 p7_6 
+1 210 obj_at 2 o2 p7_7 
+1 60 obj_at 2 o2 p7_8 
+1 153 obj_at 2 o2 p7_9 
+1 148 obj_at 2 o2 p7_10 
+1 244 obj_at 2 o2 p7_11 
+1 75 obj_at 2 o2 p7_12 
+1 100 obj_at 2 o2 p7_13 
+1 102 obj_at 2 o2 p7_14 
+1 199 obj_at 2 o2 p7_15 
+1 248 obj_at 2 o2 p7_16 
+1 190 obj_at 2 o2 p8_1 
+1 84 obj_at 2 o2 p8_2 
+1 253 obj_at 2 o2 p8_3 
+1 16 obj_at 2 o2 p8_4 
+1 184 obj_at 2 o2 p8_5 
+1 48 obj_at 2 o2 p8_6 
+1 18 obj_at 2 o2 p8_7 
+1 238 obj_at 2 o2 p8_8 
+1 140 obj_at 2 o2 p8_9 
+1 197 obj_at 2 o2 p8_10 
+1 164 obj_at 2 o2 p8_11 
+1 59 obj_at 2 o2 p8_12 
+1 222 obj_at 2 o2 p8_13 
+1 215 obj_at 2 o2 p8_14 
+1 62 obj_at 2 o2 p8_15 
+1 17 obj_at 2 o2 p8_16 
+1 213 obj_at 2 o2 p9_1 
+1 47 obj_at 2 o2 p9_2 
+1 185 obj_at 2 o2 p9_3 
+1 206 obj_at 2 o2 p9_4 
+1 36 obj_at 2 o2 p9_5 
+1 54 obj_at 2 o2 p9_6 
+1 96 obj_at 2 o2 p9_7 
+1 169 obj_at 2 o2 p9_8 
+1 172 obj_at 2 o2 p9_9 
+1 42 obj_at 2 o2 p9_10 
+1 68 obj_at 2 o2 p9_11 
+1 104 obj_at 2 o2 p9_12 
+1 228 obj_at 2 o2 p9_13 
+1 4 obj_at 2 o2 p9_14 
+1 69 obj_at 2 o2 p9_15 
+1 99 obj_at 2 o2 p9_16 
+1 182 obj_at 2 o2 p10_1 
+1 179 obj_at 2 o2 p10_2 
+1 86 obj_at 2 o2 p10_3 
+1 111 obj_at 2 o2 p10_4 
+1 22 obj_at 2 o2 p10_5 
+1 124 obj_at 2 o2 p10_6 
+1 90 obj_at 2 o2 p10_7 
+1 119 obj_at 2 o2 p10_8 
+1 224 obj_at 2 o2 p10_9 
+1 128 obj_at 2 o2 p10_10 
+1 32 obj_at 2 o2 p10_11 
+1 136 obj_at 2 o2 p10_12 
+1 233 obj_at 2 o2 p10_13 
+1 72 obj_at 2 o2 p10_14 
+1 5 obj_at 2 o2 p10_15 
+1 50 obj_at 2 o2 p10_16 
+1 187 obj_at 2 o2 p11_1 
+1 229 obj_at 2 o2 p11_2 
+1 256 obj_at 2 o2 p11_3 
+1 37 obj_at 2 o2 p11_4 
+1 194 obj_at 2 o2 p11_5 
+1 154 obj_at 2 o2 p11_6 
+1 205 obj_at 2 o2 p11_7 
+1 191 obj_at 2 o2 p11_8 
+1 89 obj_at 2 o2 p11_9 
+1 25 obj_at 2 o2 p11_10 
+1 108 obj_at 2 o2 p11_11 
+1 141 obj_at 2 o2 p11_12 
+1 173 obj_at 2 o2 p11_13 
+1 103 obj_at 2 o2 p11_14 
+1 178 obj_at 2 o2 p11_15 
+1 98 obj_at 2 o2 p11_16 
+1 131 obj_at 2 o2 p12_1 
+1 78 obj_at 2 o2 p12_2 
+1 180 obj_at 2 o2 p12_3 
+1 203 obj_at 2 o2 p12_4 
+1 106 obj_at 2 o2 p12_5 
+1 7 obj_at 2 o2 p12_6 
+1 175 obj_at 2 o2 p12_7 
+1 137 obj_at 2 o2 p12_8 
+1 166 obj_at 2 o2 p12_9 
+1 101 obj_at 2 o2 p12_10 
+1 159 obj_at 2 o2 p12_11 
+1 49 obj_at 2 o2 p12_12 
+1 216 obj_at 2 o2 p12_13 
+1 156 obj_at 2 o2 p12_14 
+1 115 obj_at 2 o2 p12_15 
+1 43 obj_at 2 o2 p12_16 
+1 118 obj_at 2 o2 p13_1 
+1 176 obj_at 2 o2 p13_2 
+1 243 obj_at 2 o2 p13_3 
+1 64 obj_at 2 o2 p13_4 
+1 112 obj_at 2 o2 p13_5 
+1 236 obj_at 2 o2 p13_6 
+1 34 obj_at 2 o2 p13_7 
+1 214 obj_at 2 o2 p13_8 
+1 218 obj_at 2 o2 p13_9 
+1 226 obj_at 2 o2 p13_10 
+1 1 obj_at 2 o2 p13_11 
+1 110 obj_at 2 o2 p13_12 
+1 223 obj_at 2 o2 p13_13 
+1 122 obj_at 2 o2 p13_14 
+1 26 obj_at 2 o2 p13_15 
+1 77 obj_at 2 o2 p13_16 
+1 92 obj_at 2 o2 p14_1 
+1 66 obj_at 2 o2 p14_2 
+1 31 obj_at 2 o2 p14_3 
+1 151 obj_at 2 o2 p14_4 
+1 116 obj_at 2 o2 p14_5 
+1 0 obj_at 2 o2 p14_6 
+1 188 obj_at 2 o2 p14_7 
+1 144 obj_at 2 o2 p14_8 
+1 51 obj_at 2 o2 p14_9 
+1 126 obj_at 2 o2 p14_10 
+1 231 obj_at 2 o2 p14_11 
+1 142 obj_at 2 o2 p14_12 
+1 174 obj_at 2 o2 p14_13 
+1 230 obj_at 2 o2 p14_14 
+1 56 obj_at 2 o2 p14_15 
+1 114 obj_at 2 o2 p14_16 
+1 30 obj_at 2 o2 p15_1 
+1 177 obj_at 2 o2 p15_2 
+1 15 obj_at 2 o2 p15_3 
+1 161 obj_at 2 o2 p15_4 
+1 162 obj_at 2 o2 p15_5 
+1 171 obj_at 2 o2 p15_6 
+1 65 obj_at 2 o2 p15_7 
+1 113 obj_at 2 o2 p15_8 
+1 211 obj_at 2 o2 p15_9 
+1 195 obj_at 2 o2 p15_10 
+1 109 obj_at 2 o2 p15_11 
+1 149 obj_at 2 o2 p15_12 
+1 76 obj_at 2 o2 p15_13 
+1 53 obj_at 2 o2 p15_14 
+1 2 obj_at 2 o2 p15_15 
+1 130 obj_at 2 o2 p15_16 
+1 24 obj_at 2 o2 p16_1 
+1 127 obj_at 2 o2 p16_2 
+1 123 obj_at 2 o2 p16_3 
+1 52 obj_at 2 o2 p16_4 
+1 35 obj_at 2 o2 p16_5 
+1 170 obj_at 2 o2 p16_6 
+1 212 obj_at 2 o2 p16_7 
+1 38 obj_at 2 o2 p16_8 
+1 8 obj_at 2 o2 p16_9 
+1 240 obj_at 2 o2 p16_10 
+1 250 obj_at 2 o2 p16_11 
+1 105 obj_at 2 o2 p16_12 
+1 83 obj_at 2 o2 p16_13 
+1 29 obj_at 2 o2 p16_14 
+1 255 obj_at 2 o2 p16_15 
+1 12 obj_at 2 o2 p16_16 
+1 219 disposed 1 o2 
+group
+258
+0 160 holding 1 o1 
+0 16 obj_at 2 o1 p1_1 
+0 165 obj_at 2 o1 p1_2 
+0 75 obj_at 2 o1 p1_3 
+0 25 obj_at 2 o1 p1_4 
+0 53 obj_at 2 o1 p1_5 
+0 11 obj_at 2 o1 p1_6 
+0 112 obj_at 2 o1 p1_7 
+0 30 obj_at 2 o1 p1_8 
+0 0 obj_at 2 o1 p1_9 
+0 70 obj_at 2 o1 p1_10 
+0 226 obj_at 2 o1 p1_11 
+0 214 obj_at 2 o1 p1_12 
+0 135 obj_at 2 o1 p1_13 
+0 100 obj_at 2 o1 p1_14 
+0 197 obj_at 2 o1 p1_15 
+0 115 obj_at 2 o1 p1_16 
+0 147 obj_at 2 o1 p2_1 
+0 255 obj_at 2 o1 p2_2 
+0 38 obj_at 2 o1 p2_3 
+0 87 obj_at 2 o1 p2_4 
+0 113 obj_at 2 o1 p2_5 
+0 249 obj_at 2 o1 p2_6 
+0 83 obj_at 2 o1 p2_7 
+0 134 obj_at 2 o1 p2_8 
+0 205 obj_at 2 o1 p2_9 
+0 167 obj_at 2 o1 p2_10 
+0 257 obj_at 2 o1 p2_11 
+0 51 obj_at 2 o1 p2_12 
+0 164 obj_at 2 o1 p2_13 
+0 208 obj_at 2 o1 p2_14 
+0 106 obj_at 2 o1 p2_15 
+0 139 obj_at 2 o1 p2_16 
+0 202 obj_at 2 o1 p3_1 
+0 110 obj_at 2 o1 p3_2 
+0 12 obj_at 2 o1 p3_3 
+0 224 obj_at 2 o1 p3_4 
+0 196 obj_at 2 o1 p3_5 
+0 158 obj_at 2 o1 p3_6 
+0 5 obj_at 2 o1 p3_7 
+0 217 obj_at 2 o1 p3_8 
+0 124 obj_at 2 o1 p3_9 
+0 136 obj_at 2 o1 p3_10 
+0 132 obj_at 2 o1 p3_11 
+0 242 obj_at 2 o1 p3_12 
+0 76 obj_at 2 o1 p3_13 
+0 98 obj_at 2 o1 p3_14 
+0 37 obj_at 2 o1 p3_15 
+0 248 obj_at 2 o1 p3_16 
+0 151 obj_at 2 o1 p4_1 
+0 181 obj_at 2 o1 p4_2 
+0 17 obj_at 2 o1 p4_3 
+0 114 obj_at 2 o1 p4_4 
+0 207 obj_at 2 o1 p4_5 
+0 175 obj_at 2 o1 p4_6 
+0 9 obj_at 2 o1 p4_7 
+0 163 obj_at 2 o1 p4_8 
+0 201 obj_at 2 o1 p4_9 
+0 40 obj_at 2 o1 p4_10 
+0 54 obj_at 2 o1 p4_11 
+0 232 obj_at 2 o1 p4_12 
+0 254 obj_at 2 o1 p4_13 
+0 195 obj_at 2 o1 p4_14 
+0 185 obj_at 2 o1 p4_15 
+0 225 obj_at 2 o1 p4_16 
+0 230 obj_at 2 o1 p5_1 
+0 121 obj_at 2 o1 p5_2 
+0 35 obj_at 2 o1 p5_3 
+0 27 obj_at 2 o1 p5_4 
+0 125 obj_at 2 o1 p5_5 
+0 85 obj_at 2 o1 p5_6 
+0 61 obj_at 2 o1 p5_7 
+0 221 obj_at 2 o1 p5_8 
+0 218 obj_at 2 o1 p5_9 
+0 162 obj_at 2 o1 p5_10 
+0 45 obj_at 2 o1 p5_11 
+0 47 obj_at 2 o1 p5_12 
+0 206 obj_at 2 o1 p5_13 
+0 154 obj_at 2 o1 p5_14 
+0 131 obj_at 2 o1 p5_15 
+0 97 obj_at 2 o1 p5_16 
+0 138 obj_at 2 o1 p6_1 
+0 116 obj_at 2 o1 p6_2 
+0 212 obj_at 2 o1 p6_3 
+0 58 obj_at 2 o1 p6_4 
+0 141 obj_at 2 o1 p6_5 
+0 122 obj_at 2 o1 p6_6 
+0 155 obj_at 2 o1 p6_7 
+0 7 obj_at 2 o1 p6_8 
+0 64 obj_at 2 o1 p6_9 
+0 228 obj_at 2 o1 p6_10 
+0 55 obj_at 2 o1 p6_11 
+0 189 obj_at 2 o1 p6_12 
+0 15 obj_at 2 o1 p6_13 
+0 8 obj_at 2 o1 p6_14 
+0 168 obj_at 2 o1 p6_15 
+0 200 obj_at 2 o1 p6_16 
+0 49 obj_at 2 o1 p7_1 
+0 128 obj_at 2 o1 p7_2 
+0 173 obj_at 2 o1 p7_3 
+0 59 obj_at 2 o1 p7_4 
+0 103 obj_at 2 o1 p7_5 
+0 34 obj_at 2 o1 p7_6 
+0 84 obj_at 2 o1 p7_7 
+0 60 obj_at 2 o1 p7_8 
+0 236 obj_at 2 o1 p7_9 
+0 142 obj_at 2 o1 p7_10 
+0 80 obj_at 2 o1 p7_11 
+0 177 obj_at 2 o1 p7_12 
+0 146 obj_at 2 o1 p7_13 
+0 99 obj_at 2 o1 p7_14 
+0 65 obj_at 2 o1 p7_15 
+0 2 obj_at 2 o1 p7_16 
+0 72 obj_at 2 o1 p8_1 
+0 171 obj_at 2 o1 p8_2 
+0 4 obj_at 2 o1 p8_3 
+0 22 obj_at 2 o1 p8_4 
+0 117 obj_at 2 o1 p8_5 
+0 213 obj_at 2 o1 p8_6 
+0 237 obj_at 2 o1 p8_7 
+0 227 obj_at 2 o1 p8_8 
+0 123 obj_at 2 o1 p8_9 
+0 74 obj_at 2 o1 p8_10 
+0 101 obj_at 2 o1 p8_11 
+0 105 obj_at 2 o1 p8_12 
+0 193 obj_at 2 o1 p8_13 
+0 78 obj_at 2 o1 p8_14 
+0 39 obj_at 2 o1 p8_15 
+0 137 obj_at 2 o1 p8_16 
+0 90 obj_at 2 o1 p9_1 
+0 79 obj_at 2 o1 p9_2 
+0 183 obj_at 2 o1 p9_3 
+0 130 obj_at 2 o1 p9_4 
+0 96 obj_at 2 o1 p9_5 
+0 118 obj_at 2 o1 p9_6 
+0 31 obj_at 2 o1 p9_7 
+0 191 obj_at 2 o1 p9_8 
+0 166 obj_at 2 o1 p9_9 
+0 245 obj_at 2 o1 p9_10 
+0 91 obj_at 2 o1 p9_11 
+0 57 obj_at 2 o1 p9_12 
+0 33 obj_at 2 o1 p9_13 
+0 29 obj_at 2 o1 p9_14 
+0 192 obj_at 2 o1 p9_15 
+0 94 obj_at 2 o1 p9_16 
+0 184 obj_at 2 o1 p10_1 
+0 243 obj_at 2 o1 p10_2 
+0 216 obj_at 2 o1 p10_3 
+0 10 obj_at 2 o1 p10_4 
+0 102 obj_at 2 o1 p10_5 
+0 209 obj_at 2 o1 p10_6 
+0 41 obj_at 2 o1 p10_7 
+0 3 obj_at 2 o1 p10_8 
+0 157 obj_at 2 o1 p10_9 
+0 143 obj_at 2 o1 p10_10 
+0 186 obj_at 2 o1 p10_11 
+0 86 obj_at 2 o1 p10_12 
+0 77 obj_at 2 o1 p10_13 
+0 188 obj_at 2 o1 p10_14 
+0 144 obj_at 2 o1 p10_15 
+0 222 obj_at 2 o1 p10_16 
+0 69 obj_at 2 o1 p11_1 
+0 235 obj_at 2 o1 p11_2 
+0 233 obj_at 2 o1 p11_3 
+0 220 obj_at 2 o1 p11_4 
+0 63 obj_at 2 o1 p11_5 
+0 159 obj_at 2 o1 p11_6 
+0 1 obj_at 2 o1 p11_7 
+0 62 obj_at 2 o1 p11_8 
+0 153 obj_at 2 o1 p11_9 
+0 32 obj_at 2 o1 p11_10 
+0 161 obj_at 2 o1 p11_11 
+0 48 obj_at 2 o1 p11_12 
+0 18 obj_at 2 o1 p11_13 
+0 89 obj_at 2 o1 p11_14 
+0 148 obj_at 2 o1 p11_15 
+0 81 obj_at 2 o1 p11_16 
+0 176 obj_at 2 o1 p12_1 
+0 140 obj_at 2 o1 p12_2 
+0 238 obj_at 2 o1 p12_3 
+0 93 obj_at 2 o1 p12_4 
+0 126 obj_at 2 o1 p12_5 
+0 149 obj_at 2 o1 p12_6 
+0 172 obj_at 2 o1 p12_7 
+0 179 obj_at 2 o1 p12_8 
+0 250 obj_at 2 o1 p12_9 
+0 178 obj_at 2 o1 p12_10 
+0 13 obj_at 2 o1 p12_11 
+0 240 obj_at 2 o1 p12_12 
+0 73 obj_at 2 o1 p12_13 
+0 6 obj_at 2 o1 p12_14 
+0 24 obj_at 2 o1 p12_15 
+0 244 obj_at 2 o1 p12_16 
+0 42 obj_at 2 o1 p13_1 
+0 229 obj_at 2 o1 p13_2 
+0 56 obj_at 2 o1 p13_3 
+0 71 obj_at 2 o1 p13_4 
+0 198 obj_at 2 o1 p13_5 
+0 190 obj_at 2 o1 p13_6 
+0 111 obj_at 2 o1 p13_7 
+0 241 obj_at 2 o1 p13_8 
+0 145 obj_at 2 o1 p13_9 
+0 26 obj_at 2 o1 p13_10 
+0 247 obj_at 2 o1 p13_11 
+0 170 obj_at 2 o1 p13_12 
+0 239 obj_at 2 o1 p13_13 
+0 28 obj_at 2 o1 p13_14 
+0 223 obj_at 2 o1 p13_15 
+0 187 obj_at 2 o1 p13_16 
+0 66 obj_at 2 o1 p14_1 
+0 203 obj_at 2 o1 p14_2 
+0 231 obj_at 2 o1 p14_3 
+0 14 obj_at 2 o1 p14_4 
+0 215 obj_at 2 o1 p14_5 
+0 211 obj_at 2 o1 p14_6 
+0 127 obj_at 2 o1 p14_7 
+0 21 obj_at 2 o1 p14_8 
+0 109 obj_at 2 o1 p14_9 
+0 253 obj_at 2 o1 p14_10 
+0 150 obj_at 2 o1 p14_11 
+0 194 obj_at 2 o1 p14_12 
+0 36 obj_at 2 o1 p14_13 
+0 23 obj_at 2 o1 p14_14 
+0 180 obj_at 2 o1 p14_15 
+0 169 obj_at 2 o1 p14_16 
+0 152 obj_at 2 o1 p15_1 
+0 119 obj_at 2 o1 p15_2 
+0 95 obj_at 2 o1 p15_3 
+0 92 obj_at 2 o1 p15_4 
+0 256 obj_at 2 o1 p15_5 
+0 104 obj_at 2 o1 p15_6 
+0 68 obj_at 2 o1 p15_7 
+0 43 obj_at 2 o1 p15_8 
+0 210 obj_at 2 o1 p15_9 
+0 252 obj_at 2 o1 p15_10 
+0 174 obj_at 2 o1 p15_11 
+0 219 obj_at 2 o1 p15_12 
+0 50 obj_at 2 o1 p15_13 
+0 234 obj_at 2 o1 p15_14 
+0 204 obj_at 2 o1 p15_15 
+0 88 obj_at 2 o1 p15_16 
+0 251 obj_at 2 o1 p16_1 
+0 52 obj_at 2 o1 p16_2 
+0 129 obj_at 2 o1 p16_3 
+0 120 obj_at 2 o1 p16_4 
+0 67 obj_at 2 o1 p16_5 
+0 108 obj_at 2 o1 p16_6 
+0 156 obj_at 2 o1 p16_7 
+0 246 obj_at 2 o1 p16_8 
+0 199 obj_at 2 o1 p16_9 
+0 82 obj_at 2 o1 p16_10 
+0 182 obj_at 2 o1 p16_11 
+0 19 obj_at 2 o1 p16_12 
+0 44 obj_at 2 o1 p16_13 
+0 46 obj_at 2 o1 p16_14 
+0 133 obj_at 2 o1 p16_15 
+0 20 obj_at 2 o1 p16_16 
+0 107 disposed 1 o1 
+group
+256
+0 16 obj_at 2 o1 p1_1 
+0 165 obj_at 2 o1 p1_2 
+0 75 obj_at 2 o1 p1_3 
+0 25 obj_at 2 o1 p1_4 
+0 53 obj_at 2 o1 p1_5 
+0 11 obj_at 2 o1 p1_6 
+0 112 obj_at 2 o1 p1_7 
+0 30 obj_at 2 o1 p1_8 
+0 0 obj_at 2 o1 p1_9 
+0 70 obj_at 2 o1 p1_10 
+0 226 obj_at 2 o1 p1_11 
+0 214 obj_at 2 o1 p1_12 
+0 135 obj_at 2 o1 p1_13 
+0 100 obj_at 2 o1 p1_14 
+0 197 obj_at 2 o1 p1_15 
+0 115 obj_at 2 o1 p1_16 
+0 147 obj_at 2 o1 p2_1 
+0 255 obj_at 2 o1 p2_2 
+0 38 obj_at 2 o1 p2_3 
+0 87 obj_at 2 o1 p2_4 
+0 113 obj_at 2 o1 p2_5 
+0 249 obj_at 2 o1 p2_6 
+0 83 obj_at 2 o1 p2_7 
+0 134 obj_at 2 o1 p2_8 
+0 205 obj_at 2 o1 p2_9 
+0 167 obj_at 2 o1 p2_10 
+0 257 obj_at 2 o1 p2_11 
+0 51 obj_at 2 o1 p2_12 
+0 164 obj_at 2 o1 p2_13 
+0 208 obj_at 2 o1 p2_14 
+0 106 obj_at 2 o1 p2_15 
+0 139 obj_at 2 o1 p2_16 
+0 202 obj_at 2 o1 p3_1 
+0 110 obj_at 2 o1 p3_2 
+0 12 obj_at 2 o1 p3_3 
+0 224 obj_at 2 o1 p3_4 
+0 196 obj_at 2 o1 p3_5 
+0 158 obj_at 2 o1 p3_6 
+0 5 obj_at 2 o1 p3_7 
+0 217 obj_at 2 o1 p3_8 
+0 124 obj_at 2 o1 p3_9 
+0 136 obj_at 2 o1 p3_10 
+0 132 obj_at 2 o1 p3_11 
+0 242 obj_at 2 o1 p3_12 
+0 76 obj_at 2 o1 p3_13 
+0 98 obj_at 2 o1 p3_14 
+0 37 obj_at 2 o1 p3_15 
+0 248 obj_at 2 o1 p3_16 
+0 151 obj_at 2 o1 p4_1 
+0 181 obj_at 2 o1 p4_2 
+0 17 obj_at 2 o1 p4_3 
+0 114 obj_at 2 o1 p4_4 
+0 207 obj_at 2 o1 p4_5 
+0 175 obj_at 2 o1 p4_6 
+0 9 obj_at 2 o1 p4_7 
+0 163 obj_at 2 o1 p4_8 
+0 201 obj_at 2 o1 p4_9 
+0 40 obj_at 2 o1 p4_10 
+0 54 obj_at 2 o1 p4_11 
+0 232 obj_at 2 o1 p4_12 
+0 254 obj_at 2 o1 p4_13 
+0 195 obj_at 2 o1 p4_14 
+0 185 obj_at 2 o1 p4_15 
+0 225 obj_at 2 o1 p4_16 
+0 230 obj_at 2 o1 p5_1 
+0 121 obj_at 2 o1 p5_2 
+0 35 obj_at 2 o1 p5_3 
+0 27 obj_at 2 o1 p5_4 
+0 125 obj_at 2 o1 p5_5 
+0 85 obj_at 2 o1 p5_6 
+0 61 obj_at 2 o1 p5_7 
+0 221 obj_at 2 o1 p5_8 
+0 218 obj_at 2 o1 p5_9 
+0 162 obj_at 2 o1 p5_10 
+0 45 obj_at 2 o1 p5_11 
+0 47 obj_at 2 o1 p5_12 
+0 206 obj_at 2 o1 p5_13 
+0 154 obj_at 2 o1 p5_14 
+0 131 obj_at 2 o1 p5_15 
+0 97 obj_at 2 o1 p5_16 
+0 138 obj_at 2 o1 p6_1 
+0 116 obj_at 2 o1 p6_2 
+0 212 obj_at 2 o1 p6_3 
+0 58 obj_at 2 o1 p6_4 
+0 141 obj_at 2 o1 p6_5 
+0 122 obj_at 2 o1 p6_6 
+0 155 obj_at 2 o1 p6_7 
+0 7 obj_at 2 o1 p6_8 
+0 64 obj_at 2 o1 p6_9 
+0 228 obj_at 2 o1 p6_10 
+0 55 obj_at 2 o1 p6_11 
+0 189 obj_at 2 o1 p6_12 
+0 15 obj_at 2 o1 p6_13 
+0 8 obj_at 2 o1 p6_14 
+0 168 obj_at 2 o1 p6_15 
+0 200 obj_at 2 o1 p6_16 
+0 49 obj_at 2 o1 p7_1 
+0 128 obj_at 2 o1 p7_2 
+0 173 obj_at 2 o1 p7_3 
+0 59 obj_at 2 o1 p7_4 
+0 103 obj_at 2 o1 p7_5 
+0 34 obj_at 2 o1 p7_6 
+0 84 obj_at 2 o1 p7_7 
+0 60 obj_at 2 o1 p7_8 
+0 236 obj_at 2 o1 p7_9 
+0 142 obj_at 2 o1 p7_10 
+0 80 obj_at 2 o1 p7_11 
+0 177 obj_at 2 o1 p7_12 
+0 146 obj_at 2 o1 p7_13 
+0 99 obj_at 2 o1 p7_14 
+0 65 obj_at 2 o1 p7_15 
+0 2 obj_at 2 o1 p7_16 
+0 72 obj_at 2 o1 p8_1 
+0 171 obj_at 2 o1 p8_2 
+0 4 obj_at 2 o1 p8_3 
+0 22 obj_at 2 o1 p8_4 
+0 117 obj_at 2 o1 p8_5 
+0 213 obj_at 2 o1 p8_6 
+0 237 obj_at 2 o1 p8_7 
+0 227 obj_at 2 o1 p8_8 
+0 123 obj_at 2 o1 p8_9 
+0 74 obj_at 2 o1 p8_10 
+0 101 obj_at 2 o1 p8_11 
+0 105 obj_at 2 o1 p8_12 
+0 193 obj_at 2 o1 p8_13 
+0 78 obj_at 2 o1 p8_14 
+0 39 obj_at 2 o1 p8_15 
+0 137 obj_at 2 o1 p8_16 
+0 90 obj_at 2 o1 p9_1 
+0 79 obj_at 2 o1 p9_2 
+0 183 obj_at 2 o1 p9_3 
+0 130 obj_at 2 o1 p9_4 
+0 96 obj_at 2 o1 p9_5 
+0 118 obj_at 2 o1 p9_6 
+0 31 obj_at 2 o1 p9_7 
+0 191 obj_at 2 o1 p9_8 
+0 166 obj_at 2 o1 p9_9 
+0 245 obj_at 2 o1 p9_10 
+0 91 obj_at 2 o1 p9_11 
+0 57 obj_at 2 o1 p9_12 
+0 33 obj_at 2 o1 p9_13 
+0 29 obj_at 2 o1 p9_14 
+0 192 obj_at 2 o1 p9_15 
+0 94 obj_at 2 o1 p9_16 
+0 184 obj_at 2 o1 p10_1 
+0 243 obj_at 2 o1 p10_2 
+0 216 obj_at 2 o1 p10_3 
+0 10 obj_at 2 o1 p10_4 
+0 102 obj_at 2 o1 p10_5 
+0 209 obj_at 2 o1 p10_6 
+0 41 obj_at 2 o1 p10_7 
+0 3 obj_at 2 o1 p10_8 
+0 157 obj_at 2 o1 p10_9 
+0 143 obj_at 2 o1 p10_10 
+0 186 obj_at 2 o1 p10_11 
+0 86 obj_at 2 o1 p10_12 
+0 77 obj_at 2 o1 p10_13 
+0 188 obj_at 2 o1 p10_14 
+0 144 obj_at 2 o1 p10_15 
+0 222 obj_at 2 o1 p10_16 
+0 69 obj_at 2 o1 p11_1 
+0 235 obj_at 2 o1 p11_2 
+0 233 obj_at 2 o1 p11_3 
+0 220 obj_at 2 o1 p11_4 
+0 63 obj_at 2 o1 p11_5 
+0 159 obj_at 2 o1 p11_6 
+0 1 obj_at 2 o1 p11_7 
+0 62 obj_at 2 o1 p11_8 
+0 153 obj_at 2 o1 p11_9 
+0 32 obj_at 2 o1 p11_10 
+0 161 obj_at 2 o1 p11_11 
+0 48 obj_at 2 o1 p11_12 
+0 18 obj_at 2 o1 p11_13 
+0 89 obj_at 2 o1 p11_14 
+0 148 obj_at 2 o1 p11_15 
+0 81 obj_at 2 o1 p11_16 
+0 176 obj_at 2 o1 p12_1 
+0 140 obj_at 2 o1 p12_2 
+0 238 obj_at 2 o1 p12_3 
+0 93 obj_at 2 o1 p12_4 
+0 126 obj_at 2 o1 p12_5 
+0 149 obj_at 2 o1 p12_6 
+0 172 obj_at 2 o1 p12_7 
+0 179 obj_at 2 o1 p12_8 
+0 250 obj_at 2 o1 p12_9 
+0 178 obj_at 2 o1 p12_10 
+0 13 obj_at 2 o1 p12_11 
+0 240 obj_at 2 o1 p12_12 
+0 73 obj_at 2 o1 p12_13 
+0 6 obj_at 2 o1 p12_14 
+0 24 obj_at 2 o1 p12_15 
+0 244 obj_at 2 o1 p12_16 
+0 42 obj_at 2 o1 p13_1 
+0 229 obj_at 2 o1 p13_2 
+0 56 obj_at 2 o1 p13_3 
+0 71 obj_at 2 o1 p13_4 
+0 198 obj_at 2 o1 p13_5 
+0 190 obj_at 2 o1 p13_6 
+0 111 obj_at 2 o1 p13_7 
+0 241 obj_at 2 o1 p13_8 
+0 145 obj_at 2 o1 p13_9 
+0 26 obj_at 2 o1 p13_10 
+0 247 obj_at 2 o1 p13_11 
+0 170 obj_at 2 o1 p13_12 
+0 239 obj_at 2 o1 p13_13 
+0 28 obj_at 2 o1 p13_14 
+0 223 obj_at 2 o1 p13_15 
+0 187 obj_at 2 o1 p13_16 
+0 66 obj_at 2 o1 p14_1 
+0 203 obj_at 2 o1 p14_2 
+0 231 obj_at 2 o1 p14_3 
+0 14 obj_at 2 o1 p14_4 
+0 215 obj_at 2 o1 p14_5 
+0 211 obj_at 2 o1 p14_6 
+0 127 obj_at 2 o1 p14_7 
+0 21 obj_at 2 o1 p14_8 
+0 109 obj_at 2 o1 p14_9 
+0 253 obj_at 2 o1 p14_10 
+0 150 obj_at 2 o1 p14_11 
+0 194 obj_at 2 o1 p14_12 
+0 36 obj_at 2 o1 p14_13 
+0 23 obj_at 2 o1 p14_14 
+0 180 obj_at 2 o1 p14_15 
+0 169 obj_at 2 o1 p14_16 
+0 152 obj_at 2 o1 p15_1 
+0 119 obj_at 2 o1 p15_2 
+0 95 obj_at 2 o1 p15_3 
+0 92 obj_at 2 o1 p15_4 
+0 256 obj_at 2 o1 p15_5 
+0 104 obj_at 2 o1 p15_6 
+0 68 obj_at 2 o1 p15_7 
+0 43 obj_at 2 o1 p15_8 
+0 210 obj_at 2 o1 p15_9 
+0 252 obj_at 2 o1 p15_10 
+0 174 obj_at 2 o1 p15_11 
+0 219 obj_at 2 o1 p15_12 
+0 50 obj_at 2 o1 p15_13 
+0 234 obj_at 2 o1 p15_14 
+0 204 obj_at 2 o1 p15_15 
+0 88 obj_at 2 o1 p15_16 
+0 251 obj_at 2 o1 p16_1 
+0 52 obj_at 2 o1 p16_2 
+0 129 obj_at 2 o1 p16_3 
+0 120 obj_at 2 o1 p16_4 
+0 67 obj_at 2 o1 p16_5 
+0 108 obj_at 2 o1 p16_6 
+0 156 obj_at 2 o1 p16_7 
+0 246 obj_at 2 o1 p16_8 
+0 199 obj_at 2 o1 p16_9 
+0 82 obj_at 2 o1 p16_10 
+0 182 obj_at 2 o1 p16_11 
+0 19 obj_at 2 o1 p16_12 
+0 44 obj_at 2 o1 p16_13 
+0 46 obj_at 2 o1 p16_14 
+0 133 obj_at 2 o1 p16_15 
+0 20 obj_at 2 o1 p16_16 
+group
+1
+1 193 obj_at 2 o2 p1_1 
+group
+1
+0 16 obj_at 2 o1 p1_1 
+group
+256
+1 193 obj_at 2 o2 p1_1 
+1 88 obj_at 2 o2 p1_2 
+1 183 obj_at 2 o2 p1_3 
+1 157 obj_at 2 o2 p1_4 
+1 242 obj_at 2 o2 p1_5 
+1 245 obj_at 2 o2 p1_6 
+1 146 obj_at 2 o2 p1_7 
+1 235 obj_at 2 o2 p1_8 
+1 207 obj_at 2 o2 p1_9 
+1 27 obj_at 2 o2 p1_10 
+1 220 obj_at 2 o2 p1_11 
+1 225 obj_at 2 o2 p1_12 
+1 3 obj_at 2 o2 p1_13 
+1 85 obj_at 2 o2 p1_14 
+1 81 obj_at 2 o2 p1_15 
+1 120 obj_at 2 o2 p1_16 
+1 234 obj_at 2 o2 p2_1 
+1 134 obj_at 2 o2 p2_2 
+1 44 obj_at 2 o2 p2_3 
+1 40 obj_at 2 o2 p2_4 
+1 14 obj_at 2 o2 p2_5 
+1 181 obj_at 2 o2 p2_6 
+1 79 obj_at 2 o2 p2_7 
+1 208 obj_at 2 o2 p2_8 
+1 46 obj_at 2 o2 p2_9 
+1 117 obj_at 2 o2 p2_10 
+1 132 obj_at 2 o2 p2_11 
+1 23 obj_at 2 o2 p2_12 
+1 74 obj_at 2 o2 p2_13 
+1 246 obj_at 2 o2 p2_14 
+1 58 obj_at 2 o2 p2_15 
+1 19 obj_at 2 o2 p2_16 
+1 55 obj_at 2 o2 p3_1 
+1 94 obj_at 2 o2 p3_2 
+1 252 obj_at 2 o2 p3_3 
+1 33 obj_at 2 o2 p3_4 
+1 63 obj_at 2 o2 p3_5 
+1 198 obj_at 2 o2 p3_6 
+1 200 obj_at 2 o2 p3_7 
+1 39 obj_at 2 o2 p3_8 
+1 129 obj_at 2 o2 p3_9 
+1 196 obj_at 2 o2 p3_10 
+1 91 obj_at 2 o2 p3_11 
+1 125 obj_at 2 o2 p3_12 
+1 160 obj_at 2 o2 p3_13 
+1 202 obj_at 2 o2 p3_14 
+1 11 obj_at 2 o2 p3_15 
+1 135 obj_at 2 o2 p3_16 
+1 82 obj_at 2 o2 p4_1 
+1 237 obj_at 2 o2 p4_2 
+1 147 obj_at 2 o2 p4_3 
+1 121 obj_at 2 o2 p4_4 
+1 87 obj_at 2 o2 p4_5 
+1 241 obj_at 2 o2 p4_6 
+1 155 obj_at 2 o2 p4_7 
+1 95 obj_at 2 o2 p4_8 
+1 70 obj_at 2 o2 p4_9 
+1 57 obj_at 2 o2 p4_10 
+1 158 obj_at 2 o2 p4_11 
+1 168 obj_at 2 o2 p4_12 
+1 6 obj_at 2 o2 p4_13 
+1 45 obj_at 2 o2 p4_14 
+1 189 obj_at 2 o2 p4_15 
+1 163 obj_at 2 o2 p4_16 
+1 165 obj_at 2 o2 p5_1 
+1 167 obj_at 2 o2 p5_2 
+1 257 obj_at 2 o2 p5_3 
+1 145 obj_at 2 o2 p5_4 
+1 107 obj_at 2 o2 p5_5 
+1 204 obj_at 2 o2 p5_6 
+1 97 obj_at 2 o2 p5_7 
+1 152 obj_at 2 o2 p5_8 
+1 239 obj_at 2 o2 p5_9 
+1 221 obj_at 2 o2 p5_10 
+1 249 obj_at 2 o2 p5_11 
+1 28 obj_at 2 o2 p5_12 
+1 186 obj_at 2 o2 p5_13 
+1 227 obj_at 2 o2 p5_14 
+1 254 obj_at 2 o2 p5_15 
+1 133 obj_at 2 o2 p5_16 
+1 150 obj_at 2 o2 p6_1 
+1 251 obj_at 2 o2 p6_2 
+1 247 obj_at 2 o2 p6_3 
+1 232 obj_at 2 o2 p6_4 
+1 143 obj_at 2 o2 p6_5 
+1 41 obj_at 2 o2 p6_6 
+1 209 obj_at 2 o2 p6_7 
+1 21 obj_at 2 o2 p6_8 
+1 192 obj_at 2 o2 p6_9 
+1 61 obj_at 2 o2 p6_10 
+1 13 obj_at 2 o2 p6_11 
+1 93 obj_at 2 o2 p6_12 
+1 73 obj_at 2 o2 p6_13 
+1 217 obj_at 2 o2 p6_14 
+1 80 obj_at 2 o2 p6_15 
+1 138 obj_at 2 o2 p6_16 
+1 201 obj_at 2 o2 p7_1 
+1 139 obj_at 2 o2 p7_2 
+1 10 obj_at 2 o2 p7_3 
+1 67 obj_at 2 o2 p7_4 
+1 20 obj_at 2 o2 p7_5 
+1 9 obj_at 2 o2 p7_6 
+1 210 obj_at 2 o2 p7_7 
+1 60 obj_at 2 o2 p7_8 
+1 153 obj_at 2 o2 p7_9 
+1 148 obj_at 2 o2 p7_10 
+1 244 obj_at 2 o2 p7_11 
+1 75 obj_at 2 o2 p7_12 
+1 100 obj_at 2 o2 p7_13 
+1 102 obj_at 2 o2 p7_14 
+1 199 obj_at 2 o2 p7_15 
+1 248 obj_at 2 o2 p7_16 
+1 190 obj_at 2 o2 p8_1 
+1 84 obj_at 2 o2 p8_2 
+1 253 obj_at 2 o2 p8_3 
+1 16 obj_at 2 o2 p8_4 
+1 184 obj_at 2 o2 p8_5 
+1 48 obj_at 2 o2 p8_6 
+1 18 obj_at 2 o2 p8_7 
+1 238 obj_at 2 o2 p8_8 
+1 140 obj_at 2 o2 p8_9 
+1 197 obj_at 2 o2 p8_10 
+1 164 obj_at 2 o2 p8_11 
+1 59 obj_at 2 o2 p8_12 
+1 222 obj_at 2 o2 p8_13 
+1 215 obj_at 2 o2 p8_14 
+1 62 obj_at 2 o2 p8_15 
+1 17 obj_at 2 o2 p8_16 
+1 213 obj_at 2 o2 p9_1 
+1 47 obj_at 2 o2 p9_2 
+1 185 obj_at 2 o2 p9_3 
+1 206 obj_at 2 o2 p9_4 
+1 36 obj_at 2 o2 p9_5 
+1 54 obj_at 2 o2 p9_6 
+1 96 obj_at 2 o2 p9_7 
+1 169 obj_at 2 o2 p9_8 
+1 172 obj_at 2 o2 p9_9 
+1 42 obj_at 2 o2 p9_10 
+1 68 obj_at 2 o2 p9_11 
+1 104 obj_at 2 o2 p9_12 
+1 228 obj_at 2 o2 p9_13 
+1 4 obj_at 2 o2 p9_14 
+1 69 obj_at 2 o2 p9_15 
+1 99 obj_at 2 o2 p9_16 
+1 182 obj_at 2 o2 p10_1 
+1 179 obj_at 2 o2 p10_2 
+1 86 obj_at 2 o2 p10_3 
+1 111 obj_at 2 o2 p10_4 
+1 22 obj_at 2 o2 p10_5 
+1 124 obj_at 2 o2 p10_6 
+1 90 obj_at 2 o2 p10_7 
+1 119 obj_at 2 o2 p10_8 
+1 224 obj_at 2 o2 p10_9 
+1 128 obj_at 2 o2 p10_10 
+1 32 obj_at 2 o2 p10_11 
+1 136 obj_at 2 o2 p10_12 
+1 233 obj_at 2 o2 p10_13 
+1 72 obj_at 2 o2 p10_14 
+1 5 obj_at 2 o2 p10_15 
+1 50 obj_at 2 o2 p10_16 
+1 187 obj_at 2 o2 p11_1 
+1 229 obj_at 2 o2 p11_2 
+1 256 obj_at 2 o2 p11_3 
+1 37 obj_at 2 o2 p11_4 
+1 194 obj_at 2 o2 p11_5 
+1 154 obj_at 2 o2 p11_6 
+1 205 obj_at 2 o2 p11_7 
+1 191 obj_at 2 o2 p11_8 
+1 89 obj_at 2 o2 p11_9 
+1 25 obj_at 2 o2 p11_10 
+1 108 obj_at 2 o2 p11_11 
+1 141 obj_at 2 o2 p11_12 
+1 173 obj_at 2 o2 p11_13 
+1 103 obj_at 2 o2 p11_14 
+1 178 obj_at 2 o2 p11_15 
+1 98 obj_at 2 o2 p11_16 
+1 131 obj_at 2 o2 p12_1 
+1 78 obj_at 2 o2 p12_2 
+1 180 obj_at 2 o2 p12_3 
+1 203 obj_at 2 o2 p12_4 
+1 106 obj_at 2 o2 p12_5 
+1 7 obj_at 2 o2 p12_6 
+1 175 obj_at 2 o2 p12_7 
+1 137 obj_at 2 o2 p12_8 
+1 166 obj_at 2 o2 p12_9 
+1 101 obj_at 2 o2 p12_10 
+1 159 obj_at 2 o2 p12_11 
+1 49 obj_at 2 o2 p12_12 
+1 216 obj_at 2 o2 p12_13 
+1 156 obj_at 2 o2 p12_14 
+1 115 obj_at 2 o2 p12_15 
+1 43 obj_at 2 o2 p12_16 
+1 118 obj_at 2 o2 p13_1 
+1 176 obj_at 2 o2 p13_2 
+1 243 obj_at 2 o2 p13_3 
+1 64 obj_at 2 o2 p13_4 
+1 112 obj_at 2 o2 p13_5 
+1 236 obj_at 2 o2 p13_6 
+1 34 obj_at 2 o2 p13_7 
+1 214 obj_at 2 o2 p13_8 
+1 218 obj_at 2 o2 p13_9 
+1 226 obj_at 2 o2 p13_10 
+1 1 obj_at 2 o2 p13_11 
+1 110 obj_at 2 o2 p13_12 
+1 223 obj_at 2 o2 p13_13 
+1 122 obj_at 2 o2 p13_14 
+1 26 obj_at 2 o2 p13_15 
+1 77 obj_at 2 o2 p13_16 
+1 92 obj_at 2 o2 p14_1 
+1 66 obj_at 2 o2 p14_2 
+1 31 obj_at 2 o2 p14_3 
+1 151 obj_at 2 o2 p14_4 
+1 116 obj_at 2 o2 p14_5 
+1 0 obj_at 2 o2 p14_6 
+1 188 obj_at 2 o2 p14_7 
+1 144 obj_at 2 o2 p14_8 
+1 51 obj_at 2 o2 p14_9 
+1 126 obj_at 2 o2 p14_10 
+1 231 obj_at 2 o2 p14_11 
+1 142 obj_at 2 o2 p14_12 
+1 174 obj_at 2 o2 p14_13 
+1 230 obj_at 2 o2 p14_14 
+1 56 obj_at 2 o2 p14_15 
+1 114 obj_at 2 o2 p14_16 
+1 30 obj_at 2 o2 p15_1 
+1 177 obj_at 2 o2 p15_2 
+1 15 obj_at 2 o2 p15_3 
+1 161 obj_at 2 o2 p15_4 
+1 162 obj_at 2 o2 p15_5 
+1 171 obj_at 2 o2 p15_6 
+1 65 obj_at 2 o2 p15_7 
+1 113 obj_at 2 o2 p15_8 
+1 211 obj_at 2 o2 p15_9 
+1 195 obj_at 2 o2 p15_10 
+1 109 obj_at 2 o2 p15_11 
+1 149 obj_at 2 o2 p15_12 
+1 76 obj_at 2 o2 p15_13 
+1 53 obj_at 2 o2 p15_14 
+1 2 obj_at 2 o2 p15_15 
+1 130 obj_at 2 o2 p15_16 
+1 24 obj_at 2 o2 p16_1 
+1 127 obj_at 2 o2 p16_2 
+1 123 obj_at 2 o2 p16_3 
+1 52 obj_at 2 o2 p16_4 
+1 35 obj_at 2 o2 p16_5 
+1 170 obj_at 2 o2 p16_6 
+1 212 obj_at 2 o2 p16_7 
+1 38 obj_at 2 o2 p16_8 
+1 8 obj_at 2 o2 p16_9 
+1 240 obj_at 2 o2 p16_10 
+1 250 obj_at 2 o2 p16_11 
+1 105 obj_at 2 o2 p16_12 
+1 83 obj_at 2 o2 p16_13 
+1 29 obj_at 2 o2 p16_14 
+1 255 obj_at 2 o2 p16_15 
+1 12 obj_at 2 o2 p16_16 
+end_groups

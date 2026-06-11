@@ -1,0 +1,18 @@
+Building domain...CNF Cost: 0, DNF Cost: 2704
+
+Initial cstate before simplification: 
+Number of unit clauses: 0
+Number of other clauses: 2654
+Number of literals in clauses: 5408
+Average clause size: 2.03768
+m_init_cstate.m_clauses.size() = 2654
+Initial cstate after simplification: 
+Number of unit clauses: 0
+Number of other clauses: 2654
+Number of literals in clauses: 5408
+Average clause size: 2.03768
+done.
+
+Number of literals: 208
+Number of goals: 2
+Goals satisfied: 0 

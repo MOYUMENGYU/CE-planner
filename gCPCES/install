@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ "$#" = 0 ]; then
+    echo "#!/bin/bash 
+
+    java -Djava.library.path="$(pwd)"/libs -classpath "$(pwd)"/build/:"$(pwd)"/libs/PPMaJal2.jar:"$(pwd)"/libs/*:"$(pwd)"/libs/com.microsoft.z3.jar main \"\$@\"" > cpces2
+else
+    echo "#!/bin/bash 
+
+    java "$1 $2" -Djava.library.path="$(pwd)"/libs -classpath "$(pwd)"/build/:"$(pwd)"/libs/PPMaJal2.jar:"$(pwd)"/libs/*:"$(pwd)"/libs/com.microsoft.z3.jar main \"\$@\"" > cpces2
+fi
+
+cp src/ff .
+cp src/MpC .
+
+
+chmod +x cpces2

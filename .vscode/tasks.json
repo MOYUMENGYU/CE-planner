@@ -1,0 +1,37 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "iGC-build",
+            "type": "shell",
+            "command": "./build",
+            "problemMatcher": []
+        },
+        {
+            "label": "iGC-run-log",
+            "type": "shell",
+            // "command": "./build && ./plan-cegis-cnf ./test/1-dispose-disappear/d2-3.pddl ./test/1-dispose-disappear/p2-3.pddl ./result_output false 2>&1 | tee planner_run.log",
+            // "command": "./build && ./plan ./test/bomb/domain.pddl ./test/bomb/p100-10.pddl ./result_output false 2>&1 | tee planner_run.log",
+            "command": "./build && ./plan-cegis-t1 ./test/blocks/domain.pddl ./test/blocks/b2.pddl ./result_output false 2>&1 | tee planner_run.log",
+            // "command": "./build && ./plan-cegis-t1 ./test/blocks/domain.pddl ./test/blocks/b3.pddl ./result_output false 2>&1 | tee planner_run.log",
+            "problemMatcher": []
+            
+        },
+    ]
+}
+
+// {
+//     // See https://go.microsoft.com/fwlink/?LinkId=733558
+//     // for the documentation about the tasks.json format
+//     "version": "2.0.0",
+//     "tasks": [
+//         {
+//             "label": "GC-build",
+//             "type": "shell",
+//             "command": "./build && ./plan /home/moyu/gc_counter/test/1-dispose-disappear/d2-2.pddl /home/moyu/gc_counter/test/1-dispose-disappear/p2-2.pddl /home/moyu/gc_counter/result_output false",
+//             "problemMatcher": []
+//         }
+//     ]
+// }

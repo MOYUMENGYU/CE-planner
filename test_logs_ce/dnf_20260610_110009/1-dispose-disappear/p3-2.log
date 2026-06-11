@@ -1,0 +1,140 @@
+[开始时间] 2026-06-10 11:01:43
+[项目根目录] /home/moyu/CE-planner/test1/CE-planner
+[候选规划器] dnf
+[启动脚本] /home/moyu/CE-planner/test1/CE-planner/plan-cegis-dnf
+[benchmark] 1-dispose-disappear
+[case_name] p3-2
+[pair_suffix] 3-2
+[domain] /home/moyu/CE-planner/test1/CE-planner/test/1-dispose-disappear/d3-2.pddl
+[problem] /home/moyu/CE-planner/test1/CE-planner/test/1-dispose-disappear/p3-2.pddl
+[result_file] /home/moyu/CE-planner/test1/CE-planner/result_output_batch_ce/dnf_20260610_110009/1-dispose-disappear/p3-2/result.plan
+[display_flag] false
+[timeout_sec] 3600
+[memory_limit] 16G
+[memory_limit_kb] 16777216
+[success_marker_configured] yes
+[快捷键] Ctrl+B=跳过本例；Ctrl+C=终止整批
+
+1. Running translator
+2. Running preprocessor
+Building causal graph...
+The causal graph is not acyclic.
+4 variables of 4 necessary
+42 of 42 operators necessary.
+0 of 0 axiom rules necessary.
+Building domain transition graphs...
+solveable in poly time 0
+Building successor generator...
+Writing output...
+done
+
+3. Running search
+主流程反例求解后端: CNF/Kissat
+CNF预处理开关: 关闭
+CNF日志开关: basic=off, detail=off, clause=off, model=off
+Simplifying transitions... done!
+2
+axiom:0
+[IGC-CEGIS] context=fnv1a64:4da39fb7c0d54631 vars=4 constraints=2 candidate_planner=DNF planner_timeout=3600 run_dir=/home/moyu/CE-planner/test1/CE-planner/runs/run_204680
+[IGC-CEGIS] legacy internal search and subplan cache are bypassed.
+[IGC-VERIFY] iteration=bootstrap plan_len=0 status=COUNTEREXAMPLE build_ms=0 solve_ms=0 extract_ms=0
+[IGC-WRITER] iteration=0 mode=exact_sample_set syntax=cnf_dnf_pip_selector_exact_samples counterexamples=1 visible_worlds=1 mapped_atoms=30 fixed_true=4 fixed_false=26 varying=0 unknown=0 oneof=0 or=0 selectors=0 selector_implications=0 icpces_complements=0 status=OK
+[IGC-VALIDATE] basic checks passed: visible_worlds=1 mapped_atoms=30 fixed_true=4 fixed_false=26 varying=0 unknown=0 oneof=0 or=0 status=OK
+[IGC-DOMAIN] iteration=0 profile=cnf_dnf_pip_selector_domain selectors=0 icpces_complements=0 added_empty_parameters=0 status=OK
+[DNF-RUNNER] runtime=/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0000/planner_work -> runtime /home/moyu/CE-planner/test1/CE-planner/dnf_planner
+[DNF-RUNNER] command=( cd '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0000/planner_work' && rm -f dp.pddl pddl2pl.pl new.pl theory_*.al theory_names temp trash plan-result result-time && cat '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0000/refined_dnf_domain.pddl' '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0000/refined_dnf_problem.pddl' > dp.pddl && ./cpa.pddl2pl dp.pddl && test -s pddl2pl.pl && cat mult5zsic.pl pddl2pl.pl > new.pl && 'sicstus' -l new.pl --goal 'main,halt.' < input > trash && test -s theory_0.al && ./dnf theory_0.al > temp && sed -e 's/cpa_//g' temp > plan-result && cat plan-result ) > '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0000/planner.stdout' 2> '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0000/planner.stderr'
+[IGC-PLANNER] planner=DNF iteration=0 status=OK
+[IGC-MAP] actions=8 status=OK
+[IGC-VERIFY] iteration=0 plan_len=8 status=COUNTEREXAMPLE build_ms=0 solve_ms=0 extract_ms=0
+[IGC-STORE] size=2 inserted_new=yes duplicate_streak=0
+[IGC-WRITER] iteration=1 mode=exact_sample_set syntax=cnf_dnf_pip_selector_exact_samples counterexamples=2 visible_worlds=2 mapped_atoms=30 fixed_true=3 fixed_false=25 varying=2 unknown=0 oneof=1 or=4 selectors=2 selector_implications=4 icpces_complements=0 status=OK
+[IGC-VALIDATE] basic checks passed: visible_worlds=2 mapped_atoms=30 fixed_true=3 fixed_false=25 varying=2 unknown=0 oneof=1 or=4 status=OK
+[IGC-DOMAIN] iteration=1 profile=cnf_dnf_pip_selector_domain selectors=2 icpces_complements=0 added_empty_parameters=0 status=OK
+[DNF-RUNNER] runtime=/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0001/planner_work -> runtime /home/moyu/CE-planner/test1/CE-planner/dnf_planner
+[DNF-RUNNER] command=( cd '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0001/planner_work' && rm -f dp.pddl pddl2pl.pl new.pl theory_*.al theory_names temp trash plan-result result-time && cat '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0001/refined_dnf_domain.pddl' '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0001/refined_dnf_problem.pddl' > dp.pddl && ./cpa.pddl2pl dp.pddl && test -s pddl2pl.pl && cat mult5zsic.pl pddl2pl.pl > new.pl && 'sicstus' -l new.pl --goal 'main,halt.' < input > trash && test -s theory_0.al && ./dnf theory_0.al > temp && sed -e 's/cpa_//g' temp > plan-result && cat plan-result ) > '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0001/planner.stdout' 2> '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0001/planner.stderr'
+[DNF-RUNNER] primary planner found a plan but omitted its action sequence; starting explicit-plan recovery on the same theory_0.al
+[DNF-RUNNER] recovery_command=( cd '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0001/planner_work' && '/home/moyu/CE-planner/test1/CE-planner/./cnf_planner/cnf' theory_0.al > recovery.temp && sed -e 's/cpa_//g' recovery.temp > recovery-plan-result && cat recovery-plan-result ) > '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0001/planner.recovery.stdout' 2> '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0001/planner.recovery.stderr'
+[DNF-RUNNER] explicit plan recovered with CNF on the identical theory; actions=10
+[IGC-PLANNER] planner=DNF iteration=1 status=OK
+[IGC-MAP] actions=10 status=OK
+[IGC-VERIFY] iteration=1 plan_len=10 status=COUNTEREXAMPLE build_ms=0 solve_ms=0 extract_ms=0
+[IGC-STORE] size=3 inserted_new=yes duplicate_streak=0
+[IGC-WRITER] iteration=2 mode=exact_sample_set syntax=cnf_dnf_pip_selector_exact_samples counterexamples=3 visible_worlds=3 mapped_atoms=30 fixed_true=3 fixed_false=24 varying=3 unknown=0 oneof=1 or=9 selectors=3 selector_implications=9 icpces_complements=0 status=OK
+[IGC-VALIDATE] basic checks passed: visible_worlds=3 mapped_atoms=30 fixed_true=3 fixed_false=24 varying=3 unknown=0 oneof=1 or=9 status=OK
+[IGC-DOMAIN] iteration=2 profile=cnf_dnf_pip_selector_domain selectors=3 icpces_complements=0 added_empty_parameters=0 status=OK
+[DNF-RUNNER] runtime=/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0002/planner_work -> runtime /home/moyu/CE-planner/test1/CE-planner/dnf_planner
+[DNF-RUNNER] command=( cd '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0002/planner_work' && rm -f dp.pddl pddl2pl.pl new.pl theory_*.al theory_names temp trash plan-result result-time && cat '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0002/refined_dnf_domain.pddl' '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0002/refined_dnf_problem.pddl' > dp.pddl && ./cpa.pddl2pl dp.pddl && test -s pddl2pl.pl && cat mult5zsic.pl pddl2pl.pl > new.pl && 'sicstus' -l new.pl --goal 'main,halt.' < input > trash && test -s theory_0.al && ./dnf theory_0.al > temp && sed -e 's/cpa_//g' temp > plan-result && cat plan-result ) > '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0002/planner.stdout' 2> '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0002/planner.stderr'
+[DNF-RUNNER] primary planner found a plan but omitted its action sequence; starting explicit-plan recovery on the same theory_0.al
+[DNF-RUNNER] recovery_command=( cd '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0002/planner_work' && '/home/moyu/CE-planner/test1/CE-planner/./cnf_planner/cnf' theory_0.al > recovery.temp && sed -e 's/cpa_//g' recovery.temp > recovery-plan-result && cat recovery-plan-result ) > '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0002/planner.recovery.stdout' 2> '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0002/planner.recovery.stderr'
+[DNF-RUNNER] explicit plan recovered with CNF on the identical theory; actions=12
+[IGC-PLANNER] planner=DNF iteration=2 status=OK
+[IGC-MAP] actions=12 status=OK
+[IGC-VERIFY] iteration=2 plan_len=12 status=COUNTEREXAMPLE build_ms=0 solve_ms=0 extract_ms=0
+[IGC-STORE] size=4 inserted_new=yes duplicate_streak=0
+[IGC-WRITER] iteration=3 mode=exact_sample_set syntax=cnf_dnf_pip_selector_exact_samples counterexamples=4 visible_worlds=4 mapped_atoms=30 fixed_true=3 fixed_false=23 varying=4 unknown=0 oneof=1 or=16 selectors=4 selector_implications=16 icpces_complements=0 status=OK
+[IGC-VALIDATE] basic checks passed: visible_worlds=4 mapped_atoms=30 fixed_true=3 fixed_false=23 varying=4 unknown=0 oneof=1 or=16 status=OK
+[IGC-DOMAIN] iteration=3 profile=cnf_dnf_pip_selector_domain selectors=4 icpces_complements=0 added_empty_parameters=0 status=OK
+[DNF-RUNNER] runtime=/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0003/planner_work -> runtime /home/moyu/CE-planner/test1/CE-planner/dnf_planner
+[DNF-RUNNER] command=( cd '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0003/planner_work' && rm -f dp.pddl pddl2pl.pl new.pl theory_*.al theory_names temp trash plan-result result-time && cat '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0003/refined_dnf_domain.pddl' '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0003/refined_dnf_problem.pddl' > dp.pddl && ./cpa.pddl2pl dp.pddl && test -s pddl2pl.pl && cat mult5zsic.pl pddl2pl.pl > new.pl && 'sicstus' -l new.pl --goal 'main,halt.' < input > trash && test -s theory_0.al && ./dnf theory_0.al > temp && sed -e 's/cpa_//g' temp > plan-result && cat plan-result ) > '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0003/planner.stdout' 2> '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0003/planner.stderr'
+[DNF-RUNNER] primary planner found a plan but omitted its action sequence; starting explicit-plan recovery on the same theory_0.al
+[DNF-RUNNER] recovery_command=( cd '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0003/planner_work' && '/home/moyu/CE-planner/test1/CE-planner/./cnf_planner/cnf' theory_0.al > recovery.temp && sed -e 's/cpa_//g' recovery.temp > recovery-plan-result && cat recovery-plan-result ) > '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0003/planner.recovery.stdout' 2> '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0003/planner.recovery.stderr'
+[DNF-RUNNER] explicit plan recovered with CNF on the identical theory; actions=20
+[IGC-PLANNER] planner=DNF iteration=3 status=OK
+[IGC-MAP] actions=20 status=OK
+[IGC-VERIFY] iteration=3 plan_len=20 status=COUNTEREXAMPLE build_ms=0 solve_ms=0 extract_ms=0
+[IGC-STORE] size=5 inserted_new=yes duplicate_streak=0
+[IGC-WRITER] iteration=4 mode=exact_sample_set syntax=cnf_dnf_pip_selector_exact_samples counterexamples=5 visible_worlds=5 mapped_atoms=30 fixed_true=3 fixed_false=22 varying=5 unknown=0 oneof=1 or=25 selectors=5 selector_implications=25 icpces_complements=0 status=OK
+[IGC-VALIDATE] basic checks passed: visible_worlds=5 mapped_atoms=30 fixed_true=3 fixed_false=22 varying=5 unknown=0 oneof=1 or=25 status=OK
+[IGC-DOMAIN] iteration=4 profile=cnf_dnf_pip_selector_domain selectors=5 icpces_complements=0 added_empty_parameters=0 status=OK
+[DNF-RUNNER] runtime=/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0004/planner_work -> runtime /home/moyu/CE-planner/test1/CE-planner/dnf_planner
+[DNF-RUNNER] command=( cd '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0004/planner_work' && rm -f dp.pddl pddl2pl.pl new.pl theory_*.al theory_names temp trash plan-result result-time && cat '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0004/refined_dnf_domain.pddl' '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0004/refined_dnf_problem.pddl' > dp.pddl && ./cpa.pddl2pl dp.pddl && test -s pddl2pl.pl && cat mult5zsic.pl pddl2pl.pl > new.pl && 'sicstus' -l new.pl --goal 'main,halt.' < input > trash && test -s theory_0.al && ./dnf theory_0.al > temp && sed -e 's/cpa_//g' temp > plan-result && cat plan-result ) > '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0004/planner.stdout' 2> '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0004/planner.stderr'
+[DNF-RUNNER] primary planner found a plan but omitted its action sequence; starting explicit-plan recovery on the same theory_0.al
+[DNF-RUNNER] recovery_command=( cd '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0004/planner_work' && '/home/moyu/CE-planner/test1/CE-planner/./cnf_planner/cnf' theory_0.al > recovery.temp && sed -e 's/cpa_//g' recovery.temp > recovery-plan-result && cat recovery-plan-result ) > '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0004/planner.recovery.stdout' 2> '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0004/planner.recovery.stderr'
+[DNF-RUNNER] explicit plan recovered with CNF on the identical theory; actions=22
+[IGC-PLANNER] planner=DNF iteration=4 status=OK
+[IGC-MAP] actions=22 status=OK
+[IGC-VERIFY] iteration=4 plan_len=22 status=COUNTEREXAMPLE build_ms=0 solve_ms=0 extract_ms=0
+[IGC-STORE] size=6 inserted_new=yes duplicate_streak=0
+[IGC-WRITER] iteration=5 mode=exact_sample_set syntax=cnf_dnf_pip_selector_exact_samples counterexamples=6 visible_worlds=6 mapped_atoms=30 fixed_true=3 fixed_false=21 varying=6 unknown=0 oneof=1 or=36 selectors=6 selector_implications=36 icpces_complements=0 status=OK
+[IGC-VALIDATE] basic checks passed: visible_worlds=6 mapped_atoms=30 fixed_true=3 fixed_false=21 varying=6 unknown=0 oneof=1 or=36 status=OK
+[IGC-DOMAIN] iteration=5 profile=cnf_dnf_pip_selector_domain selectors=6 icpces_complements=0 added_empty_parameters=0 status=OK
+[DNF-RUNNER] runtime=/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0005/planner_work -> runtime /home/moyu/CE-planner/test1/CE-planner/dnf_planner
+[DNF-RUNNER] command=( cd '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0005/planner_work' && rm -f dp.pddl pddl2pl.pl new.pl theory_*.al theory_names temp trash plan-result result-time && cat '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0005/refined_dnf_domain.pddl' '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0005/refined_dnf_problem.pddl' > dp.pddl && ./cpa.pddl2pl dp.pddl && test -s pddl2pl.pl && cat mult5zsic.pl pddl2pl.pl > new.pl && 'sicstus' -l new.pl --goal 'main,halt.' < input > trash && test -s theory_0.al && ./dnf theory_0.al > temp && sed -e 's/cpa_//g' temp > plan-result && cat plan-result ) > '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0005/planner.stdout' 2> '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0005/planner.stderr'
+[DNF-RUNNER] primary planner found a plan but omitted its action sequence; starting explicit-plan recovery on the same theory_0.al
+[DNF-RUNNER] recovery_command=( cd '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0005/planner_work' && '/home/moyu/CE-planner/test1/CE-planner/./cnf_planner/cnf' theory_0.al > recovery.temp && sed -e 's/cpa_//g' recovery.temp > recovery-plan-result && cat recovery-plan-result ) > '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0005/planner.recovery.stdout' 2> '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0005/planner.recovery.stderr'
+[DNF-RUNNER] explicit plan recovered with CNF on the identical theory; actions=22
+[IGC-PLANNER] planner=DNF iteration=5 status=OK
+[IGC-MAP] actions=22 status=OK
+[IGC-VERIFY] iteration=5 plan_len=22 status=COUNTEREXAMPLE build_ms=0 solve_ms=0 extract_ms=0
+[IGC-STORE] size=7 inserted_new=yes duplicate_streak=0
+[IGC-WRITER] iteration=6 mode=exact_sample_set syntax=cnf_dnf_pip_selector_exact_samples counterexamples=7 visible_worlds=7 mapped_atoms=30 fixed_true=3 fixed_false=20 varying=7 unknown=0 oneof=1 or=49 selectors=7 selector_implications=49 icpces_complements=0 status=OK
+[IGC-VALIDATE] basic checks passed: visible_worlds=7 mapped_atoms=30 fixed_true=3 fixed_false=20 varying=7 unknown=0 oneof=1 or=49 status=OK
+[IGC-DOMAIN] iteration=6 profile=cnf_dnf_pip_selector_domain selectors=7 icpces_complements=0 added_empty_parameters=0 status=OK
+[DNF-RUNNER] runtime=/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0006/planner_work -> runtime /home/moyu/CE-planner/test1/CE-planner/dnf_planner
+[DNF-RUNNER] command=( cd '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0006/planner_work' && rm -f dp.pddl pddl2pl.pl new.pl theory_*.al theory_names temp trash plan-result result-time && cat '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0006/refined_dnf_domain.pddl' '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0006/refined_dnf_problem.pddl' > dp.pddl && ./cpa.pddl2pl dp.pddl && test -s pddl2pl.pl && cat mult5zsic.pl pddl2pl.pl > new.pl && 'sicstus' -l new.pl --goal 'main,halt.' < input > trash && test -s theory_0.al && ./dnf theory_0.al > temp && sed -e 's/cpa_//g' temp > plan-result && cat plan-result ) > '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0006/planner.stdout' 2> '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0006/planner.stderr'
+[DNF-RUNNER] primary planner found a plan but omitted its action sequence; starting explicit-plan recovery on the same theory_0.al
+[DNF-RUNNER] recovery_command=( cd '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0006/planner_work' && '/home/moyu/CE-planner/test1/CE-planner/./cnf_planner/cnf' theory_0.al > recovery.temp && sed -e 's/cpa_//g' recovery.temp > recovery-plan-result && cat recovery-plan-result ) > '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0006/planner.recovery.stdout' 2> '/home/moyu/CE-planner/test1/CE-planner/runs/run_204680/iter_0006/planner.recovery.stderr'
+Command exited with non-zero status 124
+	Command being timed: "/usr/bin/timeout --signal=TERM --kill-after=10s 3600 bash /home/moyu/CE-planner/test1/CE-planner/plan-cegis-dnf /home/moyu/CE-planner/test1/CE-planner/test/1-dispose-disappear/d3-2.pddl /home/moyu/CE-planner/test1/CE-planner/test/1-dispose-disappear/p3-2.pddl /home/moyu/CE-planner/test1/CE-planner/result_output_batch_ce/dnf_20260610_110009/1-dispose-disappear/p3-2/result.plan false"
+	User time (seconds): 0.01
+	System time (seconds): 0.00
+	Percent of CPU this job got: 0%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:00:00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8756
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2142
+	Voluntary context switches: 14
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 112
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 124

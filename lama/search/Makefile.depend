@@ -1,0 +1,148 @@
+planner.o: planner.cc best_first_search.h closed_list.h closed_list.cc \
+ open_list.h open_list.cc search_engine.h state.h landmarks_types.h \
+ globals.h wa_star_search.h ff_heuristic.h heuristic.h operator.h \
+ landmarks_graph.h landmarks_graph_rpg_sasp.h landmarks_count_heuristic.h \
+ counter.h smt_counter.h counter_cnf.h cnf_types.h sat_var_manager.h \
+ cnf_builder.h kissat_counter.h minisat_counter.h glucose_counter.h \
+ cadical_counter.h cnf_preprocessor.h cnf_logger.h cegis_framework.h
+heuristic.o: heuristic.cc heuristic.h state.h landmarks_types.h globals.h \
+ operator.h
+ff_heuristic.o: ff_heuristic.cc ff_heuristic.h heuristic.h globals.h \
+ landmarks_types.h operator.h state.h
+wa_star_search.o: wa_star_search.cc wa_star_search.h best_first_search.h \
+ closed_list.h closed_list.cc open_list.h open_list.cc search_engine.h \
+ state.h landmarks_types.h globals.h heuristic.h successor_generator.h \
+ operator.h ff_heuristic.h landmarks_count_heuristic.h landmarks_graph.h
+domain_transition_graph.o: domain_transition_graph.cc \
+ domain_transition_graph.h globals.h operator.h state.h landmarks_types.h
+globals.o: globals.cc globals.h axioms.h domain_transition_graph.h \
+ operator.h state.h landmarks_types.h successor_generator.h \
+ landmarks_graph.h landmarks_graph_rpg_sasp.h ff_heuristic.h heuristic.h \
+ counter.h smt_counter.h
+operator.o: operator.cc globals.h operator.h state.h landmarks_types.h
+state.o: state.cc state.h landmarks_types.h globals.h axioms.h operator.h \
+ landmarks_graph.h
+successor_generator.o: successor_generator.cc globals.h operator.h \
+ state.h landmarks_types.h successor_generator.h
+best_first_search.o: best_first_search.cc best_first_search.h \
+ closed_list.h closed_list.cc open_list.h open_list.cc search_engine.h \
+ state.h landmarks_types.h globals.h heuristic.h successor_generator.h \
+ operator.h ff_heuristic.h landmarks_count_heuristic.h landmarks_graph.h
+axioms.o: axioms.cc axioms.h globals.h operator.h state.h \
+ landmarks_types.h
+search_engine.o: search_engine.cc search_engine.h
+open_list.o: open_list.cc
+closed_list.o: closed_list.cc
+landmarks_graph.o: landmarks_graph.cc landmarks_graph.h operator.h \
+ globals.h state.h landmarks_types.h ff_heuristic.h heuristic.h
+landmarks_graph_rpg_sasp.o: landmarks_graph_rpg_sasp.cc \
+ landmarks_graph_rpg_sasp.h globals.h landmarks_graph.h operator.h \
+ state.h landmarks_types.h domain_transition_graph.h
+landmarks_count_heuristic.o: landmarks_count_heuristic.cc \
+ landmarks_count_heuristic.h state.h landmarks_types.h globals.h \
+ heuristic.h landmarks_graph.h operator.h best_first_search.h \
+ closed_list.h closed_list.cc open_list.h open_list.cc search_engine.h \
+ ff_heuristic.h successor_generator.h
+counter.o: counter.cc counter.h globals.h state.h landmarks_types.h \
+ smt_counter.h operator.h best_first_search.h closed_list.h \
+ closed_list.cc open_list.h open_list.cc search_engine.h
+z3_counter.o: z3_counter.cc z3_counter.h
+smt_counter.o: smt_counter.cc smt_counter.h globals.h
+cnf_types.o: cnf_types.cc cnf_types.h
+cnf_logger.o: cnf_logger.cc cnf_logger.h
+sat_var_manager.o: sat_var_manager.cc sat_var_manager.h cnf_types.h \
+ cnf_logger.h globals.h
+cnf_builder.o: cnf_builder.cc cnf_builder.h cnf_types.h sat_var_manager.h \
+ cnf_logger.h
+kissat_counter.o: kissat_counter.cc kissat_counter.h cnf_types.h \
+ cnf_builder.h sat_var_manager.h cnf_logger.h globals.h
+minisat_counter.o: minisat_counter.cc minisat_counter.h cnf_types.h \
+ cnf_builder.h sat_var_manager.h cnf_logger.h globals.h
+glucose_counter.o: glucose_counter.cc glucose_counter.h cnf_types.h \
+ cnf_builder.h sat_var_manager.h cnf_logger.h globals.h
+cadical_counter.o: cadical_counter.cc cadical_counter.h cnf_types.h \
+ cnf_builder.h sat_var_manager.h cnf_logger.h globals.h
+counter_cnf.o: counter_cnf.cc counter_cnf.h globals.h operator.h state.h \
+ landmarks_types.h cnf_types.h sat_var_manager.h cnf_builder.h \
+ kissat_counter.h minisat_counter.h glucose_counter.h cadical_counter.h \
+ counter.h smt_counter.h cnf_preprocessor.h cnf_logger.h
+cnf_preprocessor.o: cnf_preprocessor.cc cnf_preprocessor.h cnf_types.h \
+ cnf_builder.h cnf_logger.h globals.h sat_var_manager.h
+cegis_framework.o: cegis_framework.cc cegis_framework.h counter.h \
+ globals.h state.h landmarks_types.h smt_counter.h counter_cnf.h \
+ operator.h cnf_types.h sat_var_manager.h cnf_builder.h kissat_counter.h \
+ minisat_counter.h glucose_counter.h cadical_counter.h cnf_preprocessor.h
+planner.profile.o: planner.cc best_first_search.h closed_list.h closed_list.cc \
+ open_list.h open_list.cc search_engine.h state.h landmarks_types.h \
+ globals.h wa_star_search.h ff_heuristic.h heuristic.h operator.h \
+ landmarks_graph.h landmarks_graph_rpg_sasp.h landmarks_count_heuristic.h \
+ counter.h smt_counter.h counter_cnf.h cnf_types.h sat_var_manager.h \
+ cnf_builder.h kissat_counter.h minisat_counter.h glucose_counter.h \
+ cadical_counter.h cnf_preprocessor.h cnf_logger.h cegis_framework.h
+heuristic.profile.o: heuristic.cc heuristic.h state.h landmarks_types.h globals.h \
+ operator.h
+ff_heuristic.profile.o: ff_heuristic.cc ff_heuristic.h heuristic.h globals.h \
+ landmarks_types.h operator.h state.h
+wa_star_search.profile.o: wa_star_search.cc wa_star_search.h best_first_search.h \
+ closed_list.h closed_list.cc open_list.h open_list.cc search_engine.h \
+ state.h landmarks_types.h globals.h heuristic.h successor_generator.h \
+ operator.h ff_heuristic.h landmarks_count_heuristic.h landmarks_graph.h
+domain_transition_graph.profile.o: domain_transition_graph.cc \
+ domain_transition_graph.h globals.h operator.h state.h landmarks_types.h
+globals.profile.o: globals.cc globals.h axioms.h domain_transition_graph.h \
+ operator.h state.h landmarks_types.h successor_generator.h \
+ landmarks_graph.h landmarks_graph_rpg_sasp.h ff_heuristic.h heuristic.h \
+ counter.h smt_counter.h
+operator.profile.o: operator.cc globals.h operator.h state.h landmarks_types.h
+state.profile.o: state.cc state.h landmarks_types.h globals.h axioms.h operator.h \
+ landmarks_graph.h
+successor_generator.profile.o: successor_generator.cc globals.h operator.h \
+ state.h landmarks_types.h successor_generator.h
+best_first_search.profile.o: best_first_search.cc best_first_search.h \
+ closed_list.h closed_list.cc open_list.h open_list.cc search_engine.h \
+ state.h landmarks_types.h globals.h heuristic.h successor_generator.h \
+ operator.h ff_heuristic.h landmarks_count_heuristic.h landmarks_graph.h
+axioms.profile.o: axioms.cc axioms.h globals.h operator.h state.h \
+ landmarks_types.h
+search_engine.profile.o: search_engine.cc search_engine.h
+open_list.profile.o: open_list.cc
+closed_list.profile.o: closed_list.cc
+landmarks_graph.profile.o: landmarks_graph.cc landmarks_graph.h operator.h \
+ globals.h state.h landmarks_types.h ff_heuristic.h heuristic.h
+landmarks_graph_rpg_sasp.profile.o: landmarks_graph_rpg_sasp.cc \
+ landmarks_graph_rpg_sasp.h globals.h landmarks_graph.h operator.h \
+ state.h landmarks_types.h domain_transition_graph.h
+landmarks_count_heuristic.profile.o: landmarks_count_heuristic.cc \
+ landmarks_count_heuristic.h state.h landmarks_types.h globals.h \
+ heuristic.h landmarks_graph.h operator.h best_first_search.h \
+ closed_list.h closed_list.cc open_list.h open_list.cc search_engine.h \
+ ff_heuristic.h successor_generator.h
+counter.profile.o: counter.cc counter.h globals.h state.h landmarks_types.h \
+ smt_counter.h operator.h best_first_search.h closed_list.h \
+ closed_list.cc open_list.h open_list.cc search_engine.h
+z3_counter.profile.o: z3_counter.cc z3_counter.h
+smt_counter.profile.o: smt_counter.cc smt_counter.h globals.h
+cnf_types.profile.o: cnf_types.cc cnf_types.h
+cnf_logger.profile.o: cnf_logger.cc cnf_logger.h
+sat_var_manager.profile.o: sat_var_manager.cc sat_var_manager.h cnf_types.h \
+ cnf_logger.h globals.h
+cnf_builder.profile.o: cnf_builder.cc cnf_builder.h cnf_types.h sat_var_manager.h \
+ cnf_logger.h
+kissat_counter.profile.o: kissat_counter.cc kissat_counter.h cnf_types.h \
+ cnf_builder.h sat_var_manager.h cnf_logger.h globals.h
+minisat_counter.profile.o: minisat_counter.cc minisat_counter.h cnf_types.h \
+ cnf_builder.h sat_var_manager.h cnf_logger.h globals.h
+glucose_counter.profile.o: glucose_counter.cc glucose_counter.h cnf_types.h \
+ cnf_builder.h sat_var_manager.h cnf_logger.h globals.h
+cadical_counter.profile.o: cadical_counter.cc cadical_counter.h cnf_types.h \
+ cnf_builder.h sat_var_manager.h cnf_logger.h globals.h
+counter_cnf.profile.o: counter_cnf.cc counter_cnf.h globals.h operator.h state.h \
+ landmarks_types.h cnf_types.h sat_var_manager.h cnf_builder.h \
+ kissat_counter.h minisat_counter.h glucose_counter.h cadical_counter.h \
+ counter.h smt_counter.h cnf_preprocessor.h cnf_logger.h
+cnf_preprocessor.profile.o: cnf_preprocessor.cc cnf_preprocessor.h cnf_types.h \
+ cnf_builder.h cnf_logger.h globals.h sat_var_manager.h
+cegis_framework.profile.o: cegis_framework.cc cegis_framework.h counter.h \
+ globals.h state.h landmarks_types.h smt_counter.h counter_cnf.h \
+ operator.h cnf_types.h sat_var_manager.h cnf_builder.h kissat_counter.h \
+ minisat_counter.h glucose_counter.h cadical_counter.h cnf_preprocessor.h

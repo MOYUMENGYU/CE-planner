@@ -1,0 +1,45 @@
+Building domain...CNF Cost: 264, DNF Cost: 24
+
+Initial cstate before simplification: 
+Number of unit clauses: 0
+Number of other clauses: 70
+Number of literals in clauses: 156
+Average clause size: 2.22857
+l_init_cstate.m_clauses.size() = 70
+
+Initial cstate after simplification: 
+Number of unit clauses: 0
+Number of other clauses: 62
+Number of literals in clauses: 132
+Average clause size: 2.12903
+l_init_cstate.m_clauses.size() = 62
+Initial cstate after 1st IPIA: 
+Number of unit clauses: 0
+Number of other clauses: 62
+Number of literals in clauses: 132
+Average clause size: 2.12903
+  READER: 0.000296 (sec) [21.05 %]
+  SIMPLIFICATION: 0.000282 (sec) [20.06 %]
+  IPIA: 0.000828 (sec) [58.89 %]
+done.
+
+Number of literals: 36
+Number of goals: 3
+Goals satisfied: 0 
+Found a plan of length 3:
+"follow_label(l1)" "follow_label(l1)" "follow_label(l2)" 
+STATISTICS
+---------------------
+Total time: 78.950 (sec) 
+  Reading: 0.000 (sec) [0.00 %]
+  Preprocessing: 0.005 (sec) [0.01 %]
+  Search: 78.944 (sec) [99.99 %]
+  CNF simplification: 0.000 (sec) [0.00 %]
+  Merging: 15.695 (sec) [19.88 %]
+  SAT Solver for Executability: 0.000 (sec) [0.00 %]
+  SAT Solver for Effects: 0.000 (sec) [0.00 %]
+  SAT Solver for GOAL: 0.000 (sec) [0.00 %]
+Total states allocated: 2
+Total clauses allocated: 37829
+Total PI-states generated: 8
+Total PI-states explored: 4

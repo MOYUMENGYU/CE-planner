@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+export IGC_CANDIDATE_PLANNER=pip
+export IGC_PIP_DIR="${IGC_PIP_DIR:-$PWD/pip_planner}"
+exec ./plan-cegis "$@"

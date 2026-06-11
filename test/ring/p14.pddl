@@ -1,0 +1,42 @@
+
+(define (problem ring-14)
+  (:domain d-ring-14)
+  (:init  
+        (oneof (open w1) (closed w1) (locked w1))  
+        (oneof (open w2) (closed w2) (locked w2))  
+        (oneof (open w3) (closed w3) (locked w3))  
+        (oneof (open w4) (closed w4) (locked w4))  
+        (oneof (open w5) (closed w5) (locked w5))  
+        (oneof (open w6) (closed w6) (locked w6))  
+        (oneof (open w7) (closed w7) (locked w7))  
+        (oneof (open w8) (closed w8) (locked w8))  
+        (oneof (open w9) (closed w9) (locked w9))  
+        (oneof (open w10) (closed w10) (locked w10))  
+        (oneof (open w11) (closed w11) (locked w11))  
+        (oneof (open w12) (closed w12) (locked w12))  
+        (oneof (open w13) (closed w13) (locked w13))  
+        (oneof (open w14) (closed w14) (locked w14))  
+        (oneof  (pos w1)  (pos w2)  (pos w3)  (pos w4)  (pos w5)  (pos w6)  (pos w7)  (pos w8)  (pos w9)  (pos w10)  (pos w11)  (pos w12)  (pos w13)  (pos w14) )
+
+  )
+
+  (:goal (and  
+              (locked w1) 
+              (locked w2) 
+              (locked w3) 
+              (locked w4) 
+              (locked w5) 
+              (locked w6) 
+              (locked w7) 
+              (locked w8) 
+              (locked w9) 
+              (locked w10) 
+              (locked w11) 
+              (locked w12) 
+              (locked w13) 
+              (locked w14) 
+         )
+  )
+)
+
+

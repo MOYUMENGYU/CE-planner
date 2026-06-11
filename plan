@@ -1,0 +1,69 @@
+#! /bin/sh
+
+# Paths to planner components
+TRANSLATE="./lama/translate/translate.py"
+PREPROCESS="./lama/preprocess/preprocess"
+SEARCH="./lama/search/release-search"
+# p 规划解简化(论文E) d 动态 s 静态 r 修改框架 a 优化维护状态 o 最初参考状态方案
+# 1. d
+# 2. d+o
+# 3. s
+# 4. d+a
+# 5. d+a+o
+# 6. s+a (待确定是否跑)
+# 6. p+d+a
+# 7. p+d+a+o
+# 8. p+s+a
+# 9. p+s+a+r
+# 10. p+d+a+r
+# 11. p+d+a+r+o
+# 12. p+r+a
+
+# dra iGC
+# pdra iGC+E
+# Mdra iGC+S
+# pMdra iGC+SE
+# u：开启 CNF 预处理
+# v：开启 CNF 基础日志
+# V：开启 CNF 详细日志
+# q：开启子句级日志
+# N：开启模型恢复日志
+run_planner() {
+    # Preserve the original PDDL paths for the optional external-planner
+    # CEGIS loop.  The translator/preprocessor run only once; subsequent
+    # iterations reuse the frozen internal representation and these files.
+    IGC_ORIGINAL_DOMAIN="${IGC_ORIGINAL_DOMAIN:-$(readlink -f "$1")}"
+    IGC_ORIGINAL_PROBLEM="${IGC_ORIGINAL_PROBLEM:-$(readlink -f "$2")}"
+    export IGC_ORIGINAL_DOMAIN IGC_ORIGINAL_PROBLEM
+
+    echo "1. Running translator"
+    "$TRANSLATE" "$1" "$2" > trans_file
+    echo "2. Running preprocessor"
+    "$PREPROCESS" < output.sas
+    echo "3. Running search" 
+    "$SEARCH" "pMdrafFk" "$3" "$4" < output
+}
+
+check_input_files() {
+    if [ ! -e "$1" ]; then
+	echo "Domain file \"$1\" does not exist."
+	exit 
+    fi
+    if [ ! -e "$2" ]; then
+	echo "Problem file \"$2\" does not exist."
+	exit 1
+    fi
+}
+
+# Make sure we have exactly 3 command line arguments
+if [ $# -ne 4 ]; then
+    echo "Usage: \"plan <domain_file> <problem_file> <result_file> <true/false for display>\""
+    exit 1
+fi
+
+check_input_files "$1" "$2"
+
+# Command line arguments seem to be fine, run planner
+run_planner "$1" "$2" "$3" "$4"
+
+# We do not clean up temporary files here (not necessary for IPC-2008)

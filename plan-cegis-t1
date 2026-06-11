@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+export IGC_CANDIDATE_PLANNER=t1
+export IGC_T1_EXEC="${IGC_T1_EXEC:-$PWD/T1/t1}"
+exec ./plan-cegis "$@"

@@ -1,0 +1,89 @@
+name: Build
+
+inputs:
+  mode:
+    required: true
+  config-opt:
+    required: false
+    default: ""
+  env:
+    required: false
+    default: ""
+
+runs:
+  using: composite
+  steps:
+    - name: Build and install libpoly
+      if: contains(inputs.config-opt, '--enable-mcsat')
+      shell: bash
+      run: |
+        # Set Homebrew environment variables for macOS
+        if [[ "$(uname)" == "Darwin" ]]; then
+          if [ -d /opt/homebrew ]; then
+            BREW_PREFIX=/opt/homebrew
+          else
+            BREW_PREFIX=/usr/local
+          fi
+          export CPPFLAGS="-I$BREW_PREFIX/include"
+          export LDFLAGS="-L$BREW_PREFIX/lib"
+          export PKG_CONFIG_PATH="$BREW_PREFIX/lib/pkgconfig"
+          export DYLD_LIBRARY_PATH="$BREW_PREFIX/lib:$DYLD_LIBRARY_PATH"
+        else
+          export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
+        fi
+        pushd .
+        git clone https://github.com/SRI-CSL/libpoly.git
+        mkdir -p libpoly/build
+        cd libpoly/build
+        ${{ inputs.env }} cmake ..
+        make
+        sudo make install
+        popd
+    - name: Build and install CUDD
+      if: contains(inputs.config-opt, '--enable-mcsat')
+      shell: bash
+      run: |
+        # Set Homebrew environment variables for macOS
+        if [[ "$(uname)" == "Darwin" ]]; then
+          if [ -d /opt/homebrew ]; then
+            BREW_PREFIX=/opt/homebrew
+          else
+            BREW_PREFIX=/usr/local
+          fi
+          export CPPFLAGS="-I$BREW_PREFIX/include"
+          export LDFLAGS="-L$BREW_PREFIX/lib"
+          export PKG_CONFIG_PATH="$BREW_PREFIX/lib/pkgconfig"
+          export DYLD_LIBRARY_PATH="$BREW_PREFIX/lib:$DYLD_LIBRARY_PATH"
+        else
+          export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
+        fi
+        pushd .
+        git clone https://github.com/ivmai/cudd.git
+        cd cudd
+        git checkout tags/cudd-3.0.0
+        autoreconf -fi
+        ${{ inputs.env }} ./configure --enable-shared
+        make
+        sudo make install
+        popd
+    - name: Build and test Yices
+      shell: bash
+      run: |
+        # Set Homebrew environment variables for macOS
+        if [[ "$(uname)" == "Darwin" ]]; then
+          if [ -d /opt/homebrew ]; then
+            BREW_PREFIX=/opt/homebrew
+          else
+            BREW_PREFIX=/usr/local
+          fi
+          export CPPFLAGS="-I$BREW_PREFIX/include"
+          export LDFLAGS="-L$BREW_PREFIX/lib"
+          export PKG_CONFIG_PATH="$BREW_PREFIX/lib/pkgconfig"
+          export DYLD_LIBRARY_PATH="$BREW_PREFIX/lib:$DYLD_LIBRARY_PATH"
+        else
+          export LD_LIBRARY_PATH=/usr/local/lib/:${LD_LIBRARY_PATH}
+        fi
+        autoconf
+        make clean || true
+        CFLAGS='-Werror' ${{ inputs.env }} ./configure ${{ inputs.config-opt }}
+        make MODE=${{ inputs.mode }}

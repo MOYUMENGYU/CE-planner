@@ -1,0 +1,28 @@
+[开始] ROOT_DIR=/home/moyu/CE-planner/test1/CE-planner
+[开始] BENCH_ROOT=/home/moyu/CE-planner/test1/CE-planner/test
+[开始] candidate_solver=dnf
+[开始] PLAN_SCRIPT=/home/moyu/CE-planner/test1/CE-planner/plan-cegis-dnf
+[开始] LOG_ROOT=/home/moyu/CE-planner/test1/CE-planner/test_logs_ce/dnf_20260610_110009
+[开始] RESULT_ROOT=/home/moyu/CE-planner/test1/CE-planner/result_output_batch_ce/dnf_20260610_110009
+[开始] TIMEOUT_SEC=3600
+[开始] MEMORY_LIMIT=16G
+[开始] MEMORY_LIMIT_KB=16777216
+[开始] SUCCESS_MARKER=[IGC-CEGIS] no counterexample found; final conformant plan accepted.
+[开始] Ctrl+C=终止整批；Ctrl+B=跳过当前测例
+[过滤] benchmarks=1-dispose-disappear
+
+[预扫描] 可运行benchmark数=1
+[预扫描] 可运行用例总数=90
+
+[Benchmark] 1-dispose-disappear
+  [OK] 1-dispose-disappear/p2-1 exit_code=0 elapsed=1s log=/home/moyu/CE-planner/test1/CE-planner/test_logs_ce/dnf_20260610_110009/1-dispose-disappear/p2-1.log
+  [OK] 1-dispose-disappear/p2-2 exit_code=0 elapsed=2s log=/home/moyu/CE-planner/test1/CE-planner/test_logs_ce/dnf_20260610_110009/1-dispose-disappear/p2-2.log
+  [OK] 1-dispose-disappear/p2-3 exit_code=0 elapsed=1s log=/home/moyu/CE-planner/test1/CE-planner/test_logs_ce/dnf_20260610_110009/1-dispose-disappear/p2-3.log
+  [OK] 1-dispose-disappear/p2-4 exit_code=0 elapsed=1s log=/home/moyu/CE-planner/test1/CE-planner/test_logs_ce/dnf_20260610_110009/1-dispose-disappear/p2-4.log
+  [OK] 1-dispose-disappear/p2-5 exit_code=0 elapsed=2s log=/home/moyu/CE-planner/test1/CE-planner/test_logs_ce/dnf_20260610_110009/1-dispose-disappear/p2-5.log
+  [OK] 1-dispose-disappear/p2-6 exit_code=0 elapsed=1s log=/home/moyu/CE-planner/test1/CE-planner/test_logs_ce/dnf_20260610_110009/1-dispose-disappear/p2-6.log
+  [OK] 1-dispose-disappear/p2-7 exit_code=0 elapsed=2s log=/home/moyu/CE-planner/test1/CE-planner/test_logs_ce/dnf_20260610_110009/1-dispose-disappear/p2-7.log
+  [OK] 1-dispose-disappear/p2-8 exit_code=0 elapsed=1s log=/home/moyu/CE-planner/test1/CE-planner/test_logs_ce/dnf_20260610_110009/1-dispose-disappear/p2-8.log
+  [OK] 1-dispose-disappear/p2-9 exit_code=0 elapsed=2s log=/home/moyu/CE-planner/test1/CE-planner/test_logs_ce/dnf_20260610_110009/1-dispose-disappear/p2-9.log
+  [OK] 1-dispose-disappear/p2-10 exit_code=0 elapsed=1s log=/home/moyu/CE-planner/test1/CE-planner/test_logs_ce/dnf_20260610_110009/1-dispose-disappear/p2-10.log
+  [OK] 1-dispose-disappear/p3-1 exit_code=0 elapsed=79s log=/home/moyu/CE-planner/test1/CE-planner/test_logs_ce/dnf_20260610_110009/1-dispose-disappear/p3-1.log

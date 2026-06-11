@@ -1,0 +1,187 @@
+Parsing... /home/moyu/CE-planner/test1/CE-planner/./test/blocks/domain.pddl
+/home/moyu/CE-planner/test1/CE-planner/./test/blocks/b2.pddl
+parse task...
+parse
+after parse
+Atom =(a, a)
+Atom =(b, b)
+[0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.001s wall-clock]
+Preparing model... [0.000s CPU, 0.000s wall-clock]
+Generated 27 rules.
+Computing model... [0.000s CPU, 0.001s wall-clock]
+36 relevant atoms
+32 auxiliary atoms
+68 final queue length
+169 total queue pushes
+Completing instantiation... [0.000s CPU, 0.001s wall-clock]
+Instantiating: [0.000s CPU, 0.003s wall-clock]
+(pick-up a)
+ADD: Atom handempty(), Atom clear(a), Atom ontable(a) -> Atom holding(a)
+DEL: Atom handempty(), Atom clear(a), Atom ontable(a) -> Atom ontable(a)
+DEL: Atom handempty(), Atom clear(a), Atom ontable(a) -> Atom clear(a)
+DEL: Atom handempty(), Atom clear(a), Atom ontable(a) -> Atom handempty()
+cost: 0
+(put-down a)
+ADD: Atom holding(a) -> Atom clear(a)
+ADD: Atom holding(a) -> Atom handempty()
+ADD: Atom holding(a) -> Atom ontable(a)
+DEL: Atom holding(a) -> Atom holding(a)
+cost: 0
+(pick-up b)
+ADD: Atom handempty(), Atom clear(b), Atom ontable(b) -> Atom holding(b)
+DEL: Atom handempty(), Atom clear(b), Atom ontable(b) -> Atom ontable(b)
+DEL: Atom handempty(), Atom clear(b), Atom ontable(b) -> Atom clear(b)
+DEL: Atom handempty(), Atom clear(b), Atom ontable(b) -> Atom handempty()
+cost: 0
+(put-down b)
+ADD: Atom holding(b) -> Atom clear(b)
+ADD: Atom holding(b) -> Atom handempty()
+ADD: Atom holding(b) -> Atom ontable(b)
+DEL: Atom holding(b) -> Atom holding(b)
+cost: 0
+(stack a a)
+ADD: Atom holding(a), Atom clear(a) -> Atom clear(a)
+ADD: Atom holding(a), Atom clear(a) -> Atom handempty()
+ADD: Atom holding(a), Atom clear(a) -> Atom on(a, a)
+DEL: Atom holding(a), Atom clear(a) -> Atom holding(a)
+cost: 0
+(unstack a a)
+ADD: Atom handempty(), Atom on(a, a), Atom clear(a) -> Atom holding(a)
+ADD: Atom handempty(), Atom on(a, a), Atom clear(a) -> Atom clear(a)
+DEL: Atom handempty(), Atom on(a, a), Atom clear(a) -> Atom handempty()
+DEL: Atom handempty(), Atom on(a, a), Atom clear(a) -> Atom on(a, a)
+cost: 0
+(stack a b)
+ADD: Atom holding(a), Atom clear(b) -> Atom clear(a)
+ADD: Atom holding(a), Atom clear(b) -> Atom handempty()
+ADD: Atom holding(a), Atom clear(b) -> Atom on(a, b)
+DEL: Atom holding(a), Atom clear(b) -> Atom holding(a)
+DEL: Atom holding(a), Atom clear(b) -> Atom clear(b)
+cost: 0
+(stack b a)
+ADD: Atom holding(b), Atom clear(a) -> Atom clear(b)
+ADD: Atom holding(b), Atom clear(a) -> Atom handempty()
+ADD: Atom holding(b), Atom clear(a) -> Atom on(b, a)
+DEL: Atom holding(b), Atom clear(a) -> Atom holding(b)
+DEL: Atom holding(b), Atom clear(a) -> Atom clear(a)
+cost: 0
+(stack b b)
+ADD: Atom holding(b), Atom clear(b) -> Atom clear(b)
+ADD: Atom holding(b), Atom clear(b) -> Atom handempty()
+ADD: Atom holding(b), Atom clear(b) -> Atom on(b, b)
+DEL: Atom holding(b), Atom clear(b) -> Atom holding(b)
+cost: 0
+(unstack a b)
+ADD: Atom handempty(), Atom on(a, b), Atom clear(a) -> Atom holding(a)
+ADD: Atom handempty(), Atom on(a, b), Atom clear(a) -> Atom clear(b)
+DEL: Atom handempty(), Atom on(a, b), Atom clear(a) -> Atom clear(a)
+DEL: Atom handempty(), Atom on(a, b), Atom clear(a) -> Atom handempty()
+DEL: Atom handempty(), Atom on(a, b), Atom clear(a) -> Atom on(a, b)
+cost: 0
+(unstack b a)
+ADD: Atom handempty(), Atom on(b, a), Atom clear(b) -> Atom holding(b)
+ADD: Atom handempty(), Atom on(b, a), Atom clear(b) -> Atom clear(a)
+DEL: Atom handempty(), Atom on(b, a), Atom clear(b) -> Atom clear(b)
+DEL: Atom handempty(), Atom on(b, a), Atom clear(b) -> Atom handempty()
+DEL: Atom handempty(), Atom on(b, a), Atom clear(b) -> Atom on(b, a)
+cost: 0
+(unstack b b)
+ADD: Atom handempty(), Atom on(b, b), Atom clear(b) -> Atom holding(b)
+ADD: Atom handempty(), Atom on(b, b), Atom clear(b) -> Atom clear(b)
+DEL: Atom handempty(), Atom on(b, b), Atom clear(b) -> Atom handempty()
+DEL: Atom handempty(), Atom on(b, b), Atom clear(b) -> Atom on(b, b)
+cost: 0
+Computing fact groups...
+Finding invariants... 10 initial candidates
+[0.000s CPU, 0.001s wall-clock]
+{holding  [0], handempty }
+{holding 0, on 1 [0], clear 0}
+{holding 0, ontable 0, on 0 [1]}
+Checking invariant weight... Atom =(a, a)
+Atom =(b, b)
+[0.000s CPU, 0.000s wall-clock]
+2
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+11 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+1212
+Atom holding(a)
+1212
+Atom handempty()
+1212
+Atom holding(b)
+1212
+Atom clear(a)
+1212
+Atom ontable(a)
+1212
+Atom on(b, b)
+1212
+Atom on(b, a)
+1212
+Atom on(a, a)
+1212
+Atom on(a, b)
+1212
+Atom ontable(b)
+1212
+Atom clear(b)
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.000s CPU, 0.001s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building implied facts dictionary...... [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.000s CPU, 0.001s wall-clock]
+0 implied effects removed
+0 effect conditions simplified
+0 implied preconditions added
+Building mutex information... [0.000s CPU, 0.000s wall-clock]
+Writing translation key... 
+ors and oneof in initial :
+start
+  Disjunction
+    NegatedAtom on(a, b)
+    NegatedAtom on(b, a)
+2
+((' Atom on(a, b)',),)
+(8, -1)
+('',)
+((' Atom on(b, a)',),)
+(6, -1)
+('',)
+  Conjunction
+    Atom handempty()
+    Atom holding(a)
+    Atom holding(b)
+  Conjunction
+    Atom holding(a)
+    Atom clear(a)
+    Atom on(b, a)
+  Conjunction
+    Atom holding(a)
+    Atom ontable(a)
+    Atom on(a, b)
+  Conjunction
+    Atom holding(b)
+    Atom clear(b)
+    Atom on(a, b)
+  Conjunction
+    Atom holding(b)
+    Atom ontable(b)
+    Atom on(b, a)
+end
+[0.000s CPU, 0.001s wall-clock]
+Writing mutex key... [0.000s CPU, 0.000s wall-clock]
+Writing output... [0.000s CPU, 0.000s wall-clock]
+Done! [0.000s CPU, 0.006s wall-clock]

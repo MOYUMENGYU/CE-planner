@@ -1,0 +1,3 @@
+#!/bin/bash 
+
+    java -Djava.library.path=/home/moyu/planner-test/Planner/CPCES/enricode-cpces-a2785646cc62/libs -classpath /home/moyu/planner-test/Planner/CPCES/enricode-cpces-a2785646cc62/build/:/home/moyu/planner-test/Planner/CPCES/enricode-cpces-a2785646cc62/libs/PPMaJal2.jar:/home/moyu/planner-test/Planner/CPCES/enricode-cpces-a2785646cc62/libs/*:/home/moyu/planner-test/Planner/CPCES/enricode-cpces-a2785646cc62/libs/com.microsoft.z3.jar main "$@"

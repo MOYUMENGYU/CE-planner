@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+export IGC_CANDIDATE_PLANNER=dnf
+export IGC_DNF_DIR="${IGC_DNF_DIR:-$PWD/dnf_planner}"
+exec ./plan-cegis "$@"
