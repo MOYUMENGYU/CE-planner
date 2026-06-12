@@ -37,21 +37,30 @@ prepare_cegis_groups() {
     if [ "${IGC_CEGIS_MODE:-0}" != "1" ]; then
         return 0
     fi
-    if [ -n "${IGC_ALL_GROUPS:-}" ]; then
+
+    if [ "${IGC_CEGIS_SKIP_GROUP_FILTER:-0}" = "1" ]; then
+        IGC_ALL_GROUPS="${IGC_ALL_GROUPS:-$(readlink -f all.groups)}"
+        export IGC_ALL_GROUPS
+        echo "[IGC-GROUP-FILTER] bypassed explicitly; groups=$IGC_ALL_GROUPS"
         return 0
     fi
 
     FILTER_SCRIPT="./tools/filter_cegis_groups.py"
     FILTER_PYTHON="${IGC_CEGIS_GROUP_FILTER_PYTHON:-python3}"
+    FILTER_SOURCE="${IGC_CEGIS_SOURCE_GROUPS:-all.groups}"
     FILTER_OUTPUT="${IGC_CEGIS_GROUPS_FILE:-cegis.groups}"
 
     if [ ! -f "$FILTER_SCRIPT" ]; then
         echo "[IGC-GROUP-FILTER] missing filter script: $FILTER_SCRIPT" >&2
         exit 1
     fi
+    if [ ! -f "$FILTER_SOURCE" ]; then
+        echo "[IGC-GROUP-FILTER] missing source groups: $FILTER_SOURCE" >&2
+        exit 1
+    fi
     if ! "$FILTER_PYTHON" "$FILTER_SCRIPT" \
             --sas output.sas \
-            --groups all.groups \
+            --groups "$FILTER_SOURCE" \
             --output "$FILTER_OUTPUT"; then
         echo "[IGC-GROUP-FILTER] failed to build CEGIS fact map" >&2
         exit 1
@@ -74,30 +83,27 @@ run_planner() {
     prepare_cegis_groups
     echo "2. Running preprocessor"
     "$PREPROCESS" < output.sas
-    echo "3. Running search" 
+    echo "3. Running search"
     "$SEARCH" "pMdrafFk" "$3" "$4" < output
 }
 
 check_input_files() {
     if [ ! -e "$1" ]; then
-	echo "Domain file \"$1\" does not exist."
-	exit 
+        echo "Domain file \"$1\" does not exist."
+        exit 1
     fi
     if [ ! -e "$2" ]; then
-	echo "Problem file \"$2\" does not exist."
-	exit 1
+        echo "Problem file \"$2\" does not exist."
+        exit 1
     fi
 }
 
-# Make sure we have exactly 3 command line arguments
 if [ $# -ne 4 ]; then
     echo "Usage: \"plan <domain_file> <problem_file> <result_file> <true/false for display>\""
     exit 1
 fi
 
 check_input_files "$1" "$2"
-
-# Command line arguments seem to be fine, run planner
 run_planner "$1" "$2" "$3" "$4"
 
 # We do not clean up temporary files here (not necessary for IPC-2008)
