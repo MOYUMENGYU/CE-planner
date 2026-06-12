@@ -14,7 +14,8 @@
             "type": "shell",
             // "command": "./build && ./plan-cegis-cnf ./test/1-dispose-disappear/d2-3.pddl ./test/1-dispose-disappear/p2-3.pddl ./result_output false 2>&1 | tee planner_run.log",
             // "command": "./build && ./plan ./test/bomb/domain.pddl ./test/bomb/p100-10.pddl ./result_output false 2>&1 | tee planner_run.log",
-            "command": "./build && ./plan-cegis-t1 ./test/blocks/domain.pddl ./test/blocks/b2.pddl ./result_output false 2>&1 | tee planner_run.log",
+            // "command": "./build && ./plan-cegis-cnf ./test/blocks/domain.pddl ./test/blocks/b3.pddl ./result_output false 2>&1 | tee planner_run.log",
+            "command": "./build && ./plan-cegis-dnf ./test/adder-IPC5/domain.pddl ./test/adder-IPC5/p01.pddl ./result_output false 2>&1 | tee planner_run.log",
             // "command": "./build && ./plan-cegis-t1 ./test/blocks/domain.pddl ./test/blocks/b3.pddl ./result_output false 2>&1 | tee planner_run.log",
             "problemMatcher": []
             

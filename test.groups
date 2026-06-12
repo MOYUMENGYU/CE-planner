@@ -1,33 +1,108 @@
 var0:
-  0: Atom holding(a)
+  0: Atom low(x1)
   1: <none of those>
 var1:
-  0: Atom handempty()
+  0: Atom low(z2)
   1: <none of those>
 var2:
-  0: Atom holding(b)
+  0: Atom new-axiom@11()
   1: <none of those>
 var3:
-  0: Atom clear(a)
+  0: Atom new-axiom@9()
   1: <none of those>
 var4:
-  0: Atom ontable(a)
+  0: Atom low(tmp1)
   1: <none of those>
 var5:
-  0: Atom on(b, b)
+  0: Atom low(r2)
   1: <none of those>
 var6:
-  0: Atom on(b, a)
+  0: Atom new-axiom@4()
   1: <none of those>
 var7:
-  0: Atom on(a, a)
+  0: Atom high(z1)
   1: <none of those>
 var8:
-  0: Atom on(a, b)
+  0: Atom high(x1)
   1: <none of those>
 var9:
-  0: Atom ontable(b)
+  0: Atom new-axiom@13()
   1: <none of those>
 var10:
-  0: Atom clear(b)
+  0: Atom new-axiom@0()
+  1: <none of those>
+var11:
+  0: Atom new-axiom@2()
+  1: <none of those>
+var12:
+  0: Atom new-axiom@12()
+  1: <none of those>
+var13:
+  0: Atom new-axiom@10()
+  1: <none of those>
+var14:
+  0: Atom low(z1)
+  1: <none of those>
+var15:
+  0: Atom low(f)
+  1: <none of those>
+var16:
+  0: Atom new-axiom@8()
+  1: <none of those>
+var17:
+  0: Atom low(y1)
+  1: <none of those>
+var18:
+  0: Atom high(r1)
+  1: <none of those>
+var19:
+  0: Atom new-axiom@14()
+  1: <none of those>
+var20:
+  0: Atom new-axiom@3()
+  1: <none of those>
+var21:
+  0: Atom high(t)
+  1: <none of those>
+var22:
+  0: Atom low(tmp2)
+  1: <none of those>
+var23:
+  0: Atom high(y1)
+  1: <none of those>
+var24:
+  0: Atom high(tmp1)
+  1: <none of those>
+var25:
+  0: Atom new-axiom@1()
+  1: <none of those>
+var26:
+  0: Atom high(f)
+  1: <none of those>
+var27:
+  0: Atom low(r1)
+  1: <none of those>
+var28:
+  0: Atom new-axiom@7()
+  1: <none of those>
+var29:
+  0: Atom new-axiom@15()
+  1: <none of those>
+var30:
+  0: Atom low(t)
+  1: <none of those>
+var31:
+  0: Atom new-axiom@6()
+  1: <none of those>
+var32:
+  0: Atom high(z2)
+  1: <none of those>
+var33:
+  0: Atom high(tmp2)
+  1: <none of those>
+var34:
+  0: Atom new-axiom@5()
+  1: <none of those>
+var35:
+  0: Atom high(r2)
   1: <none of those>

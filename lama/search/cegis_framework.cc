@@ -43,6 +43,17 @@ enum CandidatePlannerKind {
     CANDIDATE_PLANNER_CFF = 9
 };
 
+enum CandidateRuntimeMode {
+    CANDIDATE_RUNTIME_NATIVE = 0,
+    CANDIDATE_RUNTIME_ISOLATED = 1
+};
+
+static const char *candidate_runtime_mode_name(
+        CandidateRuntimeMode mode) {
+    return mode == CANDIDATE_RUNTIME_NATIVE
+        ? "NATIVE" : "ISOLATED";
+}
+
 enum RefinedPddlProfile {
     REFINED_PDDL_T1 = 0,
     REFINED_PDDL_CPA_FAMILY = 1,
@@ -3017,7 +3028,9 @@ static bool write_plain_plan_artifact(const std::vector<std::string> &actions,
 
 class CandidatePlannerRunner {
 public:
-    explicit CandidatePlannerRunner(CandidatePlannerKind kind) : kind_(kind) {}
+    CandidatePlannerRunner(CandidatePlannerKind kind,
+                           CandidateRuntimeMode runtime_mode)
+        : kind_(kind), runtime_mode_(runtime_mode) {}
 
     CandidatePlannerKind kind() const { return kind_; }
 
@@ -3026,6 +3039,9 @@ public:
                    const std::string &iter_dir,
                    int timeout_seconds,
                    std::string *result_path) const {
+        if (runtime_mode_ == CANDIDATE_RUNTIME_NATIVE)
+            return run_native(domain, problem, iter_dir,
+                              timeout_seconds, result_path);
         if (kind_ == CANDIDATE_PLANNER_T1)
             return run_t1(domain, problem, iter_dir, timeout_seconds, result_path);
         if (kind_ == CANDIDATE_PLANNER_CFF)
@@ -4435,7 +4451,10 @@ private:
         return STATUS_OK;
     }
 
+#include "cegis_native_runtime.inc"
+
     CandidatePlannerKind kind_;
+    CandidateRuntimeMode runtime_mode_;
 };
 
 class ActionMapper {
@@ -4708,6 +4727,23 @@ static StatusCode configured_candidate_planner(CandidatePlannerKind *kind) {
     return STATUS_OK;
 }
 
+static StatusCode configured_candidate_runtime_mode(
+        CandidateRuntimeMode *mode) {
+    const std::string value = lower_ascii(trim(getenv_string(
+        "IGC_CANDIDATE_RUNTIME_MODE", "native")));
+    if (value == "native" || value == "original" ||
+        value == "solver_dir" || value == "solver-dir") {
+        *mode = CANDIDATE_RUNTIME_NATIVE;
+        return STATUS_OK;
+    }
+    if (value == "isolated" || value == "workspace" ||
+        value == "debug") {
+        *mode = CANDIDATE_RUNTIME_ISOLATED;
+        return STATUS_OK;
+    }
+    return STATUS_INPUT_ERROR;
+}
+
 static int configured_planner_timeout(CandidatePlannerKind kind) {
     const char *specific = "IGC_T1_TIMEOUT";
     switch (kind) {
@@ -4776,11 +4812,26 @@ StatusCode run_cegis_loop(const std::string &result_file) {
         std::cerr << "[IGC-CEGIS] invalid IGC_CANDIDATE_PLANNER; expected t1|cff|cnf|dnf|pip|cpah|igc|gc_lama|gcpces|icpces." << std::endl;
         return planner_config;
     }
+    CandidateRuntimeMode runtime_mode = CANDIDATE_RUNTIME_NATIVE;
+    const StatusCode runtime_config =
+        configured_candidate_runtime_mode(&runtime_mode);
+    if (runtime_config != STATUS_OK) {
+        std::cerr << "[IGC-CEGIS] invalid IGC_CANDIDATE_RUNTIME_MODE; "
+                  << "expected native|isolated." << std::endl;
+        return runtime_config;
+    }
     const std::string all_groups = absolute_path(getenv_string("IGC_ALL_GROUPS", "all.groups"));
     const std::string oneof_initial = absolute_path(getenv_string("IGC_ONEOF_INITIAL", "oneof_initial"));
-    std::ostringstream default_run;
-    default_run << "runs/run_" << ::getpid();
-    const std::string run_dir = absolute_path(getenv_string("IGC_CEGIS_RUN_DIR", default_run.str()));
+    std::string default_run;
+    if (runtime_mode == CANDIDATE_RUNTIME_NATIVE) {
+        default_run = "runs/current";
+    } else {
+        std::ostringstream isolated_run;
+        isolated_run << "runs/run_" << ::getpid();
+        default_run = isolated_run.str();
+    }
+    const std::string run_dir = absolute_path(getenv_string(
+        "IGC_CEGIS_RUN_DIR", default_run));
     const std::string original_dir = run_dir + "/original";
     const int max_iterations = getenv_int("IGC_CEGIS_MAX_ITERATIONS", 100, 1);
     const int timeout_seconds = configured_planner_timeout(planner_kind);
@@ -4812,7 +4863,7 @@ StatusCode run_cegis_loop(const std::string &result_file) {
 
     CounterexampleStore store(ctx);
     RefinedProblemWriter writer(ctx, fact_map, constraints);
-    CandidatePlannerRunner runner(planner_kind);
+    CandidatePlannerRunner runner(planner_kind, runtime_mode);
     ActionMapper mapper;
     Counter original_driver(true);
     CounterCNF verifier(false);
@@ -4822,6 +4873,7 @@ StatusCode run_cegis_loop(const std::string &result_file) {
               << " vars=" << ctx.variable_domains.size()
               << " constraints=" << constraints.groups().size()
               << " candidate_planner=" << candidate_planner_display_name(planner_kind)
+              << " runtime_mode=" << candidate_runtime_mode_name(runtime_mode)
               << " planner_timeout=" << timeout_seconds
               << " run_dir=" << run_dir << std::endl;
     std::cout << "[IGC-CEGIS] legacy internal search and subplan cache are bypassed." << std::endl;
@@ -4853,11 +4905,14 @@ StatusCode run_cegis_loop(const std::string &result_file) {
 
     int duplicate_streak = 0;
     for (int iteration = 0; iteration < max_iterations; ++iteration) {
-        const std::string idir = iteration_dir(run_dir, iteration);
+        const std::string idir =
+            runtime_mode == CANDIDATE_RUNTIME_NATIVE
+                ? run_dir : iteration_dir(run_dir, iteration);
         if (!mkdirs(idir)) return STATUS_IO_ERROR;
         st = store.dump_json(idir + "/counterexamples.json", iteration);
         if (st != STATUS_OK) return st;
-        store.dump_json(run_dir + "/counterexamples.json", iteration);
+        if (idir != run_dir)
+            store.dump_json(run_dir + "/counterexamples.json", iteration);
 
         const std::string refined = idir + "/refined_" +
             candidate_planner_id(planner_kind) + "_problem.pddl";

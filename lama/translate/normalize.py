@@ -264,18 +264,49 @@ def move_existential_quantifiers(task):
       proxy.set(recurse(proxy.condition).simplified())
 
 def substitute_complicated_goal(task):
+  """Compile a Boolean goal into a polynomial-size acyclic axiom network.
+
+  The old implementation first converted the complete goal to DNF. For a
+  CNF-shaped goal such as (and (or ...) (or ...) ...), that creates the
+  Cartesian product of all clauses and can require exponentially many terms.
+
+  Every non-literal goal conjunct receives its own zero-arity derived
+  predicate. Conjunction nodes become one axiom with conjunctive conditions;
+  disjunction nodes are split later by split_disjunctions into one axiom per
+  alternative. A top-level conjunction remains visible as separate goal
+  literals, which preserves heuristic guidance and keeps the representation
+  polynomial.
+  """
   goal = task.goal
   if isinstance(goal, pddl.Literal):
     return
-  elif isinstance(goal, pddl.Conjunction):
-    for item in goal.parts:
-      if not isinstance(item, pddl.Literal):
-        break
+
+  def compile_subformula(condition):
+    if isinstance(condition, pddl.Literal):
+      return condition
+
+    if isinstance(condition, pddl.Conjunction):
+      compiled_parts = [compile_subformula(part)
+                        for part in condition.parts]
+      compiled_condition = pddl.Conjunction(compiled_parts).simplified()
+    elif isinstance(condition, pddl.Disjunction):
+      compiled_parts = [compile_subformula(part)
+                        for part in condition.parts]
+      compiled_condition = pddl.Disjunction(compiled_parts).simplified()
     else:
-      return
-  new_axiom = task.add_axiom([], goal)
-  new_axiom.build_DNF_condition()
-  task.goal = pddl.Atom(new_axiom.name, new_axiom.parameters)
+      compiled_condition = condition
+
+    if isinstance(compiled_condition, pddl.Literal):
+      return compiled_condition
+
+    new_axiom = task.add_axiom([], compiled_condition)
+    return pddl.Atom(new_axiom.name, new_axiom.parameters)
+
+  if isinstance(goal, pddl.Conjunction):
+    compiled_goals = [compile_subformula(part) for part in goal.parts]
+    task.goal = pddl.Conjunction(compiled_goals).simplified()
+  else:
+    task.goal = compile_subformula(goal)
 
 # Combine Steps [1], [2], [3], [4]
 def normalize(task):

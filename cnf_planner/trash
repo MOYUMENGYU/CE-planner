@@ -1,25 +1,27 @@
-    Time 0: 4 actions
-Time 0: 4 actions and 104 fluents
-    Time _14983: 4 actions
-Time _14983: 4 actions and 104 fluents 
-    Time _34585: 4 actions
-Time _34585: 4 actions and 104 fluents 
+    Time 0: 24 actions
+Time 0: 24 actions and 29 fluents
+    Time _6053: 24 actions
+Time _6053: 24 actions and 26 fluents 
+    Time _28485: 24 actions
+Time _28485: 24 actions and 26 fluents 
+    Time _37999: 24 actions
+Time _37999: 24 actions and 26 fluents 
 There are 0 new fluents
-There are 104 true and 104 false 
+There are 26 true and 26 false 
 There are 0 fluents that are always true.
 There are 0 fluents that are always false.
-Reduced from 4 to 4 actions
+Reduced from 24 to 24 actions
 Forward Simplfication: 
-    Original # of Actions and Fluents: 4/104
-    Reduced  # of Actions and Fluents: 4/104
-    Execution Time: 10ms.
+    Original # of Actions and Fluents: 24/26
+    Reduced  # of Actions and Fluents: 24/26
+    Execution Time: 6ms.
 Backward Simplification: 
-    Original # of Actions and Fluents: 4/104
-    Reduced  # of Actions and Fluents: 4/104
-    Execution Time: 1ms.
+    Original # of Actions and Fluents: 24/26
+    Reduced  # of Actions and Fluents: 24/26
+    Execution Time: 2ms.
 Independent Goals Detection:
-    Original Number of Goals: 2
+    Original Number of Goals: 3
     Number of Goals/Theories: 1
-    Execution Time: 1ms.
+    Execution Time: 0ms.
 starting 'theory_0.al'
 completed theory

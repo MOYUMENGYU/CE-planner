@@ -1,11 +1,29 @@
 #include "counter_cnf.h"
 #include "cnf_logger.h"
+#include "axioms.h"
 #include <ctime>
 #include <fstream>
 #include <sstream>
 #include <algorithm>
+#include <climits>
 
 namespace {
+static std::string trim_copy(const std::string &text) {
+    const std::string whitespace = " \t\r\n";
+    std::string::size_type begin = text.find_first_not_of(whitespace);
+    if (begin == std::string::npos) return std::string();
+    std::string::size_type end = text.find_last_not_of(whitespace);
+    return text.substr(begin, end - begin + 1);
+}
+
+static bool is_axiom_target_var(
+        const std::map< std::pair<int,int>, std::vector<PrePost> > &axioms,
+        int var) {
+    std::map< std::pair<int,int>, std::vector<PrePost> >::const_iterator it =
+        axioms.lower_bound(std::make_pair(var, INT_MIN));
+    return it != axioms.end() && it->first.first == var;
+}
+
 static int clock_diff_ms(std::clock_t begin_clock, std::clock_t end_clock) {
     return (int)(((double)(end_clock - begin_clock) / CLOCKS_PER_SEC) * 1000.0);
 }
@@ -257,7 +275,11 @@ void CounterCNF::import_driver_state(const Counter &driver_counter) {
 }
 
 void CounterCNF::parse_oneof_file(bool isinitial) {
-    oneofs.type = 0; oneofs.orlens = 0; oneofs.lens = 0; oneofs.oneof.clear();
+    oneofs.type = 0;
+    oneofs.orlens = 0;
+    oneofs.lens = 0;
+    oneofs.oneof.clear();
+
     std::ifstream infile;
     if (isinitial) infile.open("oneof_initial", std::ios::in);
     else infile.open("oneof", std::ios::in);
@@ -265,46 +287,114 @@ void CounterCNF::parse_oneof_file(bool isinitial) {
         CNF_LOG_BASIC("[CNF-初始化] 错误：无法打开 oneof 文件。");
         return;
     }
+
     std::string line;
-    std::getline(infile, line);
+    if (!std::getline(infile, line)) return;
+    line = trim_copy(line);
     if (line == "ORS") oneofs.type = 1;
     else if (line == "OR") oneofs.type = 3;
     else oneofs.type = 2;
-    std::getline(infile, line);
+
+    if (!std::getline(infile, line)) return;
+    line = trim_copy(line);
     std::istringstream ss(line);
     if (oneofs.type == 3) ss >> oneofs.orlens;
     else ss >> oneofs.lens;
+
     int base = (oneofs.type == 3 ? oneofs.orlens : oneofs.lens);
     int i;
-    for (i = 0; i < base; ++i) { oneof_item tmp; tmp.len = 0; oneofs.oneof.push_back(tmp); }
-    int index = 0; int andsize = 0;
+    for (i = 0; i < base; ++i) {
+        oneof_item tmp;
+        tmp.len = 0;
+        oneofs.oneof.push_back(tmp);
+    }
+
+    int index = 0;
+    int andsize = 0;
     while (std::getline(infile, line)) {
-        if (line == ", ") {
-            if (index >= 0 && index < (int)oneofs.oneof.size()) oneofs.oneof[index].size.push_back(andsize);
-            andsize = 0;
-        }
+        line = trim_copy(line);
+        if (line.empty()) continue;
+
         if (line == "ONEOF") {
-            std::getline(infile, line);
-            std::istringstream ss2(line); ss2 >> oneofs.lens;
-            for (i = 0; i < oneofs.lens; ++i) { oneof_item tmp; tmp.len = 0; oneofs.oneof.push_back(tmp); }
-        } else if (line == "END_ONEOF" || line == "END_OR" || (line == ", " && oneofs.type == 1)) {
-            if (index >= 0 && index < (int)oneofs.oneof.size()) oneofs.oneof[index].len = oneofs.oneof[index].size.size();
+            if (!std::getline(infile, line)) break;
+            line = trim_copy(line);
+            std::istringstream ss2(line);
+            ss2 >> oneofs.lens;
+            for (i = 0; i < oneofs.lens; ++i) {
+                oneof_item tmp;
+                tmp.len = 0;
+                oneofs.oneof.push_back(tmp);
+            }
+            continue;
+        }
+
+        if (line == ",") {
+            if (index >= 0 && index < (int)oneofs.oneof.size())
+                oneofs.oneof[index].size.push_back(andsize);
+            andsize = 0;
+            if (oneofs.type == 1) {
+                if (index >= 0 && index < (int)oneofs.oneof.size())
+                    oneofs.oneof[index].len = (int)oneofs.oneof[index].size.size();
+                ++index;
+            }
+            continue;
+        }
+
+        if (line == "END_ONEOF" || line == "END_OR") {
+            if (index >= 0 && index < (int)oneofs.oneof.size())
+                oneofs.oneof[index].len = (int)oneofs.oneof[index].size.size();
             ++index;
-        } else if (line != ", ") {
-            ++andsize;
-            int var = -1;
-            for (i = 0; i < (int)g_variable_name.size(); ++i) {
-                if (line.find(g_variable_name[i]) == 0 && line.size() == g_variable_name[i].size() + 1) { var = i; break; }
+            andsize = 0;
+            continue;
+        }
+
+        int var = -1;
+        for (i = 0; i < (int)g_variable_name.size(); ++i) {
+            if (line == g_variable_name[i]) {
+                var = i;
+                break;
             }
-            std::getline(infile, line);
-            std::stringstream ss3(line); int val = 0; ss3 >> val;
-            if (var != -1 && index >= 0 && index < (int)oneofs.oneof.size()) {
-                oneofs.oneof[index].var.push_back(var);
-                oneofs.oneof[index].val.push_back(val);
-            }
+        }
+
+        std::string value_line;
+        if (!std::getline(infile, value_line)) break;
+        value_line = trim_copy(value_line);
+        std::stringstream ss3(value_line);
+        int val = 0;
+        ss3 >> val;
+
+        if (var == -1) {
+            CNF_LOG_BASIC("[CNF-初始化] 错误：oneof 中无法识别变量行 '" << line << "'");
+            continue;
+        }
+        if (index < 0 || index >= (int)oneofs.oneof.size()) {
+            CNF_LOG_BASIC("[CNF-初始化] 错误：oneof 组索引越界 index=" << index);
+            continue;
+        }
+        oneofs.oneof[index].var.push_back(var);
+        oneofs.oneof[index].val.push_back(val);
+        ++andsize;
+    }
+
+    for (i = 0; i < (int)oneofs.oneof.size(); ++i) {
+        int expected = 0;
+        for (int j = 0; j < (int)oneofs.oneof[i].size.size(); ++j)
+            expected += oneofs.oneof[i].size[j];
+        if (expected != (int)oneofs.oneof[i].var.size() ||
+            expected != (int)oneofs.oneof[i].val.size()) {
+            CNF_LOG_BASIC("[CNF-初始化] 错误：oneof 组#" << i
+                << " 结构不一致，expected=" << expected
+                << ", vars=" << oneofs.oneof[i].var.size()
+                << ", vals=" << oneofs.oneof[i].val.size());
+            oneofs.oneof[i].len = 0;
+            oneofs.oneof[i].size.clear();
+            oneofs.oneof[i].var.clear();
+            oneofs.oneof[i].val.clear();
         }
     }
-    CNF_LOG_BASIC("[CNF-初始化] oneof 文件读取完成，type=" << oneofs.type << ", orlens=" << oneofs.orlens << ", lens=" << oneofs.lens);
+
+    CNF_LOG_BASIC("[CNF-初始化] oneof 文件读取完成，type=" << oneofs.type
+        << ", orlens=" << oneofs.orlens << ", lens=" << oneofs.lens);
 }
 
 void CounterCNF::build_axiom_index() {
@@ -312,7 +402,9 @@ void CounterCNF::build_axiom_index() {
     int i, j;
     for (i = 0; i < (int)g_axioms.size(); ++i) {
         std::vector<PrePost> prepost = g_axioms[i].get_pre_post();
-        for (j = 0; j < (int)prepost.size(); ++j) axiomtovar[std::make_pair(prepost[j].var, prepost[j].post)].push_back(prepost[j]);
+        for (j = 0; j < (int)prepost.size(); ++j) {
+            axiomtovar[std::make_pair(prepost[j].var, prepost[j].post)].push_back(prepost[j]);
+        }
     }
     CNF_LOG_BASIC("[CNF-初始化] axiom 映射建立完成，条目数=" << axiomtovar.size());
 }
@@ -339,7 +431,7 @@ void CounterCNF::build_L0() {
     compute_unknown_fact_mask(&is_unknown);
     int i;
     for (i = 0; i < (int)g_initial_state->vars.size(); ++i)
-        if (i < (int)is_unknown.size() && !is_unknown[i]) L0.push_back(std::make_pair(i, g_initial_state->vars[i]));
+        if (i < (int)is_unknown.size() && !is_unknown[i] && !is_axiom_target_var(axiomtovar, i)) L0.push_back(std::make_pair(i, g_initial_state->vars[i]));
     CNF_LOG_BASIC("[CNF-初始化] L0 确定事实数量=" << L0.size());
 }
 
@@ -354,7 +446,7 @@ void CounterCNF::build_static_init_base() {
     if (oneofs.type == 1) {
         int i, j, k;
         for (i = 0; i < (int)g_initial_state->vars.size(); ++i)
-            if (!is_unknown[i] && axiomtovar.find(std::make_pair(i, g_initial_state->vars[i])) == axiomtovar.end())
+            if (!is_unknown[i] && !is_axiom_target_var(axiomtovar, i))
                 cnf_.add_unit(fact_var(i, g_initial_state->vars[i], 0), CLAUSE_KIND_INIT_KNOWN, std::string("L0确定事实 ") + fact_desc(i, g_initial_state->vars[i], 0));
         std::vector<int> working = g_original_values;
         for (i = 0; i < (int)working.size(); ++i) if (i < (int)is_unknown.size() && is_unknown[i]) working[i] = g_variable_domain[i] - 1;
@@ -379,7 +471,7 @@ void CounterCNF::build_static_init_base() {
     } else {
         int i, j, k, m;
         for (i = 0; i < (int)g_initial_state->vars.size(); ++i)
-            if (!is_unknown[i] && axiomtovar.find(std::make_pair(i, g_initial_state->vars[i])) == axiomtovar.end())
+            if (!is_unknown[i] && !is_axiom_target_var(axiomtovar, i))
                 cnf_.add_unit(fact_var(i, g_initial_state->vars[i], 0), CLAUSE_KIND_INIT_KNOWN, std::string("L0确定事实 ") + fact_desc(i, g_initial_state->vars[i], 0));
         for (i = 0; i < oneofs.lens + oneofs.orlens; ++i) {
             if (i < 0 || i >= (int)oneofs.oneof.size()) continue;
@@ -851,7 +943,7 @@ void CounterCNF::add_init_restriction_cnf(bool isfirst, const std::vector<int> &
 void CounterCNF::build_type1_init_cnf(bool isfirst, const std::vector<int> &is_unknown) {
     int i, j, k;
     for (i = 0; i < (int)g_initial_state->vars.size(); ++i)
-        if (!is_unknown[i] && axiomtovar.find(std::make_pair(i, g_initial_state->vars[i])) == axiomtovar.end())
+        if (!is_unknown[i] && !is_axiom_target_var(axiomtovar, i))
             cnf_.add_unit(fact_var(i, g_initial_state->vars[i], 0), CLAUSE_KIND_INIT_KNOWN, std::string("L0确定事实 ") + fact_desc(i, g_initial_state->vars[i], 0));
     std::vector<int> working = g_original_values;
     for (i = 0; i < (int)working.size(); ++i) if (i < (int)is_unknown.size() && is_unknown[i]) working[i] = g_variable_domain[i] - 1;
@@ -880,7 +972,7 @@ void CounterCNF::build_type1_init_cnf(bool isfirst, const std::vector<int> &is_u
 void CounterCNF::build_type23_init_cnf(bool isfirst, const std::vector<int> &is_unknown) {
     int i, j, k, m;
     for (i = 0; i < (int)g_initial_state->vars.size(); ++i)
-        if (!is_unknown[i] && axiomtovar.find(std::make_pair(i, g_initial_state->vars[i])) == axiomtovar.end())
+        if (!is_unknown[i] && !is_axiom_target_var(axiomtovar, i))
             cnf_.add_unit(fact_var(i, g_initial_state->vars[i], 0), CLAUSE_KIND_INIT_KNOWN, std::string("L0确定事实 ") + fact_desc(i, g_initial_state->vars[i], 0));
 
     for (i = 0; i < oneofs.lens + oneofs.orlens; ++i) {
@@ -1012,13 +1104,15 @@ bool CounterCNF::analyze_time0_single_var_literal_group(int group_index, int *gr
 void CounterCNF::build_time0_exactly_one(const std::vector<int> &is_unknown) {
     int i, j;
     for (i = 0; i < (int)g_variable_domain.size(); ++i) {
+        if (is_axiom_target_var(axiomtovar, i))
+            continue;
         int domain_size = g_variable_domain[i];
         if (domain_size <= 0) continue;
 
         bool is_fixed_known = (i < (int)is_unknown.size() && !is_unknown[i]
             && g_initial_state->vars[i] >= 0
             && g_initial_state->vars[i] < domain_size
-            && axiomtovar.find(std::make_pair(i, g_initial_state->vars[i])) == axiomtovar.end());
+            && !is_axiom_target_var(axiomtovar, i));
 
         if (is_fixed_known) {
             int fixed_val = g_initial_state->vars[i];
@@ -1051,28 +1145,74 @@ void CounterCNF::build_init_cnf(bool isfirst) {
     build_round_init_delta(isfirst, static_init_base_.unknown_mask);
 }
 
-void CounterCNF::encode_axiom_goal_roots(int plan_size, const std::set< std::pair<int,int> > &goal_facts, std::set< std::pair<int,int> > *now_facts, std::set<int> *root_vars) {
-    std::set< std::pair<int,int> >::const_iterator it;
-    for (it = goal_facts.begin(); it != goal_facts.end(); ++it) {
-        std::pair<int,int> fact = *it;
-        int goal_var = fact_var(fact.first, fact.second, plan_size);
-        root_vars->insert(goal_var);
-        if (axiomtovar.find(fact) == axiomtovar.end()) { now_facts->insert(fact); continue; }
-        const std::vector<PrePost> &defs = axiomtovar[fact];
-        std::vector<int> supports; int i, j;
-        std::string goal_label = maybe_fact_desc(fact.first, fact.second, plan_size);
-        for (i = 0; i < (int)defs.size(); ++i) {
-            std::vector<int> cond_lits;
-            for (j = 0; j < (int)defs[i].cond.size(); ++j) {
-                cond_lits.push_back(fact_var(defs[i].cond[j].var, defs[i].cond[j].prev, plan_size));
-                now_facts->insert(std::make_pair(defs[i].cond[j].var, defs[i].cond[j].prev));
-            }
-            int term = make_term_gate_from_literals(cond_lits, goal_label.empty() ? std::string() : std::string("axiom目标支持 ") + goal_label, CLAUSE_KIND_AXIOM, SATVAR_KIND_AUX_AXIOM);
-            supports.push_back(term);
+void CounterCNF::encode_axiom_fact_recursive(
+        int plan_size,
+        const std::pair<int,int> &fact,
+        std::set< std::pair<int,int> > *now_facts,
+        std::set< std::pair<int,int> > *encoded_axiom_facts,
+        std::set< std::pair<int,int> > *active_axiom_facts) {
+    std::map< std::pair<int,int>, std::vector<PrePost> >::const_iterator def_it =
+        axiomtovar.find(fact);
+    if (def_it == axiomtovar.end()) {
+        now_facts->insert(fact);
+        return;
+    }
+    if (encoded_axiom_facts->find(fact) != encoded_axiom_facts->end())
+        return;
+    if (active_axiom_facts->find(fact) != active_axiom_facts->end()) {
+        CNF_LOG_BASIC("[CNF-axiom] 检测到循环派生依赖，无法按无环定义展开: "
+            << maybe_fact_desc(fact.first, fact.second, plan_size));
+        now_facts->insert(fact);
+        return;
+    }
+
+    active_axiom_facts->insert(fact);
+    const std::vector<PrePost> &defs = def_it->second;
+    std::vector<int> supports;
+    std::string fact_label = maybe_fact_desc(fact.first, fact.second, plan_size);
+
+    for (int i = 0; i < (int)defs.size(); ++i) {
+        std::vector<int> cond_lits;
+        for (int j = 0; j < (int)defs[i].cond.size(); ++j) {
+            std::pair<int,int> cond_fact(defs[i].cond[j].var, defs[i].cond[j].prev);
+            if (axiomtovar.find(cond_fact) != axiomtovar.end())
+                encode_axiom_fact_recursive(plan_size, cond_fact, now_facts,
+                    encoded_axiom_facts, active_axiom_facts);
+            else
+                now_facts->insert(cond_fact);
+            cond_lits.push_back(fact_var(cond_fact.first, cond_fact.second, plan_size));
         }
-        int axiom_or = cnf_.make_or_gate(supports, SATVAR_KIND_AUX_AXIOM, CLAUSE_KIND_AXIOM, goal_label.empty() ? std::string() : std::string("axiom目标OR ") + goal_label);
-        cnf_.add_binary(-goal_var, axiom_or, CLAUSE_KIND_AXIOM, "axiom目标：goal -> support_or");
-        cnf_.add_binary(goal_var, -axiom_or, CLAUSE_KIND_AXIOM, "axiom目标：support_or -> goal");
+        int term = make_term_gate_from_literals(cond_lits,
+            fact_label.empty() ? std::string() : std::string("axiom支持 ") + fact_label,
+            CLAUSE_KIND_AXIOM, SATVAR_KIND_AUX_AXIOM);
+        supports.push_back(term);
+    }
+
+    int axiom_or = cnf_.make_or_gate(supports, SATVAR_KIND_AUX_AXIOM,
+        CLAUSE_KIND_AXIOM,
+        fact_label.empty() ? std::string() : std::string("axiom定义OR ") + fact_label);
+    int fact_sat_var = fact_var(fact.first, fact.second, plan_size);
+    cnf_.add_binary(-fact_sat_var, axiom_or, CLAUSE_KIND_AXIOM,
+        "axiom定义：fact -> support_or");
+    cnf_.add_binary(fact_sat_var, -axiom_or, CLAUSE_KIND_AXIOM,
+        "axiom定义：support_or -> fact");
+
+    active_axiom_facts->erase(fact);
+    encoded_axiom_facts->insert(fact);
+}
+
+void CounterCNF::encode_axiom_goal_roots(
+        int plan_size,
+        const std::set< std::pair<int,int> > &goal_facts,
+        std::set< std::pair<int,int> > *now_facts,
+        std::set<int> *root_vars) {
+    std::set< std::pair<int,int> > encoded_axiom_facts;
+    std::set< std::pair<int,int> > active_axiom_facts;
+    for (std::set< std::pair<int,int> >::const_iterator it = goal_facts.begin();
+         it != goal_facts.end(); ++it) {
+        root_vars->insert(fact_var(it->first, it->second, plan_size));
+        encode_axiom_fact_recursive(plan_size, *it, now_facts,
+            &encoded_axiom_facts, &active_axiom_facts);
     }
 }
 
@@ -1663,6 +1803,16 @@ bool CounterCNF::build_state_from_sample(const std::map<int,int> &sample, const 
     for (it = sample.begin(); it != sample.end(); ++it) {
         if (it->first < 0 || it->first >= (int)state->size()) return false;
         (*state)[it->first] = it->second;
+    }
+
+    // SAT only assigns ordinary time-0 variables.  Derived variables must not
+    // retain the values of the reference state: recompute the complete axiom
+    // closure before the counterexample is handed back to the planner.
+    if (g_axiom_evaluator != 0 && g_initial_state != 0) {
+        State recovered(*g_initial_state);
+        recovered.vars = *state;
+        g_axiom_evaluator->evaluate(recovered);
+        *state = recovered.vars;
     }
     return true;
 }

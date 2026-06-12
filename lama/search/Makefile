@@ -229,6 +229,9 @@ $(PROFILE_OBJECTS): %.profile.o: %.cc
 $(RELEASE_OBJECTS): %.release.o: %.cc
 	$(CC) $(RELEASEOPT) -c $< -o obj/$@ 
 
+# cegis_framework.cc includes the native runtime implementation.
+cegis_framework.o cegis_framework.profile.o cegis_framework.release.o: cegis_native_runtime.inc
+
 clean:
 	rm -f $(OBJECTS:%=obj/%) $(PROFILE_OBJECTS:%=obj/%) $(RELEASE_OBJECTS:%=obj/%) *~ *.pyc
 	rm -f Makefile.depend profile-search gmon.out PROFILE core

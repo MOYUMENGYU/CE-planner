@@ -6,6 +6,9 @@ if [ "$#" -ne 4 ]; then
     exit 1
 fi
 
+
+# : "${IGC_CANDIDATE_RUNTIME_MODE:=isolated}"
+# export IGC_CANDIDATE_RUNTIME_MODE
 : "${IGC_CANDIDATE_PLANNER:?Set IGC_CANDIDATE_PLANNER to t1, cff, cnf, dnf, pip, cpah, igc, gc_lama, gcpces, or icpces}"
 
 case "$1" in

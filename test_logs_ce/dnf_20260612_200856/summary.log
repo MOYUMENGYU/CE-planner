@@ -1,0 +1,22 @@
+[开始] ROOT_DIR=/home/moyu/CE-planner/test2/CE-planner
+[开始] BENCH_ROOT=/home/moyu/CE-planner/test2/CE-planner/test
+[开始] candidate_solver=dnf
+[开始] PLAN_SCRIPT=/home/moyu/CE-planner/test2/CE-planner/plan-cegis-dnf
+[开始] LOG_ROOT=/home/moyu/CE-planner/test2/CE-planner/test_logs_ce/dnf_20260612_200856
+[开始] RESULT_ROOT=/home/moyu/CE-planner/test2/CE-planner/result_output_batch_ce/dnf_20260612_200856
+[开始] TIMEOUT_SEC=300
+[开始] MEMORY_LIMIT=16G
+[开始] MEMORY_LIMIT_KB=16777216
+[开始] SUCCESS_MARKER=[IGC-CEGIS] no counterexample found; final conformant plan accepted.
+[开始] Ctrl+C=终止整批；Ctrl+B=跳过当前测例
+
+[预扫描] 可运行benchmark数=42
+[预扫描] 可运行用例总数=1102
+
+[Benchmark] 1-dispose-disappear
+  [OK] 1-dispose-disappear/p2-1 exit_code=0 elapsed=2s log=/home/moyu/CE-planner/test2/CE-planner/test_logs_ce/dnf_20260612_200856/1-dispose-disappear/p2-1.log
+  [OK] 1-dispose-disappear/p2-2 exit_code=0 elapsed=1s log=/home/moyu/CE-planner/test2/CE-planner/test_logs_ce/dnf_20260612_200856/1-dispose-disappear/p2-2.log
+  [OK] 1-dispose-disappear/p2-3 exit_code=0 elapsed=2s log=/home/moyu/CE-planner/test2/CE-planner/test_logs_ce/dnf_20260612_200856/1-dispose-disappear/p2-3.log
+  [OK] 1-dispose-disappear/p2-4 exit_code=0 elapsed=1s log=/home/moyu/CE-planner/test2/CE-planner/test_logs_ce/dnf_20260612_200856/1-dispose-disappear/p2-4.log
+  [OK] 1-dispose-disappear/p2-5 exit_code=0 elapsed=2s log=/home/moyu/CE-planner/test2/CE-planner/test_logs_ce/dnf_20260612_200856/1-dispose-disappear/p2-5.log
+  [OK] 1-dispose-disappear/p2-6 exit_code=0 elapsed=1s log=/home/moyu/CE-planner/test2/CE-planner/test_logs_ce/dnf_20260612_200856/1-dispose-disappear/p2-6.log

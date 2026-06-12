@@ -17,7 +17,16 @@
 #include <utility>
 #include "state.h"
 #include "best_first_search.h"
+#include "axioms.h"
 using namespace std;
+
+static string trim_copy_counter(const string &text) {
+    const string whitespace = " \t\r\n";
+    string::size_type begin = text.find_first_not_of(whitespace);
+    if (begin == string::npos) return string();
+    string::size_type end = text.find_last_not_of(whitespace);
+    return text.substr(begin, end - begin + 1);
+}
 
 // void printPlan(vector<const Operator *> plan){
 // 	cout<<"规划长度："<<plan.size()<<endl;
@@ -211,97 +220,115 @@ Counter::Counter(bool isinitial){
         
         indextovar.insert(pair<int,int>(i,var));
     }
-    oneofs.orlens=0;
-    belief_size=1;
-    /*读取oneof进入*/
+    oneofs.type = 0;
+    oneofs.orlens = 0;
+    oneofs.lens = 0;
+    oneofs.oneof.clear();
+    belief_size = 1;
+
     ifstream infile;
-    if(isinitial==false)
-        infile.open("oneof", ios::in);
-    else
-        infile.open("oneof_initial", ios::in);
+    if (isinitial == false) infile.open("oneof", ios::in);
+    else infile.open("oneof_initial", ios::in);
     string line;
-    /*读取类型*/
-    getline(infile, line);
-    
-    // cout<<line<<endl;
-    if(line=="ORS")
-        oneofs.type=1;
-    else if(line=="OR")
-        oneofs.type=3;
-    else {
-        oneofs.type=2;
+    if (!getline(infile, line)) {
+        cerr << "无法读取 oneof 文件" << endl;
+        return;
     }
-    cout<<oneofs.type<<endl;
-    /*读取数量 针对于oneof和其他的读取*/
-    getline(infile, line);
+    line = trim_copy_counter(line);
+    if (line == "ORS") oneofs.type = 1;
+    else if (line == "OR") oneofs.type = 3;
+    else oneofs.type = 2;
+    cout << oneofs.type << endl;
+
+    if (!getline(infile, line)) return;
+    line = trim_copy_counter(line);
     istringstream ss(line);
-    if(oneofs.type==3){
-        ss >> oneofs.orlens;
-        for(int i=0;i<oneofs.orlens;i++){
-            oneof_item tmp;
-            tmp.len=0;
-            oneofs.oneof.push_back(tmp);
-        }       
+    if (oneofs.type == 3) ss >> oneofs.orlens;
+    else ss >> oneofs.lens;
+    int base = (oneofs.type == 3 ? oneofs.orlens : oneofs.lens);
+    for (int i = 0; i < base; ++i) {
+        oneof_item tmp;
+        tmp.len = 0;
+        oneofs.oneof.push_back(tmp);
     }
-    else{
-        ss >> oneofs.lens;
-        for(int i=0;i<oneofs.lens;i++){
-            oneof_item tmp;
-            tmp.len=0;
-            oneofs.oneof.push_back(tmp);
-        }   
-    }
-    int index=0,andsize=0,prevar=-1;
-    
-    while(getline(infile, line)){
-        // cout<<line<<endl;
-        if(line==", "){
-            oneofs.oneof[index].size.push_back(andsize);
-            andsize=0;
-        }
-        if(line=="ONEOF"){
-            getline(infile, line);
-            istringstream ss(line);
-            ss >> oneofs.lens;
-            for(int i=0;i<oneofs.lens;i++){
+
+    int index = 0;
+    int andsize = 0;
+    while (getline(infile, line)) {
+        line = trim_copy_counter(line);
+        if (line.empty()) continue;
+
+        if (line == "ONEOF") {
+            if (!getline(infile, line)) break;
+            line = trim_copy_counter(line);
+            istringstream ss2(line);
+            ss2 >> oneofs.lens;
+            for (int i = 0; i < oneofs.lens; ++i) {
                 oneof_item tmp;
-                tmp.len=0;
+                tmp.len = 0;
                 oneofs.oneof.push_back(tmp);
             }
+            continue;
         }
-        else if(line=="END_ONEOF"||line=="END_OR"||(line==", "&&oneofs.type==1)){
-            oneofs.oneof[index].len = oneofs.oneof[index].size.size();
-            // cout<<index<<"-"<<oneofs.oneof[index].len<<endl;
-            index++;
-        }
-        else if(line!=", "){
-            andsize++;
-            int var,val;
-            var = -1;		
-            for(int i = 0 ; i < g_variable_name.size() ; i++)
-            {
-                /*读取的name后面有一个空格，长度会+1*/
-                // cout<<(line.find(g_variable_name[i]) == 0)<<" "<<(line.size() == g_variable_name[i].size()+1)<<endl;
-                if(line.find(g_variable_name[i]) == 0 && line.size() == g_variable_name[i].size()+1)
-                {
-                    var = i;
-                    // cout << g_variable_name[i]<<"找到了";
-                }
+        if (line == ",") {
+            if (index >= 0 && index < (int)oneofs.oneof.size())
+                oneofs.oneof[index].size.push_back(andsize);
+            andsize = 0;
+            if (oneofs.type == 1) {
+                if (index >= 0 && index < (int)oneofs.oneof.size())
+                    oneofs.oneof[index].len = (int)oneofs.oneof[index].size.size();
+                ++index;
             }
-            getline(infile, line);
-            stringstream ss(line);
-            ss >> val;
-            // if(val==-1){
-            //     val = g_variable_domain[var]-1;
-            // }
-            if (var!=-1) {
-                /*var：对应g_variable_name下标,val：该变量的值*/
-                oneofs.oneof[index].var.push_back(var);
-                oneofs.oneof[index].val.push_back(val);
-            } 
+            continue;
+        }
+        if (line == "END_ONEOF" || line == "END_OR") {
+            if (index >= 0 && index < (int)oneofs.oneof.size())
+                oneofs.oneof[index].len = (int)oneofs.oneof[index].size.size();
+            ++index;
+            andsize = 0;
+            continue;
+        }
+
+        int var = -1;
+        for (int i = 0; i < (int)g_variable_name.size(); ++i) {
+            if (line == g_variable_name[i]) {
+                var = i;
+                break;
+            }
+        }
+        string value_line;
+        if (!getline(infile, value_line)) break;
+        value_line = trim_copy_counter(value_line);
+        stringstream value_stream(value_line);
+        int val = 0;
+        value_stream >> val;
+
+        if (var == -1 || index < 0 || index >= (int)oneofs.oneof.size()) {
+            cerr << "oneof 解析错误: variable='" << line << "', group=" << index << endl;
+            continue;
+        }
+        oneofs.oneof[index].var.push_back(var);
+        oneofs.oneof[index].val.push_back(val);
+        ++andsize;
+    }
+
+    for (int i = 0; i < (int)oneofs.oneof.size(); ++i) {
+        int expected = 0;
+        for (int j = 0; j < (int)oneofs.oneof[i].size.size(); ++j)
+            expected += oneofs.oneof[i].size[j];
+        if (expected != (int)oneofs.oneof[i].var.size() ||
+            expected != (int)oneofs.oneof[i].val.size()) {
+            cerr << "oneof 组结构不一致: group=" << i
+                 << ", expected=" << expected
+                 << ", vars=" << oneofs.oneof[i].var.size()
+                 << ", vals=" << oneofs.oneof[i].val.size() << endl;
+            oneofs.oneof[i].len = 0;
+            oneofs.oneof[i].size.clear();
+            oneofs.oneof[i].var.clear();
+            oneofs.oneof[i].val.clear();
         }
     }
-    
+
     /*计算信仰状态数量*/
     if(oneofs.type==2)
         belief_size=oneofs.lens;
@@ -402,7 +429,7 @@ Counter::Counter(bool isinitial){
         }
     }
 
-    delete isunKnownFact;
+    free(isunKnownFact);
 
     times(&end);
     int total_ms = (end.tms_utime - start.tms_utime) * 10;
@@ -1004,31 +1031,14 @@ void Counter::optimizePlantest(Plan plan){
     // for(int i=0;i<plansize+1;i++){
     //     cout<<everyplanvarset[i]<<endl;
     // }
-    /*再对目标状态运用axiom*/
+    /*使用 LAMA 的标准公理求值器重新计算派生变量。该过程会先恢复各层
+      的默认值，再按公理层次达到不动点，避免沿用上一状态的派生值。*/
     for(int k=0;k<curStates.size();k++){
-        for(auto ot : axiomtovar){
-            bool issatisfy=false;
-            /*如果满足其中一个，那么就会break出来*/
-            for(int i=0;i<ot.second.size();i++){
-                // cout<<"(-["<<ot.second[i].var<<","<<ot.second[i].pre<<"]-";
-                if(curStates[k].vars[ot.second[i].var]!=ot.second[i].pre)
-                    continue;
-                int assessnum=0;
-                for(int j=0;j<ot.second[i].cond.size();j++){
-                    // cout<<"["<<ot.second[i].cond[j].var<<","<<ot.second[i].cond[j].prev<<"]-";
-                    if(curStates[k].vars[ot.second[i].cond[j].var]==ot.second[i].cond[j].prev)
-                        assessnum++;
-                }
-                // cout<<")"<<endl;
-                if(assessnum==ot.second[i].cond.size()){
-                    issatisfy=true;
-                    break;
-                }
-                
-            }
-            if(issatisfy)
-                curStates[k].vars[ot.first.first] = ot.first.second;
-            // cout<<"->["<<ot.first.first<<"-"<<ot.first.second<<"]"<<endl;
+        if(g_axiom_evaluator != 0) {
+            State evaluated;
+            evaluated.vars = curStates[k].vars;
+            g_axiom_evaluator->evaluate(evaluated);
+            curStates[k].vars = evaluated.vars;
         }
     }
 
@@ -1391,7 +1401,7 @@ void Counter::initToSmt(bool isfirst){
     // cout<<endl<<variables.size()<<endl;
     init_smt+="))";
     // cout<<endl<<init_smt;
-    delete isunKnownFact;
+    free(isunKnownFact);
 }
 
 void Counter::addInitRestriction(bool isfirst){
@@ -1451,7 +1461,7 @@ void Counter::addInitRestriction(bool isfirst){
             init_smt+="\n";
         }
     }
-    delete isunKnownFact;
+    free(isunKnownFact);
 }
 
 
@@ -2823,34 +2833,13 @@ void Counter::testPlanisvalid(Plan plan){
     }
 
     cout<<endl;
-    /*再对目标状态运用axiom*/
-    
-
+    /*使用标准公理求值器，避免手工单遍求值遗漏层次和默认值复位。*/
     for(int k=0;k<curStates.size();k++){
-        for(auto ot : axiomtovar){
-            bool issatisfy=false;
-            /*如果满足其中一个，那么就会break出来*/
-            for(int i=0;i<ot.second.size();i++){
-                // cout<<"(-["<<ot.second[i].var<<","<<ot.second[i].pre<<"]-";
-                if(curStates[k].vars[ot.second[i].var]!=ot.second[i].pre)
-                    continue;
-                int acess_num=0;
-                for(int j=0;j<ot.second[i].cond.size();j++){
-                    // cout<<"["<<ot.second[i].cond[j].var<<","<<ot.second[i].cond[j].prev<<"]-";
-                    if(curStates[k].vars[ot.second[i].cond[j].var]==ot.second[i].cond[j].prev)
-                        acess_num++;
-                    
-                }
-                if(acess_num==ot.second[i].cond.size()){
-                    issatisfy=true;
-                    break;
-                }
-                // cout<<")"<<endl;
-            }
-            // cout<<"issatisfy:"<<issatisfy<<endl;
-            if(issatisfy)
-                curStates[k].vars[ot.first.first] = ot.first.second;
-            // cout<<"->["<<ot.first.first<<"-"<<ot.first.second<<"]"<<endl;
+        if(g_axiom_evaluator != 0) {
+            State evaluated;
+            evaluated.vars = curStates[k].vars;
+            g_axiom_evaluator->evaluate(evaluated);
+            curStates[k].vars = evaluated.vars;
         }
     }
     

@@ -45,7 +45,7 @@ landmarks_count_heuristic.o: landmarks_count_heuristic.cc \
  ff_heuristic.h successor_generator.h
 counter.o: counter.cc counter.h globals.h state.h landmarks_types.h \
  smt_counter.h operator.h best_first_search.h closed_list.h \
- closed_list.cc open_list.h open_list.cc search_engine.h
+ closed_list.cc open_list.h open_list.cc search_engine.h axioms.h
 z3_counter.o: z3_counter.cc z3_counter.h
 smt_counter.o: smt_counter.cc smt_counter.h globals.h
 cnf_types.o: cnf_types.cc cnf_types.h
@@ -65,13 +65,14 @@ cadical_counter.o: cadical_counter.cc cadical_counter.h cnf_types.h \
 counter_cnf.o: counter_cnf.cc counter_cnf.h globals.h operator.h state.h \
  landmarks_types.h cnf_types.h sat_var_manager.h cnf_builder.h \
  kissat_counter.h minisat_counter.h glucose_counter.h cadical_counter.h \
- counter.h smt_counter.h cnf_preprocessor.h cnf_logger.h
+ counter.h smt_counter.h cnf_preprocessor.h cnf_logger.h axioms.h
 cnf_preprocessor.o: cnf_preprocessor.cc cnf_preprocessor.h cnf_types.h \
  cnf_builder.h cnf_logger.h globals.h sat_var_manager.h
 cegis_framework.o: cegis_framework.cc cegis_framework.h counter.h \
  globals.h state.h landmarks_types.h smt_counter.h counter_cnf.h \
  operator.h cnf_types.h sat_var_manager.h cnf_builder.h kissat_counter.h \
- minisat_counter.h glucose_counter.h cadical_counter.h cnf_preprocessor.h
+ minisat_counter.h glucose_counter.h cadical_counter.h cnf_preprocessor.h \
+ cegis_native_runtime.inc
 planner.profile.o: planner.cc best_first_search.h closed_list.h closed_list.cc \
  open_list.h open_list.cc search_engine.h state.h landmarks_types.h \
  globals.h wa_star_search.h ff_heuristic.h heuristic.h operator.h \
@@ -119,7 +120,7 @@ landmarks_count_heuristic.profile.o: landmarks_count_heuristic.cc \
  ff_heuristic.h successor_generator.h
 counter.profile.o: counter.cc counter.h globals.h state.h landmarks_types.h \
  smt_counter.h operator.h best_first_search.h closed_list.h \
- closed_list.cc open_list.h open_list.cc search_engine.h
+ closed_list.cc open_list.h open_list.cc search_engine.h axioms.h
 z3_counter.profile.o: z3_counter.cc z3_counter.h
 smt_counter.profile.o: smt_counter.cc smt_counter.h globals.h
 cnf_types.profile.o: cnf_types.cc cnf_types.h
@@ -139,10 +140,11 @@ cadical_counter.profile.o: cadical_counter.cc cadical_counter.h cnf_types.h \
 counter_cnf.profile.o: counter_cnf.cc counter_cnf.h globals.h operator.h state.h \
  landmarks_types.h cnf_types.h sat_var_manager.h cnf_builder.h \
  kissat_counter.h minisat_counter.h glucose_counter.h cadical_counter.h \
- counter.h smt_counter.h cnf_preprocessor.h cnf_logger.h
+ counter.h smt_counter.h cnf_preprocessor.h cnf_logger.h axioms.h
 cnf_preprocessor.profile.o: cnf_preprocessor.cc cnf_preprocessor.h cnf_types.h \
  cnf_builder.h cnf_logger.h globals.h sat_var_manager.h
 cegis_framework.profile.o: cegis_framework.cc cegis_framework.h counter.h \
  globals.h state.h landmarks_types.h smt_counter.h counter_cnf.h \
  operator.h cnf_types.h sat_var_manager.h cnf_builder.h kissat_counter.h \
- minisat_counter.h glucose_counter.h cadical_counter.h cnf_preprocessor.h
+ minisat_counter.h glucose_counter.h cadical_counter.h cnf_preprocessor.h \
+ cegis_native_runtime.inc

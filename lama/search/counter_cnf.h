@@ -256,6 +256,10 @@ private:
         ScheduledFactLayers *scheduled_layers,
         std::set< std::pair<int,int> > *time0_facts);
     void encode_axiom_goal_roots(int plan_size, const std::set< std::pair<int,int> > &goal_facts, std::set< std::pair<int,int> > *now_facts, std::set<int> *root_vars);
+    void encode_axiom_fact_recursive(int plan_size, const std::pair<int,int> &fact,
+        std::set< std::pair<int,int> > *now_facts,
+        std::set< std::pair<int,int> > *encoded_axiom_facts,
+        std::set< std::pair<int,int> > *active_axiom_facts);
     void regress_one_fact(const Operator *op, const std::pair<int,int> &fact, int time_step,
         ScheduledFactLayers *scheduled_layers,
         std::set< std::pair<int,int> > *time0_facts,
