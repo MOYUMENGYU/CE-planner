@@ -86,6 +86,7 @@ def main() -> int:
 
         env = os.environ.copy()
         env["IGC_CANDIDATE_PLANNER"] = kind
+        env["IGC_CPA_ADAPTER_ACTIVE"] = "1"
         env["IGC_CPA_REAL_PDDL2PL"] = str(real_converter)
         env["IGC_CPA_PDDL_ADAPTER"] = str(adapter)
         env[env_name] = str(runtime)
