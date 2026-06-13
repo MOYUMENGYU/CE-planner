@@ -11,6 +11,8 @@ import tempfile
 from pathlib import Path
 from typing import Dict, Tuple
 
+from cpa_runtime_stage import stage_executable
+
 
 def normalize_kind(value: str) -> str:
     aliases = {
@@ -82,7 +84,7 @@ def main() -> int:
     try:
         (runtime / binary_name).symlink_to(real_binary)
         (runtime / "mult5zsic.pl").symlink_to(real_mult)
-        (runtime / "cpa.pddl2pl").symlink_to(converter_wrapper)
+        stage_executable(converter_wrapper, runtime / "cpa.pddl2pl")
 
         env = os.environ.copy()
         env["IGC_CANDIDATE_PLANNER"] = kind
