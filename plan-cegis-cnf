@@ -1,4 +1,5 @@
 #!/bin/sh
 set -eu
-SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-exec python3 "$SCRIPT_DIR/tools/run_cpa_family_cegis.py" cnf "$@"
+export IGC_CANDIDATE_PLANNER=cnf
+export IGC_CNF_DIR="${IGC_CNF_DIR:-$PWD/cnf_planner}"
+exec ./plan-cegis "$@"
