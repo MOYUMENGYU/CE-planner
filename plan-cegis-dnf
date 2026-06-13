@@ -1,5 +1,4 @@
 #!/bin/sh
 set -eu
-export IGC_CANDIDATE_PLANNER=dnf
-export IGC_DNF_DIR="${IGC_DNF_DIR:-$PWD/dnf_planner}"
-exec ./plan-cegis "$@"
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+exec python3 "$SCRIPT_DIR/tools/run_cpa_family_cegis.py" 2 "$@"
