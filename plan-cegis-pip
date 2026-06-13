@@ -1,19 +1,5 @@
 #!/bin/sh
 set -eu
-
-SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-
-if [ "${IGC_CPA_SICSTUS_WRAPPER_MODE:-0}" = "1" ]; then
-    "${IGC_REAL_SICSTUS_EXEC:-sicstus}" "$@" || exit $?
-    set -- theory_*.al
-    [ -e "$1" ] || exit 0
-    exec python3 "$IGC_CPA_THEORY_NORMALIZER" --pddl2pl pddl2pl.pl "$@"
-fi
-
 export IGC_CANDIDATE_PLANNER=pip
-export IGC_PIP_DIR="${IGC_PIP_DIR:-$SCRIPT_DIR/pip_planner}"
-export IGC_REAL_SICSTUS_EXEC="${IGC_SICSTUS_EXEC:-sicstus}"
-export IGC_CPA_THEORY_NORMALIZER="$SCRIPT_DIR/tools/normalize_cpa_theory.py"
-export IGC_CPA_SICSTUS_WRAPPER_MODE=1
-export IGC_SICSTUS_EXEC="$SCRIPT_DIR/plan-cegis-pip"
-exec "$SCRIPT_DIR/plan-cegis" "$@"
+export IGC_PIP_DIR="${IGC_PIP_DIR:-$PWD/pip_planner}"
+exec ./plan-cegis "$@"
