@@ -1,0 +1,4 @@
+(xor-gate x1 y1 z1)
+(and-gate t x1 tmp2)
+(and-gate tmp2 y1 r2)
+(and-gate r2 t z2)

@@ -14,7 +14,7 @@ cp "$REPO_ROOT/tools/filter_cegis_groups.py" \
    "$TMP_DIR/tools/filter_cegis_groups.py"
 chmod +x "$TMP_DIR/plan"
 
-cat > "$TMP_DIR/lama/translate/translate.py" <<'EOF'
+cat > "$TMP_DIR/lama/translate/translate.py" <<'PY'
 #!/bin/sh
 cat > output.sas <<'SAS'
 begin_variables
@@ -43,21 +43,23 @@ group
 end_groups
 GROUPS
 printf 'translated\n'
-EOF
+PY
 chmod +x "$TMP_DIR/lama/translate/translate.py"
 
-cat > "$TMP_DIR/lama/preprocess/preprocess" <<'EOF'
+cat > "$TMP_DIR/lama/preprocess/preprocess" <<'PRE'
 #!/bin/sh
 cat >/dev/null
 printf 'preprocessed\n' > output
-EOF
+PRE
 chmod +x "$TMP_DIR/lama/preprocess/preprocess"
 
-cat > "$TMP_DIR/lama/search/release-search" <<'EOF'
+cat > "$TMP_DIR/lama/search/release-search" <<'SEARCH'
 #!/bin/sh
-printf '%s\n' "$IGC_ALL_GROUPS" > observed_groups_path
-cat "$IGC_ALL_GROUPS" > observed_groups_content
-EOF
+printf '%s\n' "$IGC_ALL_GROUPS" > observed_full_path
+printf '%s\n' "$IGC_CEGIS_FACT_GROUPS" > observed_cegis_path
+cat "$IGC_ALL_GROUPS" > observed_full_content
+cat "$IGC_CEGIS_FACT_GROUPS" > observed_cegis_content
+SEARCH
 chmod +x "$TMP_DIR/lama/search/release-search"
 
 printf '(define (domain d))\n' > "$TMP_DIR/domain.pddl"
@@ -65,16 +67,17 @@ printf '(define (problem p))\n' > "$TMP_DIR/problem.pddl"
 
 (
     cd "$TMP_DIR"
-    IGC_CEGIS_MODE=1 \
-    IGC_ALL_GROUPS="$TMP_DIR/all.groups" \
-    ./plan domain.pddl problem.pddl result.plan false
+    IGC_CEGIS_MODE=1 ./plan domain.pddl problem.pddl result.plan false
 
-    test "$(cat observed_groups_path)" = "$TMP_DIR/cegis.groups"
-    test "$(sed -n '2p' observed_groups_content)" = "2"
-    if grep -q '@' observed_groups_content; then
+    test "$(cat observed_full_path)" = "$TMP_DIR/all.groups"
+    test "$(cat observed_cegis_path)" = "$TMP_DIR/cegis.groups"
+    test "$(sed -n '2p' observed_full_content)" = "4"
+    test "$(sed -n '2p' observed_cegis_content)" = "2"
+    grep -q '@' observed_full_content
+    if grep -q '@' observed_cegis_content; then
         echo "derived predicate leaked into CEGIS groups" >&2
         exit 1
     fi
 )
 
-echo "PASS: CEGIS search receives the filtered base-fluent map"
+echo "PASS: full all.groups is preserved and CEGIS receives the filtered map"

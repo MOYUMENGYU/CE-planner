@@ -702,7 +702,6 @@
         const std::string binary = cpa_binary_name();
         if (!executable_file(root + "/cpa.pddl2pl") ||
             !readable_regular_file(root + "/mult5zsic.pl") ||
-            !readable_regular_file(root + "/input") ||
             !executable_file(root + "/" + binary)) {
             std::cout << prefix << " native runtime is incomplete under "
                       << root << std::endl;
@@ -712,6 +711,16 @@
             "IGC_SICSTUS_EXEC", "sicstus");
         const std::string native_result = root + "/plan-result";
         const std::string theory_path = root + "/theory_0.al";
+        const std::string sicstus_input = iter_dir + "/sicstus.input";
+        std::string input_message;
+        StatusCode input_status = prepare_cpa_sicstus_input(
+            sicstus_input, &input_message);
+        if (input_status != STATUS_OK) {
+            std::cout << prefix << " SICStus input preparation failed: "
+                      << input_message << std::endl;
+            return input_status;
+        }
+        std::cout << prefix << " SICStus input=" << input_message << std::endl;
         ::unlink(stdout_path.c_str());
         ::unlink(stderr_path.c_str());
         ::unlink(stable.c_str());
@@ -727,7 +736,9 @@
                  << "test -s pddl2pl.pl && "
                  << "cat mult5zsic.pl pddl2pl.pl > new.pl && "
                  << shell_quote(sicstus)
-                 << " -l new.pl --goal 'main,halt.' < input > trash && "
+                 << " -l new.pl --goal 'main,halt.' < "
+                 << shell_quote(absolute_path(sicstus_input))
+                 << " > trash && "
                  << "test -s theory_0.al && "
                  << "./" << binary << " theory_0.al > temp && "
                  << "sed -e 's/cpa_//g' temp > plan-result && "

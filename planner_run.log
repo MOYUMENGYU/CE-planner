@@ -1,4 +1,6 @@
 1. Running translator
+[IGC-GROUP-FILTER] source_groups=36 output_groups=20 kept_base_facts=20 skipped_derived_facts=16 output=/home/moyu/CE-planner/test4/CE-planner/cegis.groups
+[IGC-GROUP-FILTER] full=/home/moyu/CE-planner/test4/CE-planner/all.groups cegis=/home/moyu/CE-planner/test4/CE-planner/cegis.groups
 2. Running preprocessor
 Building causal graph...
 The causal graph is not acyclic.
@@ -18,87 +20,119 @@ CNF日志开关: basic=off, detail=off, clause=off, model=off
 Simplifying transitions... done!
 2
 axiom:16
-(-[20,1]-[6,0]-)
-(-[20,1]-[2,0]-)
+(-[20,1]-[19,0]-)
+(-[20,1]-[1,0]-)
 (-[20,1]-[0,0]-)
+(-[20,1]-[14,0]-)
 ->[20-0]
-(-[21,1]-[3,0]-)
+(-[21,1]-[19,0]-)
+(-[21,1]-[6,0]-)
 (-[21,1]-[1,0]-)
-(-[21,1]-[18,0]-)
+(-[21,1]-[3,0]-)
 ->[21-0]
 (-[22,1]-[19,0]-)
+(-[22,1]-[2,0]-)
 (-[22,1]-[3,0]-)
-(-[22,1]-[18,0]-)
+(-[22,1]-[14,0]-)
 ->[22-0]
-(-[23,1]-[4,0]-)
-(-[23,1]-[18,0]-)
+(-[23,1]-[11,0]-)
+(-[23,1]-[2,0]-)
+(-[23,1]-[3,0]-)
 ->[23-0]
-(-[24,1]-[6,0]-)
-(-[24,1]-[17,0]-)
+(-[24,1]-[19,0]-)
+(-[24,1]-[1,0]-)
+(-[24,1]-[12,0]-)
 ->[24-0]
-(-[25,1]-[19,0]-)
-(-[25,1]-[2,0]-)
+(-[25,1]-[1,0]-)
 (-[25,1]-[0,0]-)
-(-[25,1]-[7,0]-)
+(-[25,1]-[12,0]-)
 ->[25-0]
-(-[26,1]-[19,0]-)
-(-[26,1]-[1,0]-)
-(-[26,1]-[18,0]-)
+(-[26,1]-[11,0]-)
+(-[26,1]-[7,0]-)
 ->[26-0]
-(-[27,1]-[6,0]-)
+(-[27,1]-[11,0]-)
 (-[27,1]-[2,0]-)
-(-[27,1]-[9,0]-)
+(-[27,1]-[10,0]-)
 ->[27-0]
-(-[28,1]-[1,0]-)
+(-[28,1]-[0,0]-)
 (-[28,1]-[2,0]-)
-(-[28,1]-[9,0]-)
-(-[28,1]-[7,0]-)
+(-[28,1]-[10,0]-)
+(-[28,1]-[14,0]-)
 ->[28-0]
-(-[29,1]-[19,0]-)
-(-[29,1]-[13,0]-)
-(-[29,1]-[3,0]-)
-(-[29,1]-[0,0]-)
+(-[29,1]-[16,0]-)
+(-[29,1]-[12,0]-)
 ->[29-0]
 (-[30,1]-[19,0]-)
-(-[30,1]-[13,0]-)
-(-[30,1]-[1,0]-)
+(-[30,1]-[6,0]-)
+(-[30,1]-[0,0]-)
 (-[30,1]-[2,0]-)
 ->[30-0]
-(-[31,1]-[13,0]-)
-(-[31,1]-[3,0]-)
-(-[31,1]-[1,0]-)
-(-[31,1]-[9,0]-)
+(-[31,1]-[19,0]-)
+(-[31,1]-[0,0]-)
+(-[31,1]-[12,0]-)
 ->[31-0]
-(-[32,1]-[13,0]-)
-(-[32,1]-[2,0]-)
-(-[32,1]-[0,0]-)
-(-[32,1]-[9,0]-)
+(-[32,1]-[1,0]-)
+(-[32,1]-[3,0]-)
+(-[32,1]-[10,0]-)
+(-[32,1]-[14,0]-)
 ->[32-0]
-(-[33,1]-[19,0]-)
+(-[33,1]-[11,0]-)
 (-[33,1]-[3,0]-)
-(-[33,1]-[1,0]-)
-(-[33,1]-[7,0]-)
+(-[33,1]-[10,0]-)
 ->[33-0]
+(-[34,1]-[6,0]-)
+(-[34,1]-[2,0]-)
 (-[34,1]-[3,0]-)
-(-[34,1]-[0,0]-)
-(-[34,1]-[9,0]-)
-(-[34,1]-[7,0]-)
+(-[34,1]-[10,0]-)
 ->[34-0]
 (-[35,1]-[6,0]-)
+(-[35,1]-[1,0]-)
 (-[35,1]-[0,0]-)
-(-[35,1]-[9,0]-)
+(-[35,1]-[10,0]-)
 ->[35-0]
-[IGC-CEGIS] context=fnv1a64:491698d976ade0c7 vars=36 constraints=2 candidate_planner=DNF runtime_mode=NATIVE planner_timeout=3600 run_dir=/home/moyu/CE-planner/test2/CE-planner/runs/current
+[IGC-CEGIS] context=fnv1a64:3a41949e0cda3083 vars=36 constraints=2 candidate_planner=DNF runtime_mode=NATIVE planner_timeout=3600 run_dir=/home/moyu/CE-planner/test4/CE-planner/runs/current
+[IGC-CEGIS] groups_full=/home/moyu/CE-planner/test4/CE-planner/all.groups groups_cegis=/home/moyu/CE-planner/test4/CE-planner/cegis.groups
 [IGC-CEGIS] legacy internal search and subplan cache are bypassed.
 [IGC-PLANNER] warning: the bundled CPA-family PDDL front-ends have planner-specific handling of OR clauses in goals; candidate output must be treated as untrusted and will still be checked by the full iGC verifier.
 [IGC-VERIFY] iteration=bootstrap plan_len=0 status=COUNTEREXAMPLE build_ms=0 solve_ms=0 extract_ms=0
-[IGC-WRITER] iteration=0 mode=exact_sample_set syntax=cnf_dnf_pip_selector_exact_samples counterexamples=1 visible_worlds=1 mapped_atoms=36 fixed_true=23 fixed_false=13 varying=0 unknown=0 oneof=0 or=0 selectors=0 selector_implications=0 icpces_complements=0 status=OK
-[IGC-VALIDATE] basic checks passed: visible_worlds=1 mapped_atoms=36 fixed_true=23 fixed_false=13 varying=0 unknown=0 oneof=0 or=0 status=OK
+[IGC-WRITER] iteration=0 mode=exact_sample_set syntax=cnf_dnf_pip_selector_exact_samples counterexamples=1 visible_worlds=1 mapped_atoms=20 fixed_true=8 fixed_false=12 varying=0 unknown=0 oneof=0 or=0 selectors=0 selector_implications=0 icpces_complements=0 status=OK
+[IGC-VALIDATE] basic checks passed: visible_worlds=1 mapped_atoms=20 fixed_true=8 fixed_false=12 varying=0 unknown=0 oneof=0 or=0 status=OK
 [IGC-DOMAIN] iteration=0 profile=cnf_dnf_pip_selector_domain selectors=0 icpces_complements=0 added_empty_parameters=0 status=OK
-[DNF-RUNNER] mode=NATIVE cwd=/home/moyu/CE-planner/test2/CE-planner/dnf_planner
-[DNF-RUNNER] command=( cd '/home/moyu/CE-planner/test2/CE-planner/dnf_planner' && rm -f dp.pddl pddl2pl.pl new.pl theory_*.al theory_names temp trash plan-result result-time && cat '/home/moyu/CE-planner/test2/CE-planner/runs/current/refined_dnf_domain.pddl' '/home/moyu/CE-planner/test2/CE-planner/runs/current/refined_dnf_problem.pddl' > dp.pddl && ./cpa.pddl2pl dp.pddl && test -s pddl2pl.pl && cat mult5zsic.pl pddl2pl.pl > new.pl && 'sicstus' -l new.pl --goal 'main,halt.' < input > trash && test -s theory_0.al && ./dnf theory_0.al > temp && sed -e 's/cpa_//g' temp > plan-result && cat plan-result ) > '/home/moyu/CE-planner/test2/CE-planner/runs/current/planner.stdout' 2> '/home/moyu/CE-planner/test2/CE-planner/runs/current/planner.stderr'
-[DNF-RUNNER] process exit_code=1
-[DNF-RUNNER] planner.stderr: SCANNER ERROR: at symbol "@" on line 63
-[IGC-PLANNER] planner=DNF iteration=0 status=PLANNER_FAILED
-[IGC-CEGIS] candidate planner failed; original problem is NOT classified as unsolvable.
-[IGC-CEGIS] final_status=PLANNER_FAILED
+[DNF-RUNNER] SICStus input=generated deterministic input at /home/moyu/CE-planner/test4/CE-planner/runs/current/sicstus.input
+[DNF-RUNNER] mode=NATIVE cwd=/home/moyu/CE-planner/test4/CE-planner/dnf_planner
+[DNF-RUNNER] command=( cd '/home/moyu/CE-planner/test4/CE-planner/dnf_planner' && rm -f dp.pddl pddl2pl.pl new.pl theory_*.al theory_names temp trash plan-result result-time && cat '/home/moyu/CE-planner/test4/CE-planner/runs/current/refined_dnf_domain.pddl' '/home/moyu/CE-planner/test4/CE-planner/runs/current/refined_dnf_problem.pddl' > dp.pddl && ./cpa.pddl2pl dp.pddl && test -s pddl2pl.pl && cat mult5zsic.pl pddl2pl.pl > new.pl && 'sicstus' -l new.pl --goal 'main,halt.' < '/home/moyu/CE-planner/test4/CE-planner/runs/current/sicstus.input' > trash && test -s theory_0.al && ./dnf theory_0.al > temp && sed -e 's/cpa_//g' temp > plan-result && cat plan-result ) > '/home/moyu/CE-planner/test4/CE-planner/runs/current/planner.stdout' 2> '/home/moyu/CE-planner/test4/CE-planner/runs/current/planner.stderr'
+[IGC-PLANNER] planner=DNF iteration=0 status=OK
+[IGC-MAP] actions=2 status=OK
+[IGC-VERIFY] iteration=0 plan_len=2 status=COUNTEREXAMPLE build_ms=0 solve_ms=0 extract_ms=0
+[IGC-STORE] size=2 inserted_new=yes duplicate_streak=0
+[IGC-WRITER] iteration=1 mode=exact_sample_set syntax=cnf_dnf_pip_selector_exact_samples counterexamples=2 visible_worlds=2 mapped_atoms=20 fixed_true=7 fixed_false=11 varying=2 unknown=0 oneof=1 or=4 selectors=2 selector_implications=4 icpces_complements=0 status=OK
+[IGC-VALIDATE] basic checks passed: visible_worlds=2 mapped_atoms=20 fixed_true=7 fixed_false=11 varying=2 unknown=0 oneof=1 or=4 status=OK
+[IGC-DOMAIN] iteration=1 profile=cnf_dnf_pip_selector_domain selectors=2 icpces_complements=0 added_empty_parameters=0 status=OK
+[DNF-RUNNER] SICStus input=generated deterministic input at /home/moyu/CE-planner/test4/CE-planner/runs/current/sicstus.input
+[DNF-RUNNER] mode=NATIVE cwd=/home/moyu/CE-planner/test4/CE-planner/dnf_planner
+[DNF-RUNNER] command=( cd '/home/moyu/CE-planner/test4/CE-planner/dnf_planner' && rm -f dp.pddl pddl2pl.pl new.pl theory_*.al theory_names temp trash plan-result result-time && cat '/home/moyu/CE-planner/test4/CE-planner/runs/current/refined_dnf_domain.pddl' '/home/moyu/CE-planner/test4/CE-planner/runs/current/refined_dnf_problem.pddl' > dp.pddl && ./cpa.pddl2pl dp.pddl && test -s pddl2pl.pl && cat mult5zsic.pl pddl2pl.pl > new.pl && 'sicstus' -l new.pl --goal 'main,halt.' < '/home/moyu/CE-planner/test4/CE-planner/runs/current/sicstus.input' > trash && test -s theory_0.al && ./dnf theory_0.al > temp && sed -e 's/cpa_//g' temp > plan-result && cat plan-result ) > '/home/moyu/CE-planner/test4/CE-planner/runs/current/planner.stdout' 2> '/home/moyu/CE-planner/test4/CE-planner/runs/current/planner.stderr'
+[IGC-PLANNER] planner=DNF iteration=1 status=OK
+[IGC-MAP] actions=3 status=OK
+[IGC-VERIFY] iteration=1 plan_len=3 status=COUNTEREXAMPLE build_ms=0 solve_ms=0 extract_ms=0
+[IGC-STORE] size=3 inserted_new=yes duplicate_streak=0
+[IGC-WRITER] iteration=2 mode=exact_sample_set syntax=cnf_dnf_pip_selector_exact_samples counterexamples=3 visible_worlds=3 mapped_atoms=20 fixed_true=6 fixed_false=10 varying=4 unknown=0 oneof=1 or=12 selectors=3 selector_implications=12 icpces_complements=0 status=OK
+[IGC-VALIDATE] basic checks passed: visible_worlds=3 mapped_atoms=20 fixed_true=6 fixed_false=10 varying=4 unknown=0 oneof=1 or=12 status=OK
+[IGC-DOMAIN] iteration=2 profile=cnf_dnf_pip_selector_domain selectors=3 icpces_complements=0 added_empty_parameters=0 status=OK
+[DNF-RUNNER] SICStus input=generated deterministic input at /home/moyu/CE-planner/test4/CE-planner/runs/current/sicstus.input
+[DNF-RUNNER] mode=NATIVE cwd=/home/moyu/CE-planner/test4/CE-planner/dnf_planner
+[DNF-RUNNER] command=( cd '/home/moyu/CE-planner/test4/CE-planner/dnf_planner' && rm -f dp.pddl pddl2pl.pl new.pl theory_*.al theory_names temp trash plan-result result-time && cat '/home/moyu/CE-planner/test4/CE-planner/runs/current/refined_dnf_domain.pddl' '/home/moyu/CE-planner/test4/CE-planner/runs/current/refined_dnf_problem.pddl' > dp.pddl && ./cpa.pddl2pl dp.pddl && test -s pddl2pl.pl && cat mult5zsic.pl pddl2pl.pl > new.pl && 'sicstus' -l new.pl --goal 'main,halt.' < '/home/moyu/CE-planner/test4/CE-planner/runs/current/sicstus.input' > trash && test -s theory_0.al && ./dnf theory_0.al > temp && sed -e 's/cpa_//g' temp > plan-result && cat plan-result ) > '/home/moyu/CE-planner/test4/CE-planner/runs/current/planner.stdout' 2> '/home/moyu/CE-planner/test4/CE-planner/runs/current/planner.stderr'
+[IGC-PLANNER] planner=DNF iteration=2 status=OK
+[IGC-MAP] actions=4 status=OK
+[IGC-VERIFY] iteration=2 plan_len=4 status=COUNTEREXAMPLE build_ms=0 solve_ms=0 extract_ms=0
+[IGC-STORE] size=4 inserted_new=yes duplicate_streak=0
+[IGC-WRITER] iteration=3 mode=exact_sample_set syntax=cnf_dnf_pip_selector_exact_samples counterexamples=4 visible_worlds=4 mapped_atoms=20 fixed_true=6 fixed_false=10 varying=4 unknown=0 oneof=1 or=16 selectors=4 selector_implications=16 icpces_complements=0 status=OK
+[IGC-VALIDATE] basic checks passed: visible_worlds=4 mapped_atoms=20 fixed_true=6 fixed_false=10 varying=4 unknown=0 oneof=1 or=16 status=OK
+[IGC-DOMAIN] iteration=3 profile=cnf_dnf_pip_selector_domain selectors=4 icpces_complements=0 added_empty_parameters=0 status=OK
+[DNF-RUNNER] SICStus input=generated deterministic input at /home/moyu/CE-planner/test4/CE-planner/runs/current/sicstus.input
+[DNF-RUNNER] mode=NATIVE cwd=/home/moyu/CE-planner/test4/CE-planner/dnf_planner
+[DNF-RUNNER] command=( cd '/home/moyu/CE-planner/test4/CE-planner/dnf_planner' && rm -f dp.pddl pddl2pl.pl new.pl theory_*.al theory_names temp trash plan-result result-time && cat '/home/moyu/CE-planner/test4/CE-planner/runs/current/refined_dnf_domain.pddl' '/home/moyu/CE-planner/test4/CE-planner/runs/current/refined_dnf_problem.pddl' > dp.pddl && ./cpa.pddl2pl dp.pddl && test -s pddl2pl.pl && cat mult5zsic.pl pddl2pl.pl > new.pl && 'sicstus' -l new.pl --goal 'main,halt.' < '/home/moyu/CE-planner/test4/CE-planner/runs/current/sicstus.input' > trash && test -s theory_0.al && ./dnf theory_0.al > temp && sed -e 's/cpa_//g' temp > plan-result && cat plan-result ) > '/home/moyu/CE-planner/test4/CE-planner/runs/current/planner.stdout' 2> '/home/moyu/CE-planner/test4/CE-planner/runs/current/planner.stderr'
+[IGC-PLANNER] planner=DNF iteration=3 status=OK
+[IGC-MAP] actions=4 status=OK
+[IGC-VERIFY] iteration=3 plan_len=4 status=VALID build_ms=0 solve_ms=0 extract_ms=0
+[IGC-CEGIS] no counterexample found; final conformant plan accepted.
+[IGC-CEGIS] final_status=VALID

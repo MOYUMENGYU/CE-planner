@@ -30,50 +30,51 @@ SEARCH="./lama/search/release-search"
 # N：开启模型恢复日志
 
 prepare_cegis_groups() {
-    # all.groups must remain complete because the original iGC search uses it
-    # for axiom-aware SAS/PDDL metadata. The external-planner CEGIS renderer,
-    # however, may only write ordinary fluents back into a PDDL :init section.
-    # Build a separate map which excludes variables with axiom_layer >= 0.
     if [ "${IGC_CEGIS_MODE:-0}" != "1" ]; then
         return 0
     fi
 
+    # Keep the complete translator mapping for the original iGC/SAS pipeline.
+    SOURCE_GROUPS="${IGC_CEGIS_SOURCE_GROUPS:-all.groups}"
+    if [ ! -f "$SOURCE_GROUPS" ]; then
+        echo "[IGC-GROUP-FILTER] missing source groups: $SOURCE_GROUPS" >&2
+        exit 1
+    fi
+    IGC_ALL_GROUPS="${IGC_ALL_GROUPS:-$(readlink -f "$SOURCE_GROUPS")}"
+    export IGC_ALL_GROUPS
+
+    # CEGIS may only emit ordinary PDDL fluents into a refined :init.  Use a
+    # distinct map so derived/axiom SAS variables remain available internally
+    # but are never written back as external PDDL predicates.
     if [ "${IGC_CEGIS_SKIP_GROUP_FILTER:-0}" = "1" ]; then
-        IGC_ALL_GROUPS="${IGC_ALL_GROUPS:-$(readlink -f all.groups)}"
-        export IGC_ALL_GROUPS
-        echo "[IGC-GROUP-FILTER] bypassed explicitly; groups=$IGC_ALL_GROUPS"
+        IGC_CEGIS_FACT_GROUPS="${IGC_CEGIS_FACT_GROUPS:-$IGC_ALL_GROUPS}"
+        export IGC_CEGIS_FACT_GROUPS
+        echo "[IGC-GROUP-FILTER] bypassed explicitly; full=$IGC_ALL_GROUPS cegis=$IGC_CEGIS_FACT_GROUPS"
         return 0
     fi
 
     FILTER_SCRIPT="./tools/filter_cegis_groups.py"
     FILTER_PYTHON="${IGC_CEGIS_GROUP_FILTER_PYTHON:-python3}"
-    FILTER_SOURCE="${IGC_CEGIS_SOURCE_GROUPS:-all.groups}"
     FILTER_OUTPUT="${IGC_CEGIS_GROUPS_FILE:-cegis.groups}"
 
     if [ ! -f "$FILTER_SCRIPT" ]; then
         echo "[IGC-GROUP-FILTER] missing filter script: $FILTER_SCRIPT" >&2
         exit 1
     fi
-    if [ ! -f "$FILTER_SOURCE" ]; then
-        echo "[IGC-GROUP-FILTER] missing source groups: $FILTER_SOURCE" >&2
-        exit 1
-    fi
     if ! "$FILTER_PYTHON" "$FILTER_SCRIPT" \
             --sas output.sas \
-            --groups "$FILTER_SOURCE" \
+            --groups "$SOURCE_GROUPS" \
             --output "$FILTER_OUTPUT"; then
         echo "[IGC-GROUP-FILTER] failed to build CEGIS fact map" >&2
         exit 1
     fi
 
-    IGC_ALL_GROUPS="$(readlink -f "$FILTER_OUTPUT")"
-    export IGC_ALL_GROUPS
+    IGC_CEGIS_FACT_GROUPS="$(readlink -f "$FILTER_OUTPUT")"
+    export IGC_CEGIS_FACT_GROUPS
+    echo "[IGC-GROUP-FILTER] full=$IGC_ALL_GROUPS cegis=$IGC_CEGIS_FACT_GROUPS"
 }
 
 run_planner() {
-    # Preserve the original PDDL paths for the optional external-planner
-    # CEGIS loop. The translator/preprocessor run only once; subsequent
-    # iterations reuse the frozen internal representation and these files.
     IGC_ORIGINAL_DOMAIN="${IGC_ORIGINAL_DOMAIN:-$(readlink -f "$1")}" 
     IGC_ORIGINAL_PROBLEM="${IGC_ORIGINAL_PROBLEM:-$(readlink -f "$2")}" 
     export IGC_ORIGINAL_DOMAIN IGC_ORIGINAL_PROBLEM
@@ -105,5 +106,3 @@ fi
 
 check_input_files "$1" "$2"
 run_planner "$1" "$2" "$3" "$4"
-
-# We do not clean up temporary files here (not necessary for IPC-2008)

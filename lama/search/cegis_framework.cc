@@ -291,7 +291,16 @@ public:
                 }
                 std::map<int, int>::const_iterator remap = original_to_current.find(var);
                 if (remap == original_to_current.end()) return STATUS_MAPPING_ERROR;
-                facts_[std::make_pair(remap->second, val)] = atom;
+                const int current_var = remap->second;
+                if (current_var >= 0 &&
+                    current_var < static_cast<int>(g_axiom_layers.size()) &&
+                    g_axiom_layers[current_var] >= 0) {
+                    // Derived/axiom SAS values are internal semantic facts.
+                    // They must never be emitted as ordinary PDDL fluents in
+                    // a refined external-planner problem.
+                    continue;
+                }
+                facts_[std::make_pair(current_var, val)] = atom;
             }
         }
         return STATUS_OK;
@@ -3074,6 +3083,60 @@ private:
             std::cout << prefix << " planner.stdout: " << planner_out << std::endl;
     }
 
+    static StatusCode prepare_cpa_sicstus_input(
+            const std::string &path, std::string *message) {
+        const std::string configured = trim(
+            getenv_string("IGC_CPA_SICSTUS_INPUT_FILE", ""));
+        std::string content;
+        if (!configured.empty()) {
+            const std::string source = absolute_path(configured);
+            if (!read_file(source, &content)) {
+                if (message)
+                    *message = std::string("cannot read configured input: ") + source;
+                return STATUS_IO_ERROR;
+            }
+        } else {
+            // The bundled CPA-family front-end expects two affirmative answers.
+            // Do not trust the mutable solver-directory input file: native mode
+            // may leave it stale or overwritten by a previous manual experiment.
+            content = "y\ny\n";
+        }
+
+        std::istringstream in(content);
+        std::string line;
+        int answers = 0;
+        while (std::getline(in, line)) {
+            const std::string answer = lower_ascii(trim(line));
+            if (answer.empty()) continue;
+            if (answer != "y" && answer != "yes" &&
+                answer != "n" && answer != "no") {
+                if (message) {
+                    std::ostringstream out;
+                    out << "invalid SICStus answer line " << (answers + 1)
+                        << ": " << line;
+                    *message = out.str();
+                }
+                return STATUS_INPUT_ERROR;
+            }
+            ++answers;
+        }
+        if (answers < 2) {
+            if (message)
+                *message = "SICStus control input must contain at least two answers";
+            return STATUS_INPUT_ERROR;
+        }
+        if (!write_file_atomic(path, content)) {
+            if (message) *message = std::string("cannot write input: ") + path;
+            return STATUS_IO_ERROR;
+        }
+        if (message) {
+            *message = configured.empty()
+                ? std::string("generated deterministic input at ") + path
+                : std::string("copied configured input to ") + path;
+        }
+        return STATUS_OK;
+    }
+
     StatusCode run_t1(const std::string &domain,
                       const std::string &problem,
                       const std::string &iter_dir,
@@ -4065,8 +4128,7 @@ private:
         struct Entry { const char *name; bool executable; };
         const Entry entries[] = {
             {"cpa.pddl2pl", true},
-            {"mult5zsic.pl", false},
-            {"input", false}
+            {"mult5zsic.pl", false}
         };
         for (std::size_t i = 0; i < sizeof(entries) / sizeof(entries[0]); ++i) {
             if (!stage_runtime_link(root + "/" + entries[i].name,
@@ -4250,6 +4312,15 @@ private:
         const std::string binary = cpa_binary_name();
         const std::string sicstus = getenv_string("IGC_SICSTUS_EXEC", "sicstus");
         const std::string plan_result = workspace + "/plan-result";
+        const std::string sicstus_input = workspace + "/sicstus.input";
+        std::string input_message;
+        st = prepare_cpa_sicstus_input(sicstus_input, &input_message);
+        if (st != STATUS_OK) {
+            std::cout << prefix << " SICStus input preparation failed: "
+                      << input_message << std::endl;
+            return st;
+        }
+        std::cout << prefix << " SICStus input=" << input_message << std::endl;
         ::unlink(stdout_path.c_str());
         ::unlink(stderr_path.c_str());
 
@@ -4263,7 +4334,9 @@ private:
                  << "test -s pddl2pl.pl && "
                  << "cat mult5zsic.pl pddl2pl.pl > new.pl && "
                  << shell_quote(sicstus)
-                 << " -l new.pl --goal 'main,halt.' < input > trash && "
+                 << " -l new.pl --goal 'main,halt.' < "
+                 << shell_quote(absolute_path(sicstus_input))
+                 << " > trash && "
                  << "test -s theory_0.al && "
                  << "./" << binary << " theory_0.al > temp && "
                  << "sed -e 's/cpa_//g' temp > plan-result && "
@@ -4820,8 +4893,12 @@ StatusCode run_cegis_loop(const std::string &result_file) {
                   << "expected native|isolated." << std::endl;
         return runtime_config;
     }
-    const std::string all_groups = absolute_path(getenv_string("IGC_ALL_GROUPS", "all.groups"));
-    const std::string oneof_initial = absolute_path(getenv_string("IGC_ONEOF_INITIAL", "oneof_initial"));
+    const std::string all_groups = absolute_path(
+        getenv_string("IGC_ALL_GROUPS", "all.groups"));
+    const std::string cegis_fact_groups = absolute_path(
+        getenv_string("IGC_CEGIS_FACT_GROUPS", all_groups));
+    const std::string oneof_initial = absolute_path(
+        getenv_string("IGC_ONEOF_INITIAL", "oneof_initial"));
     std::string default_run;
     if (runtime_mode == CANDIDATE_RUNTIME_NATIVE) {
         default_run = "runs/current";
@@ -4846,12 +4923,15 @@ StatusCode run_cegis_loop(const std::string &result_file) {
     copy_file(ctx.domain_path, original_dir + "/domain.pddl");
     copy_file(ctx.problem_path, original_dir + "/problem.pddl");
     copy_file(all_groups, original_dir + "/all.groups");
+    copy_file(cegis_fact_groups, original_dir + "/cegis.groups");
     copy_file(oneof_initial, original_dir + "/oneof_initial");
 
     SasPddlFactMap fact_map;
-    st = fact_map.load(all_groups, ctx.variable_names);
+    st = fact_map.load(cegis_fact_groups, ctx.variable_names);
     if (st != STATUS_OK) {
-        std::cerr << "[IGC-CEGIS] cannot load all.groups: " << status_name(st) << std::endl;
+        std::cerr << "[IGC-CEGIS] cannot load CEGIS fact groups: "
+                  << cegis_fact_groups << " status=" << status_name(st)
+                  << std::endl;
         return st;
     }
     InitialConstraintIR constraints;
@@ -4876,6 +4956,8 @@ StatusCode run_cegis_loop(const std::string &result_file) {
               << " runtime_mode=" << candidate_runtime_mode_name(runtime_mode)
               << " planner_timeout=" << timeout_seconds
               << " run_dir=" << run_dir << std::endl;
+    std::cout << "[IGC-CEGIS] groups_full=" << all_groups
+              << " groups_cegis=" << cegis_fact_groups << std::endl;
     std::cout << "[IGC-CEGIS] legacy internal search and subplan cache are bypassed." << std::endl;
     if ((planner_kind == CANDIDATE_PLANNER_CNF ||
          planner_kind == CANDIDATE_PLANNER_DNF ||

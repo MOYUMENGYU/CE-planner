@@ -20,7 +20,7 @@
 
 
 %option([noforward,noanalyze,no_goal_split,no_oneof]).   
-option([ no_duals, no_goal_split, no_oneof  ]).      %%do all simplifications
+option([  no_duals, no_goal_split ]).      %%do all simplifications
    %%noforward : no forward simplification
    %%noanalyze : remove backward analysis
    %%no_goal_split: do not split theories for independent goals
@@ -571,13 +571,31 @@ create_theories(Time, Rules, Fluents) :-
 	option(Opt),
 	generate_name,
 	    tell('theory_names'),
-	    dump_file_names,
+	    (member(no_goal_split,Opt) ->
+	        write('theory_0.al '), nl;
+	        dump_file_names),
 	    told,
 	(\+member(no_goal_split,Opt) ->
 	    create_independent_theories(Time,Rules,Fluents),!,
 	    create_dependent_theories(Time,Rules,Fluents);
-	    findall(A,plan_goal(A),List),
-	    write_theory(Fluents,Rules,[List],indep)).
+	    findall(A,plan_goal(A),RawGoals),
+	    normalize_unsplit_goals(RawGoals,NormalizedGoals),
+	    write_theory(Fluents,Rules,NormalizedGoals,dep)).
+
+% In no_goal_split mode all top-level PDDL goals must remain in one theory,
+% but each formula still has to be normalized before it is written in the AL
+% syntax.  Writing raw cpa_or(...) terms produces nested fluent applications
+% such as cpa_or(cpa_low(...),cpa_high(...)), which the DNF/CNF/PIP AL scanners
+% reject at the inner '('.  The AL language supports multiple goal statements
+% conjunctively, and each statement can itself be a disjunction of conjunctions.
+% Therefore preserve the top-level conjunction as a list of goal statements and
+% normalize only inside each statement, avoiding the exponential cross product
+% of all clauses.
+normalize_unsplit_goals([],[]).
+normalize_unsplit_goals([Goal|Rest],[Alternatives|NormalizedRest]) :-
+	findall(Conjunction,cv_and(Goal,Conjunction),Alternatives),
+	Alternatives = [_|_],
+	normalize_unsplit_goals(Rest,NormalizedRest).
 
 create_independent_theories(_Time,Rules,Fluents) :-
 	in_goals(G),

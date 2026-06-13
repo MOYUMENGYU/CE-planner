@@ -1,0 +1,78 @@
+Parsing...   Atom low(x1)
+  Atom low(x1)
+  Atom low(y1)
+  Atom low(y1)
+[0.000s CPU, 0.003s wall-clock]
+Instantiating...
+Normalizing task...   Conjunction
+    Atom low(r1)
+    Disjunction
+      Atom low(z2)
+      Atom high(r2)
+    Disjunction
+      Atom low(r2)
+      Atom high(z2)
+    Disjunction
+      Atom low(r2)
+      Atom high(x1)
+      Atom high(y1)
+    Disjunction
+      Atom low(r2)
+      Atom high(x1)
+      Atom high(r1)
+    Disjunction
+      Atom low(r2)
+      Atom high(y1)
+      Atom high(r1)
+    Disjunction
+      Atom low(x1)
+      Atom low(y1)
+      Atom high(r2)
+    Disjunction
+      Atom low(x1)
+      Atom low(r1)
+      Atom high(r2)
+    Disjunction
+      Atom low(y1)
+      Atom low(r1)
+      Atom high(r2)
+    Disjunction
+      Atom low(z1)
+      Atom low(x1)
+      Atom high(y1)
+      Atom low(r1)
+    Disjunction
+      Atom low(z1)
+      Atom low(x1)
+      Atom low(y1)
+      Atom high(r1)
+    Disjunction
+      Atom low(z1)
+      Atom high(x1)
+      Atom low(y1)
+      Atom low(r1)
+    Disjunction
+      Atom low(z1)
+      Atom high(x1)
+      Atom high(y1)
+      Atom high(r1)
+    Disjunction
+      Atom low(x1)
+      Atom low(y1)
+      Atom low(r1)
+      Atom high(z1)
+    Disjunction
+      Atom low(x1)
+      Atom high(y1)
+      Atom high(r1)
+      Atom high(z1)
+    Disjunction
+      Atom high(x1)
+      Atom low(y1)
+      Atom high(r1)
+      Atom high(z1)
+    Disjunction
+      Atom high(x1)
+      Atom high(y1)
+      Atom low(r1)
+      Atom high(z1)

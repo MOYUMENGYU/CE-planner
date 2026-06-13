@@ -1,1 +1,19 @@
-SCANNER ERROR:  at symbol "@" on line 63
+% compiling /home/moyu/CE-planner/test4/CE-planner/dnf_planner/new.pl...
+%  loading /usr/local/sicstus4.10.1/bin/sp-4.10.1/sicstus-4.10.1/library/lists.po...
+%  module lists imported into user
+%   loading /usr/local/sicstus4.10.1/bin/sp-4.10.1/sicstus-4.10.1/library/types.po...
+%   module types imported into lists
+%   loaded /usr/local/sicstus4.10.1/bin/sp-4.10.1/sicstus-4.10.1/library/types.po in module types, 0 msec 6224 bytes
+%  loaded /usr/local/sicstus4.10.1/bin/sp-4.10.1/sicstus-4.10.1/library/lists.po in module lists, 4 msec 220368 bytes
+%  loading /usr/local/sicstus4.10.1/bin/sp-4.10.1/sicstus-4.10.1/library/ordsets.po...
+%  module ordsets imported into user
+%  loaded /usr/local/sicstus4.10.1/bin/sp-4.10.1/sicstus-4.10.1/library/ordsets.po in module ordsets, 1 msec 56384 bytes
+* [NewFluents] - singleton variables
+* Approximate lines: 600-607, file: '/home/moyu/CE-planner/test4/CE-planner/dnf_planner/new.pl'
+* [NewFluents] - singleton variables
+* Approximate lines: 609-616, file: '/home/moyu/CE-planner/test4/CE-planner/dnf_planner/new.pl'
+* [NI] - singleton variables
+* Approximate lines: 964-971, file: '/home/moyu/CE-planner/test4/CE-planner/dnf_planner/new.pl'
+% compiled /home/moyu/CE-planner/test4/CE-planner/dnf_planner/new.pl in module user, 257 msec 1656688 bytes
+SICStus 4.10.1 (x86_64-linux-glibc2.28): Sun Jun 29 09:00:44 UTC 2025
+Licensed to mo yu

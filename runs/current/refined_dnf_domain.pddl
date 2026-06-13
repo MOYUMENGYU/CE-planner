@@ -1,7 +1,12 @@
 (define (domain adder)
    (:requirements :typing :equality)
    (:types bit)
-   (:predicates (high ?b - bit) (low ?b - bit) (constant ?b - bit))
+   (:predicates (high ?b - bit) (low ?b - bit) (constant ?b - bit)
+    (igc-ce-9e0cda3083-sel-0000)
+    (igc-ce-9e0cda3083-sel-0001)
+    (igc-ce-9e0cda3083-sel-0002)
+    (igc-ce-9e0cda3083-sel-0003)
+  )
    (:action and-gate
      :parameters (?x ?y ?z - bit)
      :precondition (and (not (constant ?z)) (not (= ?x ?y)) (not (= ?x ?z)) (not (= ?y ?z)))

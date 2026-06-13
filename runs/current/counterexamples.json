@@ -1,8 +1,11 @@
 {
   "schema_version": "igc-counterexamples-v1",
-  "context_id": "fnv1a64:491698d976ade0c7",
-  "iteration": 0,
+  "context_id": "fnv1a64:3a41949e0cda3083",
+  "iteration": 3,
   "counterexamples": [
-    {"ce_id": "ce0000", "frequency": 1, "first_iteration": 0, "source_backend": "kissat", "fail_reason": "empty_plan_invalid", "sas_values": [0,1,0,1,0,1,0,1,0,1,0,1,1,0,1,1,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+    {"ce_id": "ce0000", "frequency": 1, "first_iteration": 0, "source_backend": "kissat", "fail_reason": "empty_plan_invalid", "sas_values": [1,1,0,0,0,0,0,1,1,1,1,0,1,1,1,1,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0]},
+    {"ce_id": "ce0001", "frequency": 1, "first_iteration": 1, "source_backend": "kissat", "fail_reason": "goal_or_precondition_failure", "sas_values": [0,1,0,1,0,0,0,1,1,1,1,0,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0]},
+    {"ce_id": "ce0002", "frequency": 1, "first_iteration": 2, "source_backend": "kissat", "fail_reason": "goal_or_precondition_failure", "sas_values": [0,0,1,1,0,0,0,1,1,1,1,0,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},
+    {"ce_id": "ce0003", "frequency": 1, "first_iteration": 3, "source_backend": "kissat", "fail_reason": "goal_or_precondition_failure", "sas_values": [1,0,1,0,0,0,0,1,1,1,1,0,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0]}
   ]
 }
