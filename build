@@ -1,4 +1,13 @@
 #! /bin/sh
+set -eu
+
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+cd "$SCRIPT_DIR"
+
+CXX=${CXX:-g++}
+"$CXX" -std=gnu++98 -O2 -Wall -Wextra -pedantic \
+    tools/cpa_refined_adapter.cc \
+    -o tools/cpa_refined_adapter
 
 cd lama/preprocess && \
 (make || exit 1)
