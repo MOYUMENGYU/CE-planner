@@ -1,15 +1,6 @@
 #!/bin/sh
 set -eu
 
-if [ "${IGC_CPA_CONVERTER_MODE:-0}" = "1" ]; then
-    if [ "$#" -lt 1 ]; then
-        echo "Usage: cpa.pddl2pl <combined-pddl>" >&2
-        exit 2
-    fi
-    python3 "$IGC_CPA_PDDL_ADAPTER" "$1"
-    exec "$IGC_CPA_REAL_PDDL2PL" "$@"
-fi
-
 if [ "$#" -ne 4 ]; then
     echo "Usage: plan-cegis <domain.pddl> <problem.pddl> <result_file> <true|false>" >&2
     exit 1
