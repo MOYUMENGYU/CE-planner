@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import os
 import re
+import sys
 import tempfile
 from pathlib import Path
 from typing import Dict, Iterable, List, Set, Tuple
@@ -139,14 +140,19 @@ def main() -> int:
             print(
                 "[CPA-THEORY-CLOSURE] repaired file={} missing={} fluents={}".format(
                     theory, len(missing), ",".join(missing)
-                )
+                ),
+                file=sys.stderr,
             )
             if restored:
                 print(
-                    "[CPA-THEORY-CLOSURE] restored_initial=" + ",".join(restored)
+                    "[CPA-THEORY-CLOSURE] restored_initial=" + ",".join(restored),
+                    file=sys.stderr,
                 )
         else:
-            print(f"[CPA-THEORY-CLOSURE] file={theory} status=OK")
+            print(
+                f"[CPA-THEORY-CLOSURE] file={theory} status=OK",
+                file=sys.stderr,
+            )
     return 0
 
 
